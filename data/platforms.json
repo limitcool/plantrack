@@ -30,7 +30,7 @@
     "metrics": {
       "quota": "at least 5x usage per session vs free",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": [
         {
@@ -60,6 +60,10 @@
         "summary": "调整使用窗口描述，避免用户误解月费等于无限使用。",
         "impact": "neutral"
       }
+    ],
+    "supportedModels": [
+      "Claude Sonnet 4.6",
+      "Claude Opus 4.7"
     ]
   },
   {
@@ -92,7 +96,7 @@
     "metrics": {
       "quota": "Plus + Codex 配额活动",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 3,
       "limits": [
         {
@@ -134,6 +138,9 @@
         "summary": "开始把活动额度与基础订阅价格拆开记录。",
         "impact": "neutral"
       }
+    ],
+    "supportedModels": [
+      "GPT-5.3"
     ]
   },
   {
@@ -166,7 +173,7 @@
     "metrics": {
       "quota": "尊享澎湃额度，完美适配日常办公与高强度开发需求",
       "billing": "固定月费 / 支持年付",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -187,6 +194,9 @@
         "impact": "neutral",
         "sourceUrl": "https://www.kimi.com/code"
       }
+    ],
+    "supportedModels": [
+      "Kimi-K2.6"
     ]
   },
   {
@@ -219,7 +229,7 @@
     "metrics": {
       "quota": "提供专属 Kimi Code 使用额度，旗舰模型抢先体验，支持多个编程会话",
       "billing": "固定月费 / 支持年付",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -240,6 +250,9 @@
         "impact": "neutral",
         "sourceUrl": "https://www.kimi.com/code"
       }
+    ],
+    "supportedModels": [
+      "Kimi-K2.6"
     ]
   },
   {
@@ -272,7 +285,7 @@
     "metrics": {
       "quota": "充足的每周额度，更高的并发上限，为高级用户提供超值选择",
       "billing": "固定月费 / 支持年付",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 4,
       "limits": [
         {
@@ -323,6 +336,9 @@
         "summary": "补齐对不同额度层级的解释说明。",
         "impact": "neutral"
       }
+    ],
+    "supportedModels": [
+      "Kimi-K2.6"
     ]
   },
   {
@@ -355,7 +371,7 @@
     "metrics": {
       "quota": "每周更新的使用额度，允许多种设备登录分享你的套餐额度，支持你在多个项目中高效工作",
       "billing": "固定月费 / 支持年付",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -376,6 +392,9 @@
         "impact": "neutral",
         "sourceUrl": "https://www.kimi.com/code"
       }
+    ],
+    "supportedModels": [
+      "Kimi-K2.6"
     ]
   },
   {
@@ -408,7 +427,7 @@
     "metrics": {
       "quota": "1500 次请求/5小时",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 4,
       "limits": [
         {
@@ -459,6 +478,9 @@
         "summary": "把套餐说明补成可读语言，而不是裸额度。",
         "impact": "neutral"
       }
+    ],
+    "supportedModels": [
+      "MiniMax-M2.7"
     ]
   },
   {
@@ -491,7 +513,7 @@
     "metrics": {
       "quota": "每订阅月最多约 18,000 次请求",
       "billing": "固定月费 / 官方活动价",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -512,6 +534,15 @@
         "impact": "neutral",
         "sourceUrl": "https://www.jdcloud.com/cn/pages/codingplan"
       }
+    ],
+    "supportedModels": [
+      "DeepSeek-V3.2",
+      "GLM-5",
+      "GLM-4.7",
+      "MiniMax-M2.5",
+      "Kimi-K2.5",
+      "Kimi-K2-Turbo",
+      "Qwen3-Coder"
     ]
   },
   {
@@ -544,7 +575,7 @@
     "metrics": {
       "quota": "每订阅月最多约 90,000 次请求",
       "billing": "固定月费 / 官方活动价",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -565,6 +596,15 @@
         "impact": "neutral",
         "sourceUrl": "https://www.jdcloud.com/cn/pages/codingplan"
       }
+    ],
+    "supportedModels": [
+      "DeepSeek-V3.2",
+      "GLM-5",
+      "GLM-4.7",
+      "MiniMax-M2.5",
+      "Kimi-K2.5",
+      "Kimi-K2-Turbo",
+      "Qwen3-Coder"
     ]
   },
   {
@@ -596,7 +636,7 @@
     "metrics": {
       "quota": "每 5 小时最多约 1200 次请求，每周最多约 9000 次请求，每月最多约 18000 次请求",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -617,6 +657,10 @@
         "impact": "neutral",
         "sourceUrl": "https://www.scnet.cn/ac/openapi/doc/2.0/moduleapi/codingplan/quickstart.html"
       }
+    ],
+    "supportedModels": [
+      "MiniMax-M2.5",
+      "Qwen3-235B-A22B"
     ]
   },
   {
@@ -648,7 +692,7 @@
     "metrics": {
       "quota": "每 5 小时最多约 6000 次请求，每周最多约 45000 次请求，每月最多约 90000 次请求",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -669,6 +713,10 @@
         "impact": "neutral",
         "sourceUrl": "https://www.scnet.cn/ac/openapi/doc/2.0/moduleapi/codingplan/quickstart.html"
       }
+    ],
+    "supportedModels": [
+      "MiniMax-M2.5",
+      "Qwen3-235B-A22B"
     ]
   },
   {
@@ -700,7 +748,7 @@
     "metrics": {
       "quota": "每 5 小时最多约 80 次请求，每周最多约 400 次请求，每月最多约 1600 次请求",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -721,6 +769,11 @@
         "impact": "neutral",
         "sourceUrl": "https://ctxirang.ctyun.cn/maas/codingPlan"
       }
+    ],
+    "supportedModels": [
+      "GLM Lite",
+      "GLM Pro",
+      "GLM Max"
     ]
   },
   {
@@ -752,7 +805,7 @@
     "metrics": {
       "quota": "每 5 小时最多约 1600 次请求，每周最多约 8000 次请求，每月最多约 32000 次请求",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -773,6 +826,11 @@
         "impact": "neutral",
         "sourceUrl": "https://ctxirang.ctyun.cn/maas/codingPlan"
       }
+    ],
+    "supportedModels": [
+      "GLM Lite",
+      "GLM Pro",
+      "GLM Max"
     ]
   },
   {
@@ -804,7 +862,7 @@
     "metrics": {
       "quota": "每 5 小时最多约 400 次请求，每周最多约 2000 次请求，每月最多约 8000 次请求",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -825,6 +883,11 @@
         "impact": "neutral",
         "sourceUrl": "https://ctxirang.ctyun.cn/maas/codingPlan"
       }
+    ],
+    "supportedModels": [
+      "GLM Lite",
+      "GLM Pro",
+      "GLM Max"
     ]
   },
   {
@@ -856,7 +919,7 @@
     "metrics": {
       "quota": "每 5 小时 1000 次请求，每周 6000 次请求，每月 12000 次请求",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -877,6 +940,17 @@
         "impact": "neutral",
         "sourceUrl": "https://cloud.infini-ai.com/platform/ai"
       }
+    ],
+    "supportedModels": [
+      "DeepSeek-V3.2",
+      "DeepSeek-V3.2-Thinking",
+      "Kimi-K2.5",
+      "MiniMax-M2.1",
+      "MiniMax-M2.5",
+      "MiniMax-M2.7",
+      "GLM-4.7",
+      "GLM-5",
+      "GLM-5.1"
     ]
   },
   {
@@ -908,7 +982,7 @@
     "metrics": {
       "quota": "每 5 小时 5000 次请求，每周 30000 次请求，每月 60000 次请求",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -929,6 +1003,17 @@
         "impact": "neutral",
         "sourceUrl": "https://cloud.infini-ai.com/platform/ai"
       }
+    ],
+    "supportedModels": [
+      "DeepSeek-V3.2",
+      "DeepSeek-V3.2-Thinking",
+      "Kimi-K2.5",
+      "MiniMax-M2.1",
+      "MiniMax-M2.5",
+      "MiniMax-M2.7",
+      "GLM-4.7",
+      "GLM-5",
+      "GLM-5.1"
     ]
   },
   {
@@ -961,7 +1046,7 @@
     "metrics": {
       "quota": "3x Claude Pro 用量额度",
       "billing": "固定月费 / 支持包季",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": [
         {
@@ -993,6 +1078,9 @@
         "impact": "neutral",
         "sourceUrl": "https://www.bigmodel.cn/glm-coding"
       }
+    ],
+    "supportedModels": [
+      "GLM-4"
     ]
   },
   {
@@ -1025,7 +1113,7 @@
     "metrics": {
       "quota": "20x Lite 用量额度 + Pro 全量权益",
       "billing": "固定月费 / 支持包季",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": [
         {
@@ -1057,6 +1145,9 @@
         "impact": "neutral",
         "sourceUrl": "https://www.bigmodel.cn/glm-coding"
       }
+    ],
+    "supportedModels": [
+      "GLM-4"
     ]
   },
   {
@@ -1089,7 +1180,7 @@
     "metrics": {
       "quota": "5x Lite 用量额度 + Lite 全量权益",
       "billing": "固定月费 / 支持包季",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": [
         {
@@ -1121,6 +1212,9 @@
         "impact": "neutral",
         "sourceUrl": "https://www.bigmodel.cn/glm-coding"
       }
+    ],
+    "supportedModels": [
+      "GLM-4"
     ]
   },
   {
@@ -1152,7 +1246,7 @@
     "metrics": {
       "quota": "每 5 小时最多约 1200 次请求",
       "billing": "固定月费 / 首购优惠",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -1173,6 +1267,12 @@
         "impact": "neutral",
         "sourceUrl": "https://www.volcengine.com/activity/codingplan-feishu"
       }
+    ],
+    "supportedModels": [
+      "DeepSeek-V3.2",
+      "Kimi-K2-Thinking",
+      "GLM-4.7",
+      "Doubao-Seed-Code"
     ]
   },
   {
@@ -1204,7 +1304,7 @@
     "metrics": {
       "quota": "每 5 小时最多约 6000 次请求",
       "billing": "固定月费 / 首购优惠",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -1225,6 +1325,12 @@
         "impact": "neutral",
         "sourceUrl": "https://www.volcengine.com/activity/codingplan-feishu"
       }
+    ],
+    "supportedModels": [
+      "DeepSeek-V3.2",
+      "Kimi-K2-Thinking",
+      "GLM-4.7",
+      "Doubao-Seed-Code"
     ]
   },
   {
@@ -1256,7 +1362,7 @@
     "metrics": {
       "quota": "每月最多 18,000 次请求",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -1277,6 +1383,11 @@
         "impact": "neutral",
         "sourceUrl": "https://cloud.baidu.com/product/codingplan.html"
       }
+    ],
+    "supportedModels": [
+      "GLM-5",
+      "MiniMax-M2.5",
+      "Kimi-K2.5"
     ]
   },
   {
@@ -1308,7 +1419,7 @@
     "metrics": {
       "quota": "每月最多 90,000 次请求",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -1329,6 +1440,11 @@
         "impact": "neutral",
         "sourceUrl": "https://cloud.baidu.com/product/codingplan.html"
       }
+    ],
+    "supportedModels": [
+      "GLM-5",
+      "MiniMax-M2.5",
+      "Kimi-K2.5"
     ]
   },
   {
@@ -1361,7 +1477,7 @@
     "metrics": {
       "quota": "每 5 小时最多约 1200 次请求，每周最多约 9000 次请求，每订阅月最多约 18000 次请求",
       "billing": "固定月费 / 官方活动价",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -1382,6 +1498,9 @@
         "impact": "neutral",
         "sourceUrl": "https://ecloud.10086.cn/portal/act/codingplan"
       }
+    ],
+    "supportedModels": [
+      "MiniMax-M2.5"
     ]
   },
   {
@@ -1414,7 +1533,7 @@
     "metrics": {
       "quota": "每 5 小时最多约 6000 次请求，每周最多约 45000 次请求，每订阅月最多约 90000 次请求",
       "billing": "固定月费 / 官方活动价",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -1435,6 +1554,9 @@
         "impact": "neutral",
         "sourceUrl": "https://ecloud.10086.cn/portal/act/codingplan"
       }
+    ],
+    "supportedModels": [
+      "MiniMax-M2.5"
     ]
   },
   {
@@ -1467,7 +1589,7 @@
     "metrics": {
       "quota": "每订阅月最多约 18000 次请求",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 1,
       "limits": []
     },
@@ -1480,7 +1602,8 @@
         "impact": "neutral",
         "sourceUrl": "https://www.cucloud.cn/Product/CodingPlan.html"
       }
-    ]
+    ],
+    "supportedModels": []
   },
   {
     "id": "cucloud-coding-pro",
@@ -1512,7 +1635,7 @@
     "metrics": {
       "quota": "每订阅月最多约 90000 次请求",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 1,
       "limits": []
     },
@@ -1525,7 +1648,8 @@
         "impact": "neutral",
         "sourceUrl": "https://www.cucloud.cn/Product/CodingPlan.html"
       }
-    ]
+    ],
+    "supportedModels": []
   },
   {
     "id": "xunfei-spark-pro",
@@ -1556,7 +1680,7 @@
     "metrics": {
       "quota": "每 5 小时最多约 1200 次请求，每周最多约 9000 次请求，每月最多约 18000 次请求",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -1577,6 +1701,14 @@
         "impact": "neutral",
         "sourceUrl": "https://maas.xfyun.cn/packageSubscription?from=packageSubscriptionOverlay"
       }
+    ],
+    "supportedModels": [
+      "DeepSeek-V3.2",
+      "GLM-5",
+      "Kimi-K2.5",
+      "MiniMax-M2.5",
+      "GLM-4.7-Flash",
+      "Qwen3.5-35B-A3B"
     ]
   },
   {
@@ -1608,7 +1740,7 @@
     "metrics": {
       "quota": "请求次数不限",
       "billing": "固定月费 / 首购优惠",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -1629,6 +1761,14 @@
         "impact": "neutral",
         "sourceUrl": "https://maas.xfyun.cn/packageSubscription?from=packageSubscriptionOverlay"
       }
+    ],
+    "supportedModels": [
+      "DeepSeek-V3.2",
+      "GLM-5",
+      "Kimi-K2.5",
+      "MiniMax-M2.5",
+      "GLM-4.7-Flash",
+      "Qwen3.5-35B-A3B"
     ]
   },
   {
@@ -1660,7 +1800,7 @@
     "metrics": {
       "quota": "每 5 小时最多约 6000 次请求，每周最多约 45000 次请求，每月最多约 90000 次请求",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -1681,6 +1821,14 @@
         "impact": "neutral",
         "sourceUrl": "https://maas.xfyun.cn/packageSubscription?from=packageSubscriptionOverlay"
       }
+    ],
+    "supportedModels": [
+      "DeepSeek-V3.2",
+      "GLM-5",
+      "Kimi-K2.5",
+      "MiniMax-M2.5",
+      "GLM-4.7-Flash",
+      "Qwen3.5-35B-A3B"
     ]
   },
   {
@@ -1712,7 +1860,7 @@
     "metrics": {
       "quota": "与 Pro 套餐支持模型一致；官方公开页未展示 Lite 当前价格",
       "billing": "已停止新购 / 已停止续费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -1733,6 +1881,17 @@
         "impact": "neutral",
         "sourceUrl": "https://common-buy.aliyun.com/token-plan"
       }
+    ],
+    "supportedModels": [
+      "Qwen3.6-plus",
+      "Kimi-K2.5",
+      "GLM-5",
+      "MiniMax-M2.5",
+      "Qwen3.5-plus",
+      "Qwen3-max-2026-01-23",
+      "Qwen3-coder-next",
+      "Qwen3-coder-plus",
+      "GLM-4.7"
     ]
   },
   {
@@ -1764,7 +1923,7 @@
     "metrics": {
       "quota": "每 5 小时 6000 次请求，每周 45000 次请求，每月 90000 次请求",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -1785,6 +1944,17 @@
         "impact": "neutral",
         "sourceUrl": "https://common-buy.aliyun.com/token-plan"
       }
+    ],
+    "supportedModels": [
+      "Qwen3.6-plus",
+      "Kimi-K2.5",
+      "GLM-5",
+      "MiniMax-M2.5",
+      "Qwen3.5-plus",
+      "Qwen3-max-2026-01-23",
+      "Qwen3-coder-next",
+      "Qwen3-coder-plus",
+      "GLM-4.7"
     ]
   },
   {
@@ -1817,7 +1987,7 @@
     "metrics": {
       "quota": "4500 次请求/5小时",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -1838,6 +2008,9 @@
         "impact": "neutral",
         "sourceUrl": "https://platform.minimaxi.com/subscribe/token-plan"
       }
+    ],
+    "supportedModels": [
+      "MiniMax-M2.7"
     ]
   },
   {
@@ -1870,7 +2043,7 @@
     "metrics": {
       "quota": "4500 次请求/5小时",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -1891,6 +2064,9 @@
         "impact": "neutral",
         "sourceUrl": "https://platform.minimaxi.com/subscribe/token-plan"
       }
+    ],
+    "supportedModels": [
+      "MiniMax-M2.7"
     ]
   },
   {
@@ -1923,7 +2099,7 @@
     "metrics": {
       "quota": "1500 次请求/5小时",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -1944,6 +2120,9 @@
         "impact": "neutral",
         "sourceUrl": "https://platform.minimaxi.com/subscribe/token-plan"
       }
+    ],
+    "supportedModels": [
+      "MiniMax-M2.7"
     ]
   },
   {
@@ -1976,7 +2155,7 @@
     "metrics": {
       "quota": "600 次请求/5小时",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -1997,6 +2176,9 @@
         "impact": "neutral",
         "sourceUrl": "https://platform.minimaxi.com/subscribe/token-plan"
       }
+    ],
+    "supportedModels": [
+      "MiniMax-M2.7"
     ]
   },
   {
@@ -2029,7 +2211,7 @@
     "metrics": {
       "quota": "30000 次请求/5小时",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -2050,6 +2232,9 @@
         "impact": "neutral",
         "sourceUrl": "https://platform.minimaxi.com/subscribe/token-plan"
       }
+    ],
+    "supportedModels": [
+      "MiniMax-M2.7"
     ]
   },
   {
@@ -2082,7 +2267,7 @@
     "metrics": {
       "quota": "每模型 1,500 次调用 / 5 小时",
       "billing": "公测免费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 1,
       "limits": []
     },
@@ -2095,6 +2280,10 @@
         "impact": "neutral",
         "sourceUrl": "https://www.sensenova.cn/token-plan"
       }
+    ],
+    "supportedModels": [
+      "SenseNova 6.7 Flash-Lite",
+      "SenseNova U1 Fast"
     ]
   },
   {
@@ -2127,7 +2316,7 @@
     "metrics": {
       "quota": "720,000,000 Credits",
       "billing": "连续包年",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -2148,6 +2337,13 @@
         "impact": "neutral",
         "sourceUrl": "https://platform.xiaomimimo.com/token-plan"
       }
+    ],
+    "supportedModels": [
+      "MiMo-V2.5-Pro",
+      "MiMo-V2.5",
+      "MiMo-V2.5-TTS-VoiceClone",
+      "MiMo-V2.5-TTS-VoiceDesign",
+      "MiMo-V2.5-TTS"
     ]
   },
   {
@@ -2180,7 +2376,7 @@
     "metrics": {
       "quota": "19,200,000,000 Credits",
       "billing": "连续包年",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -2201,6 +2397,13 @@
         "impact": "neutral",
         "sourceUrl": "https://platform.xiaomimimo.com/token-plan"
       }
+    ],
+    "supportedModels": [
+      "MiMo-V2.5-Pro",
+      "MiMo-V2.5",
+      "MiMo-V2.5-TTS-VoiceClone",
+      "MiMo-V2.5-TTS-VoiceDesign",
+      "MiMo-V2.5-TTS"
     ]
   },
   {
@@ -2233,7 +2436,7 @@
     "metrics": {
       "quota": "8,400,000,000 Credits",
       "billing": "连续包年",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -2254,6 +2457,13 @@
         "impact": "neutral",
         "sourceUrl": "https://platform.xiaomimimo.com/token-plan"
       }
+    ],
+    "supportedModels": [
+      "MiMo-V2.5-Pro",
+      "MiMo-V2.5",
+      "MiMo-V2.5-TTS-VoiceClone",
+      "MiMo-V2.5-TTS-VoiceDesign",
+      "MiMo-V2.5-TTS"
     ]
   },
   {
@@ -2286,7 +2496,7 @@
     "metrics": {
       "quota": "2,400,000,000 Credits",
       "billing": "连续包年",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -2307,6 +2517,13 @@
         "impact": "neutral",
         "sourceUrl": "https://platform.xiaomimimo.com/token-plan"
       }
+    ],
+    "supportedModels": [
+      "MiMo-V2.5-Pro",
+      "MiMo-V2.5",
+      "MiMo-V2.5-TTS-VoiceClone",
+      "MiMo-V2.5-TTS-VoiceDesign",
+      "MiMo-V2.5-TTS"
     ]
   },
   {
@@ -2339,7 +2556,7 @@
     "metrics": {
       "quota": "600万 tokens",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 1,
       "limits": []
     },
@@ -2352,7 +2569,8 @@
         "impact": "neutral",
         "sourceUrl": "https://www.cucloud.cn/product/tokenplan.html"
       }
-    ]
+    ],
+    "supportedModels": []
   },
   {
     "id": "cucloud-token-team-lite",
@@ -2384,7 +2602,7 @@
     "metrics": {
       "quota": "25,000 credits",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 1,
       "limits": []
     },
@@ -2397,7 +2615,8 @@
         "impact": "neutral",
         "sourceUrl": "https://www.cucloud.cn/product/tokenplan.html"
       }
-    ]
+    ],
+    "supportedModels": []
   },
   {
     "id": "cucloud-token-max",
@@ -2429,7 +2648,7 @@
     "metrics": {
       "quota": "1,800万 tokens",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 1,
       "limits": []
     },
@@ -2442,7 +2661,8 @@
         "impact": "neutral",
         "sourceUrl": "https://www.cucloud.cn/product/tokenplan.html"
       }
-    ]
+    ],
+    "supportedModels": []
   },
   {
     "id": "cucloud-token-team-max",
@@ -2474,7 +2694,7 @@
     "metrics": {
       "quota": "250,000 credits",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -2495,7 +2715,8 @@
         "impact": "neutral",
         "sourceUrl": "https://www.cucloud.cn/product/tokenplan.html"
       }
-    ]
+    ],
+    "supportedModels": []
   },
   {
     "id": "cucloud-token-pro",
@@ -2527,7 +2748,7 @@
     "metrics": {
       "quota": "1,200万 tokens",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 1,
       "limits": []
     },
@@ -2540,7 +2761,8 @@
         "impact": "neutral",
         "sourceUrl": "https://www.cucloud.cn/product/tokenplan.html"
       }
-    ]
+    ],
+    "supportedModels": []
   },
   {
     "id": "cucloud-token-team-pro",
@@ -2572,7 +2794,7 @@
     "metrics": {
       "quota": "100,000 credits",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 1,
       "limits": []
     },
@@ -2585,7 +2807,8 @@
         "impact": "neutral",
         "sourceUrl": "https://www.cucloud.cn/product/tokenplan.html"
       }
-    ]
+    ],
+    "supportedModels": []
   },
   {
     "id": "tencent-token-lite",
@@ -2617,7 +2840,7 @@
     "metrics": {
       "quota": "每订阅月 3500万 Tokens",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 1,
       "limits": []
     },
@@ -2630,6 +2853,14 @@
         "impact": "neutral",
         "sourceUrl": "https://cloud.tencent.com/act/pro/tokenplan"
       }
+    ],
+    "supportedModels": [
+      "Hunyuan-2.0-Instruct",
+      "Kimi-K2.5",
+      "GLM-5.1",
+      "GLM-5",
+      "MiniMax-M2.7",
+      "MiniMax-M2.5"
     ]
   },
   {
@@ -2662,7 +2893,7 @@
     "metrics": {
       "quota": "每订阅月 6.5 亿 Tokens",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 1,
       "limits": []
     },
@@ -2675,6 +2906,14 @@
         "impact": "neutral",
         "sourceUrl": "https://cloud.tencent.com/act/pro/tokenplan"
       }
+    ],
+    "supportedModels": [
+      "Hunyuan-2.0-Instruct",
+      "Kimi-K2.5",
+      "GLM-5.1",
+      "GLM-5",
+      "MiniMax-M2.7",
+      "MiniMax-M2.5"
     ]
   },
   {
@@ -2707,7 +2946,7 @@
     "metrics": {
       "quota": "每订阅月 3.2 亿 Tokens",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 1,
       "limits": []
     },
@@ -2720,6 +2959,14 @@
         "impact": "neutral",
         "sourceUrl": "https://cloud.tencent.com/act/pro/tokenplan"
       }
+    ],
+    "supportedModels": [
+      "Hunyuan-2.0-Instruct",
+      "Kimi-K2.5",
+      "GLM-5.1",
+      "GLM-5",
+      "MiniMax-M2.7",
+      "MiniMax-M2.5"
     ]
   },
   {
@@ -2752,7 +2999,7 @@
     "metrics": {
       "quota": "每订阅月 1 亿 Tokens",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 1,
       "limits": []
     },
@@ -2765,6 +3012,14 @@
         "impact": "neutral",
         "sourceUrl": "https://cloud.tencent.com/act/pro/tokenplan"
       }
+    ],
+    "supportedModels": [
+      "Hunyuan-2.0-Instruct",
+      "Kimi-K2.5",
+      "GLM-5.1",
+      "GLM-5",
+      "MiniMax-M2.7",
+      "MiniMax-M2.5"
     ]
   },
   {
@@ -2796,7 +3051,7 @@
     "metrics": {
       "quota": "625000 Credits/个",
       "billing": "一次性共享包",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -2817,6 +3072,12 @@
         "impact": "neutral",
         "sourceUrl": "https://common-buy.aliyun.com/token-plan"
       }
+    ],
+    "supportedModels": [
+      "Qwen3.6-plus",
+      "GLM-5",
+      "MiniMax-M2.5",
+      "DeepSeek-v3.2"
     ]
   },
   {
@@ -2848,7 +3109,7 @@
     "metrics": {
       "quota": "250000 Credits/坐席/月",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": [
         {
@@ -2875,6 +3136,12 @@
         "impact": "neutral",
         "sourceUrl": "https://common-buy.aliyun.com/token-plan"
       }
+    ],
+    "supportedModels": [
+      "Qwen3.6-plus",
+      "GLM-5",
+      "MiniMax-M2.5",
+      "DeepSeek-v3.2"
     ]
   },
   {
@@ -2906,7 +3173,7 @@
     "metrics": {
       "quota": "25000 Credits/坐席/月",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": [
         {
@@ -2933,6 +3200,12 @@
         "impact": "neutral",
         "sourceUrl": "https://common-buy.aliyun.com/token-plan"
       }
+    ],
+    "supportedModels": [
+      "Qwen3.6-plus",
+      "GLM-5",
+      "MiniMax-M2.5",
+      "DeepSeek-v3.2"
     ]
   },
   {
@@ -2964,7 +3237,7 @@
     "metrics": {
       "quota": "100000 Credits/坐席/月",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": [
         {
@@ -2991,6 +3264,12 @@
         "impact": "neutral",
         "sourceUrl": "https://common-buy.aliyun.com/token-plan"
       }
+    ],
+    "supportedModels": [
+      "Qwen3.6-plus",
+      "GLM-5",
+      "MiniMax-M2.5",
+      "DeepSeek-v3.2"
     ]
   },
   {
@@ -3023,7 +3302,7 @@
     "metrics": {
       "quota": "extended limits on Agent",
       "billing": "固定月费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": [
         {
@@ -3048,6 +3327,16 @@
         "summary": "改为单独一条 usage lane，比直接放在月包表更准确。",
         "impact": "neutral"
       }
+    ],
+    "supportedModels": [
+      "Claude 4.6 Sonnet",
+      "Claude 4.7 Opus",
+      "Composer 2",
+      "Gemini 3.1 Pro",
+      "GPT-5.3 Codex",
+      "GPT-5.5",
+      "Grok 4.3",
+      "GPT-4.1"
     ]
   },
   {
@@ -3080,7 +3369,7 @@
     "metrics": {
       "quota": "按模型分档，每 5 小时约 1-31650 次请求",
       "billing": "固定月费 / 首月优惠",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": []
     },
@@ -3101,6 +3390,17 @@
         "impact": "neutral",
         "sourceUrl": "https://opencode.ai/zh/go"
       }
+    ],
+    "supportedModels": [
+      "DeepSeek-V4",
+      "Kimi-K2.6",
+      "Kimi-K2.5",
+      "MiniMax-M2.7",
+      "MiniMax-M2.5",
+      "GLM-5.1",
+      "GLM-5",
+      "Qwen3.6 Plus",
+      "Qwen3.5 Plus"
     ]
   },
   {
@@ -3133,7 +3433,7 @@
     "metrics": {
       "quota": "25+ free models",
       "billing": "按量计费",
-      "lastChecked": "2026-05-06",
+      "lastChecked": "2026-05-07",
       "changeCount": 2,
       "limits": [
         {
@@ -3159,6 +3459,30 @@
         "summary": "开始记录免费模型窗口和代表性模型说明。",
         "impact": "neutral"
       }
+    ],
+    "supportedModels": [
+      "Gemini 3.1 Flash Lite",
+      "CoBuddy",
+      "GPT Chat",
+      "Grok 4.3",
+      "Granite 4.1 8B",
+      "Mistral Medium 3.5",
+      "Owl Alpha",
+      "Nemotron 3 Nano Omni",
+      "Laguna XS.2",
+      "Laguna M.1",
+      "Claude Haiku",
+      "GPT Mini",
+      "Gemini Pro",
+      "Gemini Flash",
+      "Claude Sonnet",
+      "Qwen3.5 Plus",
+      "Qwen3.6 Flash",
+      "Qwen3.6 35B A3B",
+      "Qwen3.6 Max Preview",
+      "Qwen3.6 27B",
+      "GPT-5.5 Pro",
+      "GPT-5.5"
     ]
   }
 ]

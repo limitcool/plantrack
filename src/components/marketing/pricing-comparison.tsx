@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useMemo, useState } from "react";
+import { startTransition, useId, useMemo, useState } from "react";
 
 import {
   ArrowDown,
@@ -41,7 +41,6 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import {
   Drawer,
@@ -216,6 +215,8 @@ const dictionary = {
     noPlansSelectedYet: "还没有选择套餐，先从列表中勾选后再对比。",
     openOfficialSite: "打开 {vendor} 官网",
     viewPlanDetails: "查看 {name} 详情",
+    supportedModelsLabel: "支持模型",
+    noModelHints: "待补充",
   },
   en: {
     title: "Pricing comparison",
@@ -341,6 +342,8 @@ const dictionary = {
     noPlansSelectedYet: "No plans selected yet. Pick plans from the list before comparing.",
     openOfficialSite: "Open {vendor} official site",
     viewPlanDetails: "View details for {name}",
+    supportedModelsLabel: "Models",
+    noModelHints: "Coming soon",
   },
 } as const;
 
@@ -520,25 +523,14 @@ function getPlatformModelFilters(platform: Platform): ModelFilterItem[] {
     items.push({ key, label: normalized, count: 1 });
   }
 
-  const haystack = `${platform.name} ${platform.vendor} ${platform.tags.join(" ")} ${platform.supportedModels.join(" ")}`;
-  const inferred: Array<{ key: string; label: string }> = [];
-  if (/gpt|openai/i.test(haystack)) inferred.push({ key: "gpt", label: "GPT / OpenAI" });
-  if (/claude|anthropic/i.test(haystack)) inferred.push({ key: "claude", label: "Claude / Anthropic" });
-  if (/gemini/i.test(haystack)) inferred.push({ key: "gemini", label: "Gemini" });
-  if (/llama/i.test(haystack)) inferred.push({ key: "llama", label: "Llama" });
-  if (/deepseek/i.test(haystack)) inferred.push({ key: "deepseek", label: "DeepSeek" });
-  if (/kimi/i.test(haystack)) inferred.push({ key: "kimi", label: "Kimi" });
-  if (/minimax/i.test(haystack)) inferred.push({ key: "minimax", label: "MiniMax" });
-
-  for (const item of inferred) {
-    if (seen.has(item.key)) {
-      continue;
-    }
-    seen.add(item.key);
-    items.push({ ...item, count: 1 });
-  }
-
   return items;
+}
+
+function getDisplayModels(platform: Platform, limit = 4): string[] {
+  return platform.supportedModels
+    .map((model) => model.trim())
+    .filter(Boolean)
+    .slice(0, limit);
 }
 
 function detectModelFamily(label: string): { key: string; label: string } {
@@ -649,6 +641,7 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
   const [unitMode, setUnitMode] = useState<MetricUnitMode>("compact");
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [compareOpen, setCompareOpen] = useState(false);
+  const [detailsPlatform, setDetailsPlatform] = useState<Platform | null>(null);
 
   const toggleSelect = (id: string) => {
     setSelectedIds((prev) => {
@@ -663,6 +656,7 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
   };
 
   const clearSelection = () => setSelectedIds(new Set());
+  const openPlatformDetails = (platform: Platform) => setDetailsPlatform(platform);
   const toggleModelKey = (modelKey: string) => {
     setSelectedModels((prev) => {
       const next = new Set(prev);
@@ -1238,6 +1232,7 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
               getStatusBadge={getStatusBadge}
               selectedIds={selectedIds}
               onToggleSelect={toggleSelect}
+              onOpenDetails={openPlatformDetails}
               unitMode={unitMode}
               rank={sortBy === "value-score-desc" ? index + 1 : undefined}
               lang={lang}
@@ -1255,6 +1250,18 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
           </div>
         )}
       </div>
+      <PlatformDetailsDialog
+        open={detailsPlatform !== null}
+        onOpenChange={(open) => {
+          if (!open) {
+            setDetailsPlatform(null);
+          }
+        }}
+        platform={detailsPlatform}
+        unitMode={unitMode}
+        getStatusBadge={getStatusBadge}
+        lang={lang}
+      />
     </section>
   );
 }
@@ -1264,6 +1271,7 @@ interface VendorGroupCardProps {
   getStatusBadge: (status: string) => React.ReactNode;
   selectedIds: Set<string>;
   onToggleSelect: (id: string) => void;
+  onOpenDetails: (platform: Platform) => void;
   unitMode: MetricUnitMode;
   rank?: number;
   lang: Lang;
@@ -1328,6 +1336,7 @@ interface ActiveVendorPlanPanelProps {
   representativeStatus: string;
   isSelected: boolean;
   onToggleSelect: (id: string) => void;
+  onOpenDetails: (platform: Platform) => void;
   unitMode: MetricUnitMode;
   getStatusBadge: (status: string) => React.ReactNode;
   lang: Lang;
@@ -1405,13 +1414,16 @@ function ActiveVendorPlanPanel({
   representativeStatus,
   isSelected,
   onToggleSelect,
+  onOpenDetails,
   unitMode,
   getStatusBadge,
   lang,
 }: ActiveVendorPlanPanelProps) {
+  const t = dictionary[lang];
   const seriesName = getPlanSeriesName(plan);
   const primaryLimit = plan.metrics.limits[0];
   const secondaryLimit = plan.metrics.limits[1];
+  const displayModels = getDisplayModels(plan, 4);
 
   return (
     <div
@@ -1441,6 +1453,24 @@ function ActiveVendorPlanPanel({
                 )}
               </div>
               <div className="text-muted-foreground text-xs">{plan.subcategory}</div>
+              <div className="space-y-2">
+                <div className={getMicroLabelClass(lang)}>{t.supportedModelsLabel}</div>
+                {displayModels.length > 0 ? (
+                  <div className="flex flex-wrap gap-1.5">
+                    {displayModels.map((model) => (
+                      <Badge
+                        key={model}
+                        variant="secondary"
+                        className="rounded-full border border-border/60 bg-secondary/40 px-2 py-0.5 text-[11px]"
+                      >
+                        {model}
+                      </Badge>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-muted-foreground text-xs">{t.noModelHints}</div>
+                )}
+              </div>
               <div className="text-muted-foreground text-sm leading-6">
                 {formatQuotaText(plan.metrics.quota, unitMode)}
               </div>
@@ -1481,13 +1511,16 @@ function ActiveVendorPlanPanel({
                 </div>
                 <div className="text-muted-foreground text-xs">{plan.priceDisplay}</div>
               </div>
-              <PlatformDetailsDialog
-                platform={plan}
-                unitMode={unitMode}
-                valueScore={calculateValueScore(plan)}
-                getStatusBadge={getStatusBadge}
-                lang={lang}
-              />
+              <Button
+                variant="outline"
+                size="sm"
+                className="h-8"
+                onClick={() => onOpenDetails(plan)}
+                aria-label={dictionary[lang].viewPlanDetails.replace("{name}", plan.name)}
+                title={dictionary[lang].viewPlanDetails.replace("{name}", plan.name)}
+              >
+                {dictionary[lang].details}
+              </Button>
             </div>
           </div>
         </div>
@@ -1501,6 +1534,7 @@ interface VendorPlanDirectoryItemProps {
   representativeStatus: string;
   isSelected: boolean;
   onToggleSelect: (id: string) => void;
+  onOpenDetails: (platform: Platform) => void;
   unitMode: MetricUnitMode;
   getStatusBadge: (status: string) => React.ReactNode;
   lang: Lang;
@@ -1511,6 +1545,7 @@ function VendorPlanDirectoryItem({
   representativeStatus,
   isSelected,
   onToggleSelect,
+  onOpenDetails,
   unitMode,
   getStatusBadge,
   lang,
@@ -1518,6 +1553,7 @@ function VendorPlanDirectoryItem({
   const t = dictionary[lang];
   const seriesName = getPlanSeriesName(plan);
   const primaryLimit = plan.metrics.limits[0];
+  const displayModels = getDisplayModels(plan, 4);
 
   return (
     <div
@@ -1547,6 +1583,24 @@ function VendorPlanDirectoryItem({
                 {plan.status !== representativeStatus ? getStatusBadge(plan.status) : null}
               </div>
               <div className="text-muted-foreground text-xs">{plan.subcategory}</div>
+              <div className="space-y-2">
+                <div className={getMicroLabelClass(lang)}>{t.supportedModelsLabel}</div>
+                {displayModels.length > 0 ? (
+                  <div className="flex flex-wrap gap-1.5">
+                    {displayModels.map((model) => (
+                      <Badge
+                        key={model}
+                        variant="secondary"
+                        className="rounded-full border border-border/60 bg-secondary/40 px-2 py-0.5 text-[11px]"
+                      >
+                        {model}
+                      </Badge>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-muted-foreground text-xs">{t.noModelHints}</div>
+                )}
+              </div>
               <div className="text-muted-foreground text-sm leading-6">
                 {formatQuotaText(plan.metrics.quota, unitMode)}
               </div>
@@ -1576,13 +1630,16 @@ function VendorPlanDirectoryItem({
             </div>
 
             <div className="flex items-center justify-end lg:self-center">
-              <PlatformDetailsDialog
-                platform={plan}
-                unitMode={unitMode}
-                valueScore={calculateValueScore(plan)}
-                getStatusBadge={getStatusBadge}
-                lang={lang}
-              />
+              <Button
+                variant="outline"
+                size="sm"
+                className="h-8"
+                onClick={() => onOpenDetails(plan)}
+                aria-label={t.viewPlanDetails.replace("{name}", plan.name)}
+                title={t.viewPlanDetails.replace("{name}", plan.name)}
+              >
+                {t.details}
+              </Button>
             </div>
           </div>
         </div>
@@ -1596,6 +1653,7 @@ function VendorGroupCard({
   getStatusBadge,
   selectedIds,
   onToggleSelect,
+  onOpenDetails,
   unitMode,
   rank,
   lang,
@@ -1605,6 +1663,7 @@ function VendorGroupCard({
   const platform = group.representativePlan;
   const latestChange = platform.history[0];
   const [vendorPlansOpen, setVendorPlansOpen] = useState(false);
+  const [vendorPlansMounted, setVendorPlansMounted] = useState(false);
   const [activePlanId, setActivePlanId] = useState(group.plans[0]?.id ?? platform.id);
   const priceText =
     group.minPriceValueRmb === group.maxPriceValueRmb
@@ -1648,6 +1707,15 @@ function VendorGroupCard({
     if (rank === 2) return <Badge className="bg-zinc-400 text-zinc-950">TOP 2</Badge>;
     if (rank === 3) return <Badge className="bg-amber-700 text-amber-100">TOP 3</Badge>;
     return null;
+  };
+
+  const handleVendorPlansOpenChange = (open: boolean) => {
+    setVendorPlansOpen(open);
+    if (open && !vendorPlansMounted) {
+      startTransition(() => {
+        setVendorPlansMounted(true);
+      });
+    }
   };
 
   return (
@@ -1771,7 +1839,7 @@ function VendorGroupCard({
               </div>
             </div>
             {group.planCount > 4 && (
-              <Drawer open={vendorPlansOpen} onOpenChange={setVendorPlansOpen} direction="bottom">
+              <Drawer open={vendorPlansOpen} onOpenChange={handleVendorPlansOpenChange} direction="bottom">
                 <DrawerTrigger asChild>
                   <Button
                     variant="default"
@@ -1849,33 +1917,40 @@ function VendorGroupCard({
                     </div>
                   </DrawerHeader>
 
-                  <ScrollArea className="min-h-0 flex-1">
-                    <div className="px-5 py-5">
-                      <div className="mb-3 flex items-center justify-between gap-3">
-                        <div>
-                          <div className={microLabelClass}>{t.planDirectory}</div>
-                          <div className="mt-1 text-muted-foreground text-sm">
-                            {group.planCount} {t.plansInVendor}
+                  {vendorPlansMounted ? (
+                    <ScrollArea className="min-h-0 flex-1">
+                      <div className="px-5 py-5">
+                        <div className="mb-3 flex items-center justify-between gap-3">
+                          <div>
+                            <div className={microLabelClass}>{t.planDirectory}</div>
+                            <div className="mt-1 text-muted-foreground text-sm">
+                              {group.planCount} {t.plansInVendor}
+                            </div>
                           </div>
                         </div>
-                      </div>
 
-                      <div className="overflow-hidden rounded-3xl border border-border/70 bg-card/70 shadow-sm">
-                        {group.plans.map((plan) => (
-                          <VendorPlanDirectoryItem
-                            key={plan.id}
-                            plan={plan}
-                            representativeStatus={platform.status}
-                            isSelected={selectedIds.has(plan.id)}
-                            onToggleSelect={onToggleSelect}
-                            unitMode={unitMode}
-                            getStatusBadge={getStatusBadge}
-                            lang={lang}
-                          />
-                        ))}
+                        <div className="overflow-hidden rounded-3xl border border-border/70 bg-card/70 shadow-sm">
+                          {group.plans.map((plan) => (
+                            <VendorPlanDirectoryItem
+                              key={plan.id}
+                              plan={plan}
+                              representativeStatus={platform.status}
+                              isSelected={selectedIds.has(plan.id)}
+                              onToggleSelect={onToggleSelect}
+                              onOpenDetails={onOpenDetails}
+                              unitMode={unitMode}
+                              getStatusBadge={getStatusBadge}
+                              lang={lang}
+                            />
+                          ))}
+                        </div>
                       </div>
+                    </ScrollArea>
+                  ) : (
+                    <div className="flex min-h-0 flex-1 items-center justify-center px-5 py-10 text-muted-foreground text-sm">
+                      {group.planCount} {t.plansInVendor}
                     </div>
-                  </ScrollArea>
+                  )}
                 </DrawerContent>
               </Drawer>
             )}
@@ -1919,6 +1994,7 @@ function VendorGroupCard({
               representativeStatus={platform.status}
               isSelected={selectedIds.has(activePlan.id)}
               onToggleSelect={onToggleSelect}
+              onOpenDetails={onOpenDetails}
               unitMode={unitMode}
               getStatusBadge={getStatusBadge}
               lang={lang}
@@ -1931,15 +2007,30 @@ function VendorGroupCard({
 }
 
 interface PlatformDetailsDialogProps {
-  platform: Platform;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  platform: Platform | null;
   unitMode: MetricUnitMode;
-  valueScore: number;
   getStatusBadge: (status: string) => React.ReactNode;
   lang: Lang;
 }
 
-function PlatformDetailsDialog({ platform, unitMode, valueScore, getStatusBadge, lang }: PlatformDetailsDialogProps) {
+function PlatformDetailsDialog({
+  open,
+  onOpenChange,
+  platform,
+  unitMode,
+  getStatusBadge,
+  lang,
+}: PlatformDetailsDialogProps) {
   const t = dictionary[lang];
+
+  if (!platform) {
+    return null;
+  }
+
+  const valueScore = calculateValueScore(platform);
+  const displayModels = getDisplayModels(platform, 8);
 
   const getCategoryBadge = (category: string) => {
     switch (category) {
@@ -1979,18 +2070,7 @@ function PlatformDetailsDialog({ platform, unitMode, valueScore, getStatusBadge,
   };
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button
-          variant="outline"
-          size="sm"
-          className="h-8"
-          aria-label={t.viewPlanDetails.replace("{name}", platform.name)}
-          title={t.viewPlanDetails.replace("{name}", platform.name)}
-        >
-          {t.details}
-        </Button>
-      </DialogTrigger>
+    <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-h-[90vh] overflow-hidden border-border/70 bg-background p-0 sm:max-w-4xl">
         <Tabs defaultValue="overview" className="flex max-h-[90vh] flex-col">
           <DialogHeader className="border-border/70 border-b bg-gradient-to-br from-primary/10 via-background to-background px-5 py-5 sm:px-7">
@@ -2058,6 +2138,23 @@ function PlatformDetailsDialog({ platform, unitMode, valueScore, getStatusBadge,
                     <p className="mt-2 text-muted-foreground text-sm leading-6">
                       {platform.description || t.noDescription}
                     </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-sm">{t.supportedModelsLabel}</h4>
+                    {displayModels.length > 0 ? (
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {displayModels.map((model) => (
+                          <Badge key={model} variant="secondary" className="rounded-full px-2.5 py-1 text-xs">
+                            {model}
+                          </Badge>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="mt-3 rounded-2xl border border-border/70 border-dashed bg-background/70 px-4 py-3 text-muted-foreground text-sm">
+                        {t.noModelHints}
+                      </div>
+                    )}
                   </div>
 
                   {platform.highlight && (
