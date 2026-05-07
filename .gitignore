@@ -1,0 +1,62 @@
+# build output
+dist/
+# generated types
+.astro/
+.next/
+tsconfig.tsbuildinfo
+
+# dependencies
+node_modules/
+
+# logs
+.logs/
+.next-dev.log
+.tmp/
+tmp/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# local legacy / scratch
+.legacy/
+
+# Python caches
+__pycache__/
+*.pyc
+
+# private backend / crawler / infra
+backend/
+infra/
+cloudbuild.api.yaml
+cloudbuild.crawler.yaml
+docker-compose.yml
+.dockerignore
+DEPLOYMENT.md
+DESIGN.md
+DESIGN.json
+PRODUCT.md
+scripts/
+src/app/(main)/
+src/app/auth/
+src/components/dashboard/
+src/config/
+src/data/users.ts
+src/lib/preferences/
+src/navigation/
+src/proxy.disabled.ts
+src/server/
+src/stores/
+
+# environment variables
+.env
+.env.*
+.env.production
+backend/etc/*.local.yaml
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+.vscode/

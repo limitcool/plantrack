@@ -1,0 +1,65 @@
+name: Submit new listing
+description: Suggest a new platform or plan to track on PlanTrack.
+title: "[New Listing] "
+labels:
+  - new-listing
+body:
+  - type: input
+    id: platform_name
+    attributes:
+      label: Plan name
+      placeholder: e.g. Claude Pro
+    validations:
+      required: true
+
+  - type: input
+    id: vendor
+    attributes:
+      label: Vendor
+      placeholder: e.g. Anthropic
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - AI model plan
+        - Coding plan
+        - Token plan
+        - Image generation
+        - Video platform
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: pricing_url
+    attributes:
+      label: Pricing URL
+      placeholder: https://...
+    validations:
+      required: true
+
+  - type: input
+    id: price
+    attributes:
+      label: Price
+      placeholder: e.g. 20 USD / 149 CNY
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Notes
+      description: Add quota, limits, model support, or notable features.
+      placeholder: Quota, limits, notable features...
+
+  - type: input
+    id: contact
+    attributes:
+      label: Contact (optional)
+      description: Email or handle if you want us to follow up.
+      placeholder: your@email.com

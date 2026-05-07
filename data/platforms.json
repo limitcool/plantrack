@@ -1,0 +1,3164 @@
+[
+  {
+    "id": "claude-pro",
+    "slug": "claude-pro",
+    "name": "Claude Pro",
+    "vendor": "Anthropic",
+    "category": "model-subscription",
+    "subcategory": "AI 工具",
+    "priceDisplay": "$20/月",
+    "priceValue": 20.0,
+    "priceCurrency": "USD",
+    "summary": "面向高频写作与编码使用者的主流订阅。",
+    "description": "Claude Pro 的表面价格和 ChatGPT Plus 相同，但实际比较必须考虑区域购买差异、不同时间窗口内的使用限制，以及重度编码场景下的稳定性。",
+    "status": "tracked",
+    "valueLane": "Model subscription",
+    "highlight": "区域购买差异和 5h 配额感知会显著影响体感。",
+    "officialUrl": "https://claude.ai/upgrade",
+    "tags": [
+      "Anthropic",
+      "AI 工具",
+      "写作",
+      "编程订阅"
+    ],
+    "coverageNotes": [
+      "官方升级页",
+      "区域购买备注",
+      "使用窗口观察",
+      "官方来源：https://support.claude.com/en/articles/8325606-what-is-the-pro-plan"
+    ],
+    "metrics": {
+      "quota": "at least 5x usage per session vs free",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": [
+        {
+          "label": "5 小时",
+          "value": "窗口限制",
+          "unit": "按使用情况"
+        },
+        {
+          "label": "每周",
+          "value": "节奏型",
+          "unit": "非固定硬额度"
+        }
+      ]
+    },
+    "history": [
+      {
+        "date": "2026-05-04",
+        "type": "regional",
+        "title": "区域价差说明更新",
+        "summary": "补充不同购买路径造成的体感差异说明。",
+        "impact": "neutral"
+      },
+      {
+        "date": "2026-04-16",
+        "type": "coverage",
+        "title": "5 小时窗口说明改写",
+        "summary": "调整使用窗口描述，避免用户误解月费等于无限使用。",
+        "impact": "neutral"
+      }
+    ]
+  },
+  {
+    "id": "chatgpt-plus",
+    "slug": "chatgpt-plus",
+    "name": "ChatGPT Plus",
+    "vendor": "OpenAI",
+    "category": "model-subscription",
+    "subcategory": "AI 工具",
+    "priceDisplay": "$20/月",
+    "priceValue": 20.0,
+    "priceCurrency": "USD",
+    "summary": "通用 AI 订阅，兼顾对话、研究与编码场景。",
+    "description": "ChatGPT Plus 适合希望在一个入口里覆盖对话、研究和编码工作的用户。PlanTrack 会把价格、活动额度、区域差异和关键变动节点拆开记录，而不是只展示月费。",
+    "status": "tracked",
+    "valueLane": "Model subscription",
+    "highlight": "Codex 活动配额仍然影响实际价值判断。",
+    "officialUrl": "https://chatgpt.com/pricing",
+    "tags": [
+      "OpenAI",
+      "AI 工具",
+      "编程订阅"
+    ],
+    "coverageNotes": [
+      "官方定价页",
+      "配额活动记录",
+      "区域价格差异",
+      "官方来源：https://help.openai.com/en/articles/6950777-what-is-chatgpt-plus"
+    ],
+    "metrics": {
+      "quota": "Plus + Codex 配额活动",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 3,
+      "limits": [
+        {
+          "label": "5 小时",
+          "value": "动态",
+          "unit": "活动配额"
+        },
+        {
+          "label": "每周",
+          "value": "动态",
+          "unit": "活动配额"
+        },
+        {
+          "label": "每月",
+          "value": "动态",
+          "unit": "活动配额"
+        }
+      ]
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "promo",
+        "title": "促销配额仍然影响实际价值",
+        "summary": "价格没有变化，但活动额度延续，实际性价比仍高于静态月费表述。",
+        "impact": "value-up"
+      },
+      {
+        "date": "2026-04-20",
+        "type": "quota",
+        "title": "Codex 使用说明更新",
+        "summary": "编码入口和使用说明变更，需要单独记录在价值解释里。",
+        "impact": "neutral"
+      },
+      {
+        "date": "2026-03-31",
+        "type": "coverage",
+        "title": "活动口径纳入追踪",
+        "summary": "开始把活动额度与基础订阅价格拆开记录。",
+        "impact": "neutral"
+      }
+    ]
+  },
+  {
+    "id": "kimi-allegro",
+    "slug": "kimi-allegro",
+    "name": "Kimi Allegro",
+    "vendor": "Kimi",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥699/月（年付月均 ¥559/月）",
+    "priceValue": 699.0,
+    "priceCurrency": "CNY",
+    "summary": "Kimi 的 Allegro 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "Kimi Allegro 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "覆盖 3 个代表模型",
+    "officialUrl": "https://www.kimi.com/code",
+    "tags": [
+      "Kimi",
+      "Coding Plan",
+      "Allegro"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://www.kimi.com/code"
+    ],
+    "metrics": {
+      "quota": "尊享澎湃额度，完美适配日常办公与高强度开发需求",
+      "billing": "固定月费 / 支持年付",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 699元/月，559元/月（年付月均） 更新为 ¥699/月（年付月均 ¥559/月），计费方式为 固定月费 / 支持年付。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.kimi.com/code"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.kimi.com/code"
+      }
+    ]
+  },
+  {
+    "id": "kimi-andante",
+    "slug": "kimi-andante",
+    "name": "Kimi Andante",
+    "vendor": "Kimi",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥49/月（年付月均 ¥39/月）",
+    "priceValue": 49.0,
+    "priceCurrency": "CNY",
+    "summary": "Kimi 的 Andante 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "Kimi Andante 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "覆盖 3 个代表模型",
+    "officialUrl": "https://www.kimi.com/code",
+    "tags": [
+      "Kimi",
+      "Coding Plan",
+      "Andante"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://www.kimi.com/code"
+    ],
+    "metrics": {
+      "quota": "提供专属 Kimi Code 使用额度，旗舰模型抢先体验，支持多个编程会话",
+      "billing": "固定月费 / 支持年付",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 49元/月，39元/月（年付月均） 更新为 ¥49/月（年付月均 ¥39/月），计费方式为 固定月费 / 支持年付。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.kimi.com/code"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.kimi.com/code"
+      }
+    ]
+  },
+  {
+    "id": "kimi-code-allegretto",
+    "slug": "kimi-code-allegretto",
+    "name": "Kimi Code Allegretto",
+    "vendor": "Kimi",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥199/月（年付月均 ¥159/月）",
+    "priceValue": 199.0,
+    "priceCurrency": "CNY",
+    "summary": "面向重度编码用户的大额度套餐。",
+    "description": "Kimi Code Allegretto 不该只看价格，而要看它在高频开发场景里的额度密度。首页摘要会把它放进重度编码价值段，而详情页会解释它为什么不适合轻度订阅用户。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "20x tier 更适合高频编码场景，而不是轻度尝鲜。",
+    "officialUrl": "https://www.kimi.com/membership/pricing",
+    "tags": [
+      "Kimi",
+      "Coding Plan",
+      "国产平台"
+    ],
+    "coverageNotes": [
+      "官方会员页",
+      "额度层级拆分",
+      "价值带宽解释",
+      "官方来源：https://www.kimi.com/code"
+    ],
+    "metrics": {
+      "quota": "充足的每周额度，更高的并发上限，为高级用户提供超值选择",
+      "billing": "固定月费 / 支持年付",
+      "lastChecked": "2026-05-06",
+      "changeCount": 4,
+      "limits": [
+        {
+          "label": "5 小时",
+          "value": "20x",
+          "unit": "tier quota"
+        },
+        {
+          "label": "每周",
+          "value": "3.57 亿",
+          "unit": "Tokens"
+        },
+        {
+          "label": "每月",
+          "value": "14.28 亿",
+          "unit": "Tokens"
+        }
+      ]
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 199元/月，159元/月（年付月均） 更新为 ¥199/月（年付月均 ¥159/月），计费方式为 固定月费 / 支持年付。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.kimi.com/code"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "目录源价格更新",
+        "summary": "上游目录价格从 ¥199/月 更新为 199元/月，159元/月（年付月均），计费方式为 固定月费。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.kimi.com/code"
+      },
+      {
+        "date": "2026-04-29",
+        "type": "classification",
+        "title": "重度编码价值段单独标记",
+        "summary": "不再和轻度套餐直接横比，改为按使用强度解释。",
+        "impact": "neutral"
+      },
+      {
+        "date": "2026-03-10",
+        "type": "coverage",
+        "title": "额度层级说明补完",
+        "summary": "补齐对不同额度层级的解释说明。",
+        "impact": "neutral"
+      }
+    ]
+  },
+  {
+    "id": "kimi-moderato",
+    "slug": "kimi-moderato",
+    "name": "Kimi Moderato",
+    "vendor": "Kimi",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥99/月（年付月均 ¥79/月）",
+    "priceValue": 99.0,
+    "priceCurrency": "CNY",
+    "summary": "Kimi 的 Moderato 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "Kimi Moderato 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "覆盖 3 个代表模型",
+    "officialUrl": "https://www.kimi.com/code",
+    "tags": [
+      "Kimi",
+      "Coding Plan",
+      "Moderato"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://www.kimi.com/code"
+    ],
+    "metrics": {
+      "quota": "每周更新的使用额度，允许多种设备登录分享你的套餐额度，支持你在多个项目中高效工作",
+      "billing": "固定月费 / 支持年付",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 99元/月，79元/月（年付月均） 更新为 ¥99/月（年付月均 ¥79/月），计费方式为 固定月费 / 支持年付。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.kimi.com/code"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.kimi.com/code"
+      }
+    ]
+  },
+  {
+    "id": "minimax-coding-plan-plus",
+    "slug": "minimax-coding-plan-plus",
+    "name": "MiniMax Coding Plan Plus",
+    "vendor": "MiniMax",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥49/月",
+    "priceValue": 49.0,
+    "priceCurrency": "CNY",
+    "summary": "轻中度编码用户常见的高性价比选择。",
+    "description": "MiniMax Coding Plan Plus 更像轻中度用户的价值方案。PlanTrack 会在列表页把它放在更清楚的价值比较上下文里，而不是只靠折扣数字吸引点击。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "轻中度用户里性价比表现强，但不等于适合所有团队场景。",
+    "officialUrl": "https://platform.minimaxi.com/subscribe/token-plan",
+    "tags": [
+      "MiniMax",
+      "Coding Plan",
+      "国产平台"
+    ],
+    "coverageNotes": [
+      "官方订阅页",
+      "价值倍率说明",
+      "轻中度人群适配",
+      "官方来源：https://platform.minimaxi.com/docs/guides/pricing-token-plan"
+    ],
+    "metrics": {
+      "quota": "1500 次请求/5小时",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 4,
+      "limits": [
+        {
+          "label": "5 小时",
+          "value": "1500",
+          "unit": "次"
+        },
+        {
+          "label": "每周",
+          "value": "9000",
+          "unit": "次"
+        },
+        {
+          "label": "每月",
+          "value": "18000",
+          "unit": "次"
+        }
+      ]
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 49元/月，41元/月（包年均价） 更新为 ¥49/月，计费方式为 固定月费。",
+        "impact": "neutral",
+        "sourceUrl": "https://platform.minimaxi.com/docs/guides/pricing-token-plan"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "目录源价格更新",
+        "summary": "上游目录价格从 ¥49/月 更新为 49元/月，41元/月（包年均价），计费方式为 固定月费。",
+        "impact": "neutral",
+        "sourceUrl": "https://platform.minimaxi.com/subscribe/token-plan"
+      },
+      {
+        "date": "2026-04-29",
+        "type": "classification",
+        "title": "与 Kimi 重度套餐拆分价值段",
+        "summary": "避免同价位错觉，按适用人群重写对比。",
+        "impact": "neutral"
+      },
+      {
+        "date": "2026-03-18",
+        "type": "coverage",
+        "title": "新增上下文与用量说明",
+        "summary": "把套餐说明补成可读语言，而不是裸额度。",
+        "impact": "neutral"
+      }
+    ]
+  },
+  {
+    "id": "jdcloud-coding-lite",
+    "slug": "jdcloud-coding-lite",
+    "name": "京东云 Lite",
+    "vendor": "京东云",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "19.9元/月（原价 40元/月）",
+    "priceValue": 19.9,
+    "priceCurrency": "CNY",
+    "summary": "京东云 的 Lite 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "京东云 Lite 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "limited",
+    "valueLane": "Coding plan",
+    "highlight": "每天早上 10:30 抢购",
+    "officialUrl": "https://www.jdcloud.com/cn/pages/codingplan",
+    "tags": [
+      "京东云",
+      "Coding Plan",
+      "Lite"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://www.jdcloud.com/cn/pages/codingplan"
+    ],
+    "metrics": {
+      "quota": "每订阅月最多约 18,000 次请求",
+      "billing": "固定月费 / 官方活动价",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 40元/月 更新为 19.9元/月（原价 40元/月），计费方式为 固定月费 / 官方活动价。",
+        "impact": "value-up",
+        "sourceUrl": "https://www.jdcloud.com/cn/pages/codingplan"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.jdcloud.com/cn/pages/codingplan"
+      }
+    ]
+  },
+  {
+    "id": "jdcloud-coding-pro",
+    "slug": "jdcloud-coding-pro",
+    "name": "京东云 Pro",
+    "vendor": "京东云",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "99.9元/月（原价 200元/月）",
+    "priceValue": 99.9,
+    "priceCurrency": "CNY",
+    "summary": "京东云 的 Pro 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "京东云 Pro 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "limited",
+    "valueLane": "Coding plan",
+    "highlight": "每天早上 10:30 抢购",
+    "officialUrl": "https://www.jdcloud.com/cn/pages/codingplan",
+    "tags": [
+      "京东云",
+      "Coding Plan",
+      "Pro"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://www.jdcloud.com/cn/pages/codingplan"
+    ],
+    "metrics": {
+      "quota": "每订阅月最多约 90,000 次请求",
+      "billing": "固定月费 / 官方活动价",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 200元/月 更新为 99.9元/月（原价 200元/月），计费方式为 固定月费 / 官方活动价。",
+        "impact": "value-up",
+        "sourceUrl": "https://www.jdcloud.com/cn/pages/codingplan"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.jdcloud.com/cn/pages/codingplan"
+      }
+    ]
+  },
+  {
+    "id": "scnet-coding-lite",
+    "slug": "scnet-coding-lite",
+    "name": "国家超算中心 Lite",
+    "vendor": "国家超算中心",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥20/月",
+    "priceValue": 20.0,
+    "priceCurrency": "CNY",
+    "summary": "国家超算中心 的 Lite 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "国家超算中心 Lite 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "模型太少",
+    "officialUrl": "https://www.scnet.cn/ac/openapi/doc/2.0/moduleapi/codingplan/quickstart.html",
+    "tags": [
+      "国家超算中心",
+      "Coding Plan",
+      "Lite"
+    ],
+    "coverageNotes": [
+      "官方站点直抓",
+      "价格与额度以官网口径为准",
+      "官方来源：https://www.scnet.cn/ac/openapi/doc/2.0/moduleapi/codingplan/subscriptionnotice.html"
+    ],
+    "metrics": {
+      "quota": "每 5 小时最多约 1200 次请求，每周最多约 9000 次请求，每月最多约 18000 次请求",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-06",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 待接入官网直抓 更新为 ¥20/月，计费方式为 固定月费。",
+        "impact": "value-down",
+        "sourceUrl": "https://www.scnet.cn/ac/openapi/doc/2.0/moduleapi/codingplan/subscriptionnotice.html"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.scnet.cn/ac/openapi/doc/2.0/moduleapi/codingplan/quickstart.html"
+      }
+    ]
+  },
+  {
+    "id": "scnet-coding-pro",
+    "slug": "scnet-coding-pro",
+    "name": "国家超算中心 Pro",
+    "vendor": "国家超算中心",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥100/月",
+    "priceValue": 100.0,
+    "priceCurrency": "CNY",
+    "summary": "国家超算中心 的 Pro 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "国家超算中心 Pro 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "模型太少",
+    "officialUrl": "https://www.scnet.cn/ac/openapi/doc/2.0/moduleapi/codingplan/quickstart.html",
+    "tags": [
+      "国家超算中心",
+      "Coding Plan",
+      "Pro"
+    ],
+    "coverageNotes": [
+      "官方站点直抓",
+      "价格与额度以官网口径为准",
+      "官方来源：https://www.scnet.cn/ac/openapi/doc/2.0/moduleapi/codingplan/subscriptionnotice.html"
+    ],
+    "metrics": {
+      "quota": "每 5 小时最多约 6000 次请求，每周最多约 45000 次请求，每月最多约 90000 次请求",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-06",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 待接入官网直抓 更新为 ¥100/月，计费方式为 固定月费。",
+        "impact": "value-down",
+        "sourceUrl": "https://www.scnet.cn/ac/openapi/doc/2.0/moduleapi/codingplan/subscriptionnotice.html"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.scnet.cn/ac/openapi/doc/2.0/moduleapi/codingplan/quickstart.html"
+      }
+    ]
+  },
+  {
+    "id": "ctyun-glm-lite",
+    "slug": "ctyun-glm-lite",
+    "name": "天翼云 GLM Lite",
+    "vendor": "天翼云",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥49/月",
+    "priceValue": 49.0,
+    "priceCurrency": "CNY",
+    "summary": "天翼云 的 GLM Lite 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "天翼云 GLM Lite 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "limited",
+    "valueLane": "Coding plan",
+    "highlight": "覆盖 3 个代表模型",
+    "officialUrl": "https://ctxirang.ctyun.cn/maas/codingPlan",
+    "tags": [
+      "天翼云",
+      "Coding Plan",
+      "GLM Lite"
+    ],
+    "coverageNotes": [
+      "官方站点直抓",
+      "价格与额度以官网口径为准",
+      "官方来源：https://www.ctyun.cn/document/11061839/11092368"
+    ],
+    "metrics": {
+      "quota": "每 5 小时最多约 80 次请求，每周最多约 400 次请求，每月最多约 1600 次请求",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-06",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 待接入官网直抓 更新为 ¥49/月，计费方式为 固定月费。",
+        "impact": "value-down",
+        "sourceUrl": "https://www.ctyun.cn/document/11061839/11092368"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://ctxirang.ctyun.cn/maas/codingPlan"
+      }
+    ]
+  },
+  {
+    "id": "ctyun-glm-max",
+    "slug": "ctyun-glm-max",
+    "name": "天翼云 GLM Max",
+    "vendor": "天翼云",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥469/月",
+    "priceValue": 469.0,
+    "priceCurrency": "CNY",
+    "summary": "天翼云 的 GLM Max 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "天翼云 GLM Max 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "覆盖 3 个代表模型",
+    "officialUrl": "https://ctxirang.ctyun.cn/maas/codingPlan",
+    "tags": [
+      "天翼云",
+      "Coding Plan",
+      "GLM Max"
+    ],
+    "coverageNotes": [
+      "官方站点直抓",
+      "价格与额度以官网口径为准",
+      "官方来源：https://www.ctyun.cn/document/11061839/11092368"
+    ],
+    "metrics": {
+      "quota": "每 5 小时最多约 1600 次请求，每周最多约 8000 次请求，每月最多约 32000 次请求",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-06",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 待接入官网直抓 更新为 ¥469/月，计费方式为 固定月费。",
+        "impact": "value-down",
+        "sourceUrl": "https://www.ctyun.cn/document/11061839/11092368"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://ctxirang.ctyun.cn/maas/codingPlan"
+      }
+    ]
+  },
+  {
+    "id": "ctyun-glm-pro",
+    "slug": "ctyun-glm-pro",
+    "name": "天翼云 GLM Pro",
+    "vendor": "天翼云",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥149/月",
+    "priceValue": 149.0,
+    "priceCurrency": "CNY",
+    "summary": "天翼云 的 GLM Pro 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "天翼云 GLM Pro 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "limited",
+    "valueLane": "Coding plan",
+    "highlight": "覆盖 3 个代表模型",
+    "officialUrl": "https://ctxirang.ctyun.cn/maas/codingPlan",
+    "tags": [
+      "天翼云",
+      "Coding Plan",
+      "GLM Pro"
+    ],
+    "coverageNotes": [
+      "官方站点直抓",
+      "价格与额度以官网口径为准",
+      "官方来源：https://www.ctyun.cn/document/11061839/11092368"
+    ],
+    "metrics": {
+      "quota": "每 5 小时最多约 400 次请求，每周最多约 2000 次请求，每月最多约 8000 次请求",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-06",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 待接入官网直抓 更新为 ¥149/月，计费方式为 固定月费。",
+        "impact": "value-down",
+        "sourceUrl": "https://www.ctyun.cn/document/11061839/11092368"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://ctxirang.ctyun.cn/maas/codingPlan"
+      }
+    ]
+  },
+  {
+    "id": "infini-ai-coding-lite",
+    "slug": "infini-ai-coding-lite",
+    "name": "无问芯穹 Lite",
+    "vendor": "无问芯穹",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥40/月",
+    "priceValue": 40.0,
+    "priceCurrency": "CNY",
+    "summary": "无问芯穹 的 Lite 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "无问芯穹 Lite 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "limited",
+    "valueLane": "Coding plan",
+    "highlight": "覆盖 3 个代表模型",
+    "officialUrl": "https://cloud.infini-ai.com/platform/ai",
+    "tags": [
+      "无问芯穹",
+      "Coding Plan",
+      "Lite"
+    ],
+    "coverageNotes": [
+      "官方站点直抓",
+      "价格与额度以官网口径为准",
+      "官方来源：https://docs.infini-ai.com/gen-studio-coding-plan/"
+    ],
+    "metrics": {
+      "quota": "每 5 小时 1000 次请求，每周 6000 次请求，每月 12000 次请求",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-06",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 待接入官网直抓 更新为 ¥40/月，计费方式为 固定月费。",
+        "impact": "value-down",
+        "sourceUrl": "https://docs.infini-ai.com/gen-studio-coding-plan/"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://cloud.infini-ai.com/platform/ai"
+      }
+    ]
+  },
+  {
+    "id": "infini-ai-coding-pro",
+    "slug": "infini-ai-coding-pro",
+    "name": "无问芯穹 Pro",
+    "vendor": "无问芯穹",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥200/月",
+    "priceValue": 200.0,
+    "priceCurrency": "CNY",
+    "summary": "无问芯穹 的 Pro 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "无问芯穹 Pro 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "limited",
+    "valueLane": "Coding plan",
+    "highlight": "覆盖 3 个代表模型",
+    "officialUrl": "https://cloud.infini-ai.com/platform/ai",
+    "tags": [
+      "无问芯穹",
+      "Coding Plan",
+      "Pro"
+    ],
+    "coverageNotes": [
+      "官方站点直抓",
+      "价格与额度以官网口径为准",
+      "官方来源：https://docs.infini-ai.com/gen-studio-coding-plan/"
+    ],
+    "metrics": {
+      "quota": "每 5 小时 5000 次请求，每周 30000 次请求，每月 60000 次请求",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-06",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 待接入官网直抓 更新为 ¥200/月，计费方式为 固定月费。",
+        "impact": "value-down",
+        "sourceUrl": "https://docs.infini-ai.com/gen-studio-coding-plan/"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://cloud.infini-ai.com/platform/ai"
+      }
+    ]
+  },
+  {
+    "id": "zhipu-lite",
+    "slug": "zhipu-lite",
+    "name": "智谱 GLM Lite",
+    "vendor": "智谱 GLM",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥49/月（包季 ¥44.1/月）",
+    "priceValue": 49.0,
+    "priceCurrency": "CNY",
+    "summary": "智谱 GLM 的 Lite 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "智谱 GLM Lite 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "limited",
+    "valueLane": "Coding plan",
+    "highlight": "GLM-5.1、GLM-5-Turbo 在高峰期（每日 14:00～18:00 UTC+8）消耗系数为 3 倍，非高峰期 2 倍（限时福利：非高峰期仅 1 倍，至 6 月底）",
+    "officialUrl": "https://www.bigmodel.cn/glm-coding",
+    "tags": [
+      "智谱 GLM",
+      "Coding Plan",
+      "Lite"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://www.bigmodel.cn/glm-coding"
+    ],
+    "metrics": {
+      "quota": "3x Claude Pro 用量额度",
+      "billing": "固定月费 / 支持包季",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": [
+        {
+          "label": "5 小时",
+          "value": "80",
+          "unit": ""
+        },
+        {
+          "label": "每周",
+          "value": "400",
+          "unit": ""
+        }
+      ]
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 49元/月，39元/月（包年均价） 更新为 ¥49/月（包季 ¥44.1/月），计费方式为 固定月费 / 支持包季。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.bigmodel.cn/glm-coding"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.bigmodel.cn/glm-coding"
+      }
+    ]
+  },
+  {
+    "id": "zhipu-max",
+    "slug": "zhipu-max",
+    "name": "智谱 GLM Max",
+    "vendor": "智谱 GLM",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥469/月（包季 ¥422.1/月）",
+    "priceValue": 469.0,
+    "priceCurrency": "CNY",
+    "summary": "智谱 GLM 的 Max 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "智谱 GLM Max 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "limited",
+    "valueLane": "Coding plan",
+    "highlight": "GLM-5.1、GLM-5-Turbo 在高峰期（每日 14:00～18:00 UTC+8）消耗系数为 3 倍，非高峰期 2 倍（限时福利：非高峰期仅 1 倍，至 6 月底）",
+    "officialUrl": "https://www.bigmodel.cn/glm-coding",
+    "tags": [
+      "智谱 GLM",
+      "Coding Plan",
+      "Max"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://www.bigmodel.cn/glm-coding"
+    ],
+    "metrics": {
+      "quota": "20x Lite 用量额度 + Pro 全量权益",
+      "billing": "固定月费 / 支持包季",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": [
+        {
+          "label": "5 小时",
+          "value": "1600",
+          "unit": ""
+        },
+        {
+          "label": "每周",
+          "value": "8000",
+          "unit": ""
+        }
+      ]
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 469元/月，375元/月（包年均价） 更新为 ¥469/月（包季 ¥422.1/月），计费方式为 固定月费 / 支持包季。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.bigmodel.cn/glm-coding"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.bigmodel.cn/glm-coding"
+      }
+    ]
+  },
+  {
+    "id": "zhipu-pro",
+    "slug": "zhipu-pro",
+    "name": "智谱 GLM Pro",
+    "vendor": "智谱 GLM",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥149/月（包季 ¥134.1/月）",
+    "priceValue": 149.0,
+    "priceCurrency": "CNY",
+    "summary": "智谱 GLM 的 Pro 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "智谱 GLM Pro 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "limited",
+    "valueLane": "Coding plan",
+    "highlight": "GLM-5.1、GLM-5-Turbo 在高峰期（每日 14:00～18:00 UTC+8）消耗系数为 3 倍，非高峰期 2 倍（限时福利：非高峰期仅 1 倍，至 6 月底）",
+    "officialUrl": "https://www.bigmodel.cn/glm-coding",
+    "tags": [
+      "智谱 GLM",
+      "Coding Plan",
+      "Pro"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://www.bigmodel.cn/glm-coding"
+    ],
+    "metrics": {
+      "quota": "5x Lite 用量额度 + Lite 全量权益",
+      "billing": "固定月费 / 支持包季",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": [
+        {
+          "label": "5 小时",
+          "value": "400",
+          "unit": ""
+        },
+        {
+          "label": "每周",
+          "value": "2000",
+          "unit": ""
+        }
+      ]
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 149元/月，119元/月（包年均价） 更新为 ¥149/月（包季 ¥134.1/月），计费方式为 固定月费 / 支持包季。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.bigmodel.cn/glm-coding"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.bigmodel.cn/glm-coding"
+      }
+    ]
+  },
+  {
+    "id": "volcengine-lite",
+    "slug": "volcengine-lite",
+    "name": "火山方舟 Lite",
+    "vendor": "火山方舟",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥9.9/月（首月最低 ¥8.9）",
+    "priceValue": 9.9,
+    "priceCurrency": "CNY",
+    "summary": "火山方舟 的 Lite 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "火山方舟 Lite 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "limited",
+    "valueLane": "Coding plan",
+    "highlight": "有倍率消耗机制，实际消耗量极快",
+    "officialUrl": "https://www.volcengine.com/activity/codingplan-feishu",
+    "tags": [
+      "火山方舟",
+      "Coding Plan",
+      "Lite"
+    ],
+    "coverageNotes": [
+      "官方站点直抓",
+      "价格与额度以官网口径为准",
+      "官方来源：https://developer.volcengine.com/articles/7595502342175195187"
+    ],
+    "metrics": {
+      "quota": "每 5 小时最多约 1200 次请求",
+      "billing": "固定月费 / 首购优惠",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-06",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 待接入官网直抓 更新为 ¥9.9/月（首月最低 ¥8.9），计费方式为 固定月费 / 首购优惠。",
+        "impact": "value-down",
+        "sourceUrl": "https://developer.volcengine.com/articles/7595502342175195187"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.volcengine.com/activity/codingplan-feishu"
+      }
+    ]
+  },
+  {
+    "id": "volcengine-pro",
+    "slug": "volcengine-pro",
+    "name": "火山方舟 Pro",
+    "vendor": "火山方舟",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥49.9/月",
+    "priceValue": 49.9,
+    "priceCurrency": "CNY",
+    "summary": "火山方舟 的 Pro 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "火山方舟 Pro 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "有倍率消耗机制，实际消耗量极快",
+    "officialUrl": "https://www.volcengine.com/activity/codingplan-feishu",
+    "tags": [
+      "火山方舟",
+      "Coding Plan",
+      "Pro"
+    ],
+    "coverageNotes": [
+      "官方站点直抓",
+      "价格与额度以官网口径为准",
+      "官方来源：https://developer.volcengine.com/articles/7595502342175195187"
+    ],
+    "metrics": {
+      "quota": "每 5 小时最多约 6000 次请求",
+      "billing": "固定月费 / 首购优惠",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-06",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 待接入官网直抓 更新为 ¥49.9/月，计费方式为 固定月费 / 首购优惠。",
+        "impact": "value-down",
+        "sourceUrl": "https://developer.volcengine.com/articles/7595502342175195187"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.volcengine.com/activity/codingplan-feishu"
+      }
+    ]
+  },
+  {
+    "id": "baidu-qianfan-coding-lite",
+    "slug": "baidu-qianfan-coding-lite",
+    "name": "百度千帆 Lite",
+    "vendor": "百度千帆",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥40/月",
+    "priceValue": 40.0,
+    "priceCurrency": "CNY",
+    "summary": "百度千帆 的 Lite 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "百度千帆 Lite 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "覆盖 3 个代表模型",
+    "officialUrl": "https://cloud.baidu.com/product/codingplan.html",
+    "tags": [
+      "百度千帆",
+      "Coding Plan",
+      "Lite"
+    ],
+    "coverageNotes": [
+      "官方站点直抓",
+      "价格与额度以官网口径为准",
+      "官方来源：https://cloud.baidu.com/product/codingplan.html"
+    ],
+    "metrics": {
+      "quota": "每月最多 18,000 次请求",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 待接入官网直抓 更新为 ¥40/月，计费方式为 固定月费。",
+        "impact": "value-down",
+        "sourceUrl": "https://cloud.baidu.com/product/codingplan.html"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://cloud.baidu.com/product/codingplan.html"
+      }
+    ]
+  },
+  {
+    "id": "baidu-qianfan-coding-pro",
+    "slug": "baidu-qianfan-coding-pro",
+    "name": "百度千帆 Pro",
+    "vendor": "百度千帆",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥200/月",
+    "priceValue": 200.0,
+    "priceCurrency": "CNY",
+    "summary": "百度千帆 的 Pro 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "百度千帆 Pro 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "覆盖 3 个代表模型",
+    "officialUrl": "https://cloud.baidu.com/product/codingplan.html",
+    "tags": [
+      "百度千帆",
+      "Coding Plan",
+      "Pro"
+    ],
+    "coverageNotes": [
+      "官方站点直抓",
+      "价格与额度以官网口径为准",
+      "官方来源：https://cloud.baidu.com/product/codingplan.html"
+    ],
+    "metrics": {
+      "quota": "每月最多 90,000 次请求",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 待接入官网直抓 更新为 ¥200/月，计费方式为 固定月费。",
+        "impact": "value-down",
+        "sourceUrl": "https://cloud.baidu.com/product/codingplan.html"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://cloud.baidu.com/product/codingplan.html"
+      }
+    ]
+  },
+  {
+    "id": "ecloud-coding-lite",
+    "slug": "ecloud-coding-lite",
+    "name": "移动云 Lite",
+    "vendor": "移动云",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "7.9元/月（标准价 40元/月）",
+    "priceValue": 7.9,
+    "priceCurrency": "CNY",
+    "summary": "移动云 的 Lite 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "移动云 Lite 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "注意：无购买价值",
+    "officialUrl": "https://ecloud.10086.cn/portal/act/codingplan",
+    "tags": [
+      "移动云",
+      "Coding Plan",
+      "Lite"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://ecloud.10086.cn/portal/act/codingplan"
+    ],
+    "metrics": {
+      "quota": "每 5 小时最多约 1200 次请求，每周最多约 9000 次请求，每订阅月最多约 18000 次请求",
+      "billing": "固定月费 / 官方活动价",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 40元/月（首月7.9元） 更新为 7.9元/月（标准价 40元/月），计费方式为 固定月费 / 官方活动价。",
+        "impact": "value-up",
+        "sourceUrl": "https://ecloud.10086.cn/portal/act/codingplan"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://ecloud.10086.cn/portal/act/codingplan"
+      }
+    ]
+  },
+  {
+    "id": "ecloud-coding-pro",
+    "slug": "ecloud-coding-pro",
+    "name": "移动云 Pro",
+    "vendor": "移动云",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "39.9元/月（标准价 200元/月）",
+    "priceValue": 39.9,
+    "priceCurrency": "CNY",
+    "summary": "移动云 的 Pro 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "移动云 Pro 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "注意：无购买价值",
+    "officialUrl": "https://ecloud.10086.cn/portal/act/codingplan",
+    "tags": [
+      "移动云",
+      "Coding Plan",
+      "Pro"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://ecloud.10086.cn/portal/act/codingplan"
+    ],
+    "metrics": {
+      "quota": "每 5 小时最多约 6000 次请求，每周最多约 45000 次请求，每订阅月最多约 90000 次请求",
+      "billing": "固定月费 / 官方活动价",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 200元/月（首月39.9元） 更新为 39.9元/月（标准价 200元/月），计费方式为 固定月费 / 官方活动价。",
+        "impact": "value-up",
+        "sourceUrl": "https://ecloud.10086.cn/portal/act/codingplan"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://ecloud.10086.cn/portal/act/codingplan"
+      }
+    ]
+  },
+  {
+    "id": "cucloud-coding-lite",
+    "slug": "cucloud-coding-lite",
+    "name": "联通云 Coding Plan-Lite",
+    "vendor": "联通云",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "40元/月",
+    "priceValue": 40.0,
+    "priceCurrency": "CNY",
+    "summary": "联通云 的 Coding Plan-Lite 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "联通云 Coding Plan-Lite 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "GLM-5.1 当前服务资源有限，仅供尝鲜体验",
+    "officialUrl": "https://www.cucloud.cn/Product/CodingPlan.html",
+    "tags": [
+      "联通云",
+      "Coding Plan",
+      "Coding Plan-Lite"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://www.cucloud.cn/Product/CodingPlan.html"
+    ],
+    "metrics": {
+      "quota": "每订阅月最多约 18000 次请求",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 1,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.cucloud.cn/Product/CodingPlan.html"
+      }
+    ]
+  },
+  {
+    "id": "cucloud-coding-pro",
+    "slug": "cucloud-coding-pro",
+    "name": "联通云 Coding Plan-Pro",
+    "vendor": "联通云",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "200元/月",
+    "priceValue": 200.0,
+    "priceCurrency": "CNY",
+    "summary": "联通云 的 Coding Plan-Pro 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "联通云 Coding Plan-Pro 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "GLM-5.1 当前服务资源有限，仅供尝鲜体验",
+    "officialUrl": "https://www.cucloud.cn/Product/CodingPlan.html",
+    "tags": [
+      "联通云",
+      "Coding Plan",
+      "Coding Plan-Pro"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://www.cucloud.cn/Product/CodingPlan.html"
+    ],
+    "metrics": {
+      "quota": "每订阅月最多约 90000 次请求",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 1,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.cucloud.cn/Product/CodingPlan.html"
+      }
+    ]
+  },
+  {
+    "id": "xunfei-spark-pro",
+    "slug": "xunfei-spark-pro",
+    "name": "讯飞星火 专业版",
+    "vendor": "讯飞星火",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥39/月",
+    "priceValue": 39.0,
+    "priceCurrency": "CNY",
+    "summary": "讯飞星火 的 专业版 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "讯飞星火 专业版 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "覆盖 3 个代表模型",
+    "officialUrl": "https://maas.xfyun.cn/packageSubscription?from=packageSubscriptionOverlay",
+    "tags": [
+      "讯飞星火",
+      "Coding Plan",
+      "专业版"
+    ],
+    "coverageNotes": [
+      "官方站点直抓",
+      "价格与额度以官网口径为准",
+      "官方来源：https://www.xfyun.cn/doc/spark/CodingPlan.html"
+    ],
+    "metrics": {
+      "quota": "每 5 小时最多约 1200 次请求，每周最多约 9000 次请求，每月最多约 18000 次请求",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-06",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 待接入官网直抓 更新为 ¥39/月，计费方式为 固定月费。",
+        "impact": "value-down",
+        "sourceUrl": "https://www.xfyun.cn/doc/spark/CodingPlan.html"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://maas.xfyun.cn/packageSubscription?from=packageSubscriptionOverlay"
+      }
+    ]
+  },
+  {
+    "id": "xunfei-spark-wuyou",
+    "slug": "xunfei-spark-wuyou",
+    "name": "讯飞星火 无忧版",
+    "vendor": "讯飞星火",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥19/月（首购 ¥3.9/月）",
+    "priceValue": 19.0,
+    "priceCurrency": "CNY",
+    "summary": "讯飞星火 的 无忧版 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "讯飞星火 无忧版 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "覆盖 3 个代表模型",
+    "officialUrl": "https://maas.xfyun.cn/packageSubscription?from=packageSubscriptionOverlay",
+    "tags": [
+      "讯飞星火",
+      "Coding Plan",
+      "无忧版"
+    ],
+    "coverageNotes": [
+      "官方站点直抓",
+      "价格与额度以官网口径为准",
+      "官方来源：https://www.xfyun.cn/doc/spark/CodingPlan.html"
+    ],
+    "metrics": {
+      "quota": "请求次数不限",
+      "billing": "固定月费 / 首购优惠",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-06",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 待接入官网直抓 更新为 ¥19/月（首购 ¥3.9/月），计费方式为 固定月费 / 首购优惠。",
+        "impact": "value-down",
+        "sourceUrl": "https://www.xfyun.cn/doc/spark/CodingPlan.html"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://maas.xfyun.cn/packageSubscription?from=packageSubscriptionOverlay"
+      }
+    ]
+  },
+  {
+    "id": "xunfei-spark-efficiency",
+    "slug": "xunfei-spark-efficiency",
+    "name": "讯飞星火 高效版",
+    "vendor": "讯飞星火",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥199/月",
+    "priceValue": 199.0,
+    "priceCurrency": "CNY",
+    "summary": "讯飞星火 的 高效版 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "讯飞星火 高效版 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "覆盖 3 个代表模型",
+    "officialUrl": "https://maas.xfyun.cn/packageSubscription?from=packageSubscriptionOverlay",
+    "tags": [
+      "讯飞星火",
+      "Coding Plan",
+      "高效版"
+    ],
+    "coverageNotes": [
+      "官方站点直抓",
+      "价格与额度以官网口径为准",
+      "官方来源：https://www.xfyun.cn/doc/spark/CodingPlan.html"
+    ],
+    "metrics": {
+      "quota": "每 5 小时最多约 6000 次请求，每周最多约 45000 次请求，每月最多约 90000 次请求",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-06",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 待接入官网直抓 更新为 ¥199/月，计费方式为 固定月费。",
+        "impact": "value-down",
+        "sourceUrl": "https://www.xfyun.cn/doc/spark/CodingPlan.html"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://maas.xfyun.cn/packageSubscription?from=packageSubscriptionOverlay"
+      }
+    ]
+  },
+  {
+    "id": "aliyun-coding-lite-stopped",
+    "slug": "aliyun-coding-lite-stopped",
+    "name": "阿里云百炼 Lite",
+    "vendor": "阿里云百炼",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "停售",
+    "priceValue": 0.0,
+    "priceCurrency": "CNY",
+    "summary": "阿里云百炼 的 Lite 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "阿里云百炼 Lite 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "archived",
+    "valueLane": "Coding plan",
+    "highlight": "官方文档积分消耗具体规则不明确",
+    "officialUrl": "https://common-buy.aliyun.com/token-plan",
+    "tags": [
+      "阿里云百炼",
+      "Coding Plan",
+      "Lite"
+    ],
+    "coverageNotes": [
+      "官方站点直抓",
+      "价格与额度以官网口径为准",
+      "官方来源：https://help.aliyun.com/zh/model-studio/coding-plan"
+    ],
+    "metrics": {
+      "quota": "与 Pro 套餐支持模型一致；官方公开页未展示 Lite 当前价格",
+      "billing": "已停止新购 / 已停止续费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-06",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 待接入官网直抓 更新为 停售，计费方式为 已停止新购 / 已停止续费。",
+        "impact": "neutral",
+        "sourceUrl": "https://help.aliyun.com/zh/model-studio/coding-plan"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://common-buy.aliyun.com/token-plan"
+      }
+    ]
+  },
+  {
+    "id": "aliyun-coding-pro-stopped",
+    "slug": "aliyun-coding-pro-stopped",
+    "name": "阿里云百炼 Pro",
+    "vendor": "阿里云百炼",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥200/月",
+    "priceValue": 200.0,
+    "priceCurrency": "CNY",
+    "summary": "阿里云百炼 的 Pro 编程套餐，适合按价格、配额和模型范围做横向比较。",
+    "description": "阿里云百炼 Pro 是面向编程与模型调用场景的固定套餐。PlanTrack 会优先保留价格、额度、模型支持与限制说明。",
+    "status": "archived",
+    "valueLane": "Coding plan",
+    "highlight": "官方文档积分消耗具体规则不明确",
+    "officialUrl": "https://common-buy.aliyun.com/token-plan",
+    "tags": [
+      "阿里云百炼",
+      "Coding Plan",
+      "Pro"
+    ],
+    "coverageNotes": [
+      "官方站点直抓",
+      "价格与额度以官网口径为准",
+      "官方来源：https://help.aliyun.com/zh/model-studio/coding-plan"
+    ],
+    "metrics": {
+      "quota": "每 5 小时 6000 次请求，每周 45000 次请求，每月 90000 次请求",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-06",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 待接入官网直抓 更新为 ¥200/月，计费方式为 固定月费。",
+        "impact": "value-down",
+        "sourceUrl": "https://help.aliyun.com/zh/model-studio/coding-plan"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://common-buy.aliyun.com/token-plan"
+      }
+    ]
+  },
+  {
+    "id": "minimax-max",
+    "slug": "minimax-max",
+    "name": "MiniMax Max",
+    "vendor": "MiniMax",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "¥119/月",
+    "priceValue": 119.0,
+    "priceCurrency": "CNY",
+    "summary": "MiniMax 的 Max 套餐，核心看点是月费、额度和适配模型。",
+    "description": "MiniMax Max 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "每周可使用额度为「每 5 小时额度」的 10 倍",
+    "officialUrl": "https://platform.minimaxi.com/subscribe/token-plan",
+    "tags": [
+      "MiniMax",
+      "Token Plan",
+      "Max"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://platform.minimaxi.com/docs/guides/pricing-token-plan"
+    ],
+    "metrics": {
+      "quota": "4500 次请求/5小时",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 119元/月，99元/月（包年均价） 更新为 ¥119/月，计费方式为 固定月费。",
+        "impact": "neutral",
+        "sourceUrl": "https://platform.minimaxi.com/docs/guides/pricing-token-plan"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://platform.minimaxi.com/subscribe/token-plan"
+      }
+    ]
+  },
+  {
+    "id": "minimax-max-fast",
+    "slug": "minimax-max-fast",
+    "name": "MiniMax Max 极速",
+    "vendor": "MiniMax",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "¥199/月",
+    "priceValue": 199.0,
+    "priceCurrency": "CNY",
+    "summary": "MiniMax 的 Max 极速 套餐，核心看点是月费、额度和适配模型。",
+    "description": "MiniMax Max 极速 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "每周可使用额度为「每 5 小时额度」的 10 倍",
+    "officialUrl": "https://platform.minimaxi.com/subscribe/token-plan",
+    "tags": [
+      "MiniMax",
+      "Token Plan",
+      "Max 极速"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://platform.minimaxi.com/docs/guides/pricing-token-plan"
+    ],
+    "metrics": {
+      "quota": "4500 次请求/5小时",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 199元/月，166元/月（包年均价） 更新为 ¥199/月，计费方式为 固定月费。",
+        "impact": "neutral",
+        "sourceUrl": "https://platform.minimaxi.com/docs/guides/pricing-token-plan"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://platform.minimaxi.com/subscribe/token-plan"
+      }
+    ]
+  },
+  {
+    "id": "minimax-plus-fast",
+    "slug": "minimax-plus-fast",
+    "name": "MiniMax Plus 极速",
+    "vendor": "MiniMax",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "¥98/月",
+    "priceValue": 98.0,
+    "priceCurrency": "CNY",
+    "summary": "MiniMax 的 Plus 极速 套餐，核心看点是月费、额度和适配模型。",
+    "description": "MiniMax Plus 极速 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "每周可使用额度为「每 5 小时额度」的 10 倍",
+    "officialUrl": "https://platform.minimaxi.com/subscribe/token-plan",
+    "tags": [
+      "MiniMax",
+      "Token Plan",
+      "Plus 极速"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://platform.minimaxi.com/docs/guides/pricing-token-plan"
+    ],
+    "metrics": {
+      "quota": "1500 次请求/5小时",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 98元/月，82元/月（包年均价） 更新为 ¥98/月，计费方式为 固定月费。",
+        "impact": "neutral",
+        "sourceUrl": "https://platform.minimaxi.com/docs/guides/pricing-token-plan"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://platform.minimaxi.com/subscribe/token-plan"
+      }
+    ]
+  },
+  {
+    "id": "minimax-starter",
+    "slug": "minimax-starter",
+    "name": "MiniMax Starter",
+    "vendor": "MiniMax",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "¥29/月",
+    "priceValue": 29.0,
+    "priceCurrency": "CNY",
+    "summary": "MiniMax 的 Starter 套餐，核心看点是月费、额度和适配模型。",
+    "description": "MiniMax Starter 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "每周可使用额度为「每 5 小时额度」的 10 倍",
+    "officialUrl": "https://platform.minimaxi.com/subscribe/token-plan",
+    "tags": [
+      "MiniMax",
+      "Token Plan",
+      "Starter"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://platform.minimaxi.com/docs/guides/pricing-token-plan"
+    ],
+    "metrics": {
+      "quota": "600 次请求/5小时",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 29元/月，24元/月（包年均价） 更新为 ¥29/月，计费方式为 固定月费。",
+        "impact": "neutral",
+        "sourceUrl": "https://platform.minimaxi.com/docs/guides/pricing-token-plan"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://platform.minimaxi.com/subscribe/token-plan"
+      }
+    ]
+  },
+  {
+    "id": "minimax-ultra-fast",
+    "slug": "minimax-ultra-fast",
+    "name": "MiniMax Ultra 极速",
+    "vendor": "MiniMax",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "¥899/月",
+    "priceValue": 899.0,
+    "priceCurrency": "CNY",
+    "summary": "MiniMax 的 Ultra 极速 套餐，核心看点是月费、额度和适配模型。",
+    "description": "MiniMax Ultra 极速 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "每周可使用额度为「每 5 小时额度」的 10 倍",
+    "officialUrl": "https://platform.minimaxi.com/subscribe/token-plan",
+    "tags": [
+      "MiniMax",
+      "Token Plan",
+      "Ultra 极速"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://platform.minimaxi.com/docs/guides/pricing-token-plan"
+    ],
+    "metrics": {
+      "quota": "30000 次请求/5小时",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 899元/月，749元/月（包年均价） 更新为 ¥899/月，计费方式为 固定月费。",
+        "impact": "neutral",
+        "sourceUrl": "https://platform.minimaxi.com/docs/guides/pricing-token-plan"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://platform.minimaxi.com/subscribe/token-plan"
+      }
+    ]
+  },
+  {
+    "id": "sensenova-free-public",
+    "slug": "sensenova-free-public",
+    "name": "商汤科技 SenseNova Free · 公测",
+    "vendor": "商汤科技 SenseNova",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "¥0/月",
+    "priceValue": 0.0,
+    "priceCurrency": "CNY",
+    "summary": "商汤科技 SenseNova 的 Free · 公测 套餐，核心看点是月费、额度和适配模型。",
+    "description": "商汤科技 SenseNova Free · 公测 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "limited",
+    "valueLane": "Token plan",
+    "highlight": "覆盖 3 个代表模型",
+    "officialUrl": "https://www.sensenova.cn/token-plan",
+    "tags": [
+      "商汤科技 SenseNova",
+      "Token Plan",
+      "Free · 公测"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://www.sensenova.cn/token-plan"
+    ],
+    "metrics": {
+      "quota": "每模型 1,500 次调用 / 5 小时",
+      "billing": "公测免费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 1,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.sensenova.cn/token-plan"
+      }
+    ]
+  },
+  {
+    "id": "xiaomi-mimo-lite",
+    "slug": "xiaomi-mimo-lite",
+    "name": "小米 MiMo Lite",
+    "vendor": "小米 MiMo",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "¥411.84/年（原价 ¥468/年）",
+    "priceValue": 411.84,
+    "priceCurrency": "CNY",
+    "summary": "小米 MiMo 的 Lite 套餐，核心看点是月费、额度和适配模型。",
+    "description": "小米 MiMo Lite 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "非高峰期（16:00-24:00 UTC） 0.8x 系数消耗",
+    "officialUrl": "https://platform.xiaomimimo.com/token-plan",
+    "tags": [
+      "小米 MiMo",
+      "Token Plan",
+      "Lite"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://platform.xiaomimimo.com/token-plan"
+    ],
+    "metrics": {
+      "quota": "720,000,000 Credits",
+      "billing": "连续包年",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 ¥39.00/月 更新为 ¥411.84/年（原价 ¥468/年），计费方式为 连续包年。",
+        "impact": "value-down",
+        "sourceUrl": "https://platform.xiaomimimo.com/token-plan"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://platform.xiaomimimo.com/token-plan"
+      }
+    ]
+  },
+  {
+    "id": "xiaomi-mimo-max",
+    "slug": "xiaomi-mimo-max",
+    "name": "小米 MiMo Max",
+    "vendor": "小米 MiMo",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "¥6959.04/年（原价 ¥7908/年）",
+    "priceValue": 6959.04,
+    "priceCurrency": "CNY",
+    "summary": "小米 MiMo 的 Max 套餐，核心看点是月费、额度和适配模型。",
+    "description": "小米 MiMo Max 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "非高峰期（16:00-24:00 UTC） 0.8x 系数消耗",
+    "officialUrl": "https://platform.xiaomimimo.com/token-plan",
+    "tags": [
+      "小米 MiMo",
+      "Token Plan",
+      "Max"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://platform.xiaomimimo.com/token-plan"
+    ],
+    "metrics": {
+      "quota": "19,200,000,000 Credits",
+      "billing": "连续包年",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 ¥659.00/月 更新为 ¥6959.04/年（原价 ¥7908/年），计费方式为 连续包年。",
+        "impact": "value-down",
+        "sourceUrl": "https://platform.xiaomimimo.com/token-plan"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://platform.xiaomimimo.com/token-plan"
+      }
+    ]
+  },
+  {
+    "id": "xiaomi-mimo-pro",
+    "slug": "xiaomi-mimo-pro",
+    "name": "小米 MiMo Pro",
+    "vendor": "小米 MiMo",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "¥3474.24/年（原价 ¥3948/年）",
+    "priceValue": 3474.24,
+    "priceCurrency": "CNY",
+    "summary": "小米 MiMo 的 Pro 套餐，核心看点是月费、额度和适配模型。",
+    "description": "小米 MiMo Pro 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "非高峰期（16:00-24:00 UTC） 0.8x 系数消耗",
+    "officialUrl": "https://platform.xiaomimimo.com/token-plan",
+    "tags": [
+      "小米 MiMo",
+      "Token Plan",
+      "Pro"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://platform.xiaomimimo.com/token-plan"
+    ],
+    "metrics": {
+      "quota": "8,400,000,000 Credits",
+      "billing": "连续包年",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 ¥329.00/月 更新为 ¥3474.24/年（原价 ¥3948/年），计费方式为 连续包年。",
+        "impact": "value-down",
+        "sourceUrl": "https://platform.xiaomimimo.com/token-plan"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://platform.xiaomimimo.com/token-plan"
+      }
+    ]
+  },
+  {
+    "id": "xiaomi-mimo-standard",
+    "slug": "xiaomi-mimo-standard",
+    "name": "小米 MiMo Standard",
+    "vendor": "小米 MiMo",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "¥1045.44/年（原价 ¥1188/年）",
+    "priceValue": 1045.44,
+    "priceCurrency": "CNY",
+    "summary": "小米 MiMo 的 Standard 套餐，核心看点是月费、额度和适配模型。",
+    "description": "小米 MiMo Standard 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "非高峰期（16:00-24:00 UTC） 0.8x 系数消耗",
+    "officialUrl": "https://platform.xiaomimimo.com/token-plan",
+    "tags": [
+      "小米 MiMo",
+      "Token Plan",
+      "Standard"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://platform.xiaomimimo.com/token-plan"
+    ],
+    "metrics": {
+      "quota": "2,400,000,000 Credits",
+      "billing": "连续包年",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 ¥99.00/月 更新为 ¥1045.44/年（原价 ¥1188/年），计费方式为 连续包年。",
+        "impact": "value-down",
+        "sourceUrl": "https://platform.xiaomimimo.com/token-plan"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://platform.xiaomimimo.com/token-plan"
+      }
+    ]
+  },
+  {
+    "id": "cucloud-token-lite",
+    "slug": "cucloud-token-lite",
+    "name": "联通云 Token Plan-Lite（个人版）",
+    "vendor": "联通云",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "15元/月",
+    "priceValue": 15.0,
+    "priceCurrency": "CNY",
+    "summary": "联通云 的 Token Plan-Lite（个人版） 套餐，核心看点是月费、额度和适配模型。",
+    "description": "联通云 Token Plan-Lite（个人版） 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "覆盖 2 个代表模型",
+    "officialUrl": "https://www.cucloud.cn/product/tokenplan.html",
+    "tags": [
+      "联通云",
+      "Token Plan",
+      "Token Plan-Lite（个人版）"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://www.cucloud.cn/product/tokenplan.html"
+    ],
+    "metrics": {
+      "quota": "600万 tokens",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 1,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.cucloud.cn/product/tokenplan.html"
+      }
+    ]
+  },
+  {
+    "id": "cucloud-token-team-lite",
+    "slug": "cucloud-token-team-lite",
+    "name": "联通云 Token Plan-Lite（团队版）",
+    "vendor": "联通云",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "198元/月",
+    "priceValue": 198.0,
+    "priceCurrency": "CNY",
+    "summary": "联通云 的 Token Plan-Lite（团队版） 套餐，核心看点是月费、额度和适配模型。",
+    "description": "联通云 Token Plan-Lite（团队版） 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "覆盖 3 个代表模型",
+    "officialUrl": "https://www.cucloud.cn/product/tokenplan.html",
+    "tags": [
+      "联通云",
+      "Token Plan",
+      "Token Plan-Lite（团队版）"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://www.cucloud.cn/product/tokenplan.html"
+    ],
+    "metrics": {
+      "quota": "25,000 credits",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 1,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.cucloud.cn/product/tokenplan.html"
+      }
+    ]
+  },
+  {
+    "id": "cucloud-token-max",
+    "slug": "cucloud-token-max",
+    "name": "联通云 Token Plan-Max（个人版）",
+    "vendor": "联通云",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "45元/月",
+    "priceValue": 45.0,
+    "priceCurrency": "CNY",
+    "summary": "联通云 的 Token Plan-Max（个人版） 套餐，核心看点是月费、额度和适配模型。",
+    "description": "联通云 Token Plan-Max（个人版） 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "覆盖 2 个代表模型",
+    "officialUrl": "https://www.cucloud.cn/product/tokenplan.html",
+    "tags": [
+      "联通云",
+      "Token Plan",
+      "Token Plan-Max（个人版）"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://www.cucloud.cn/product/tokenplan.html"
+    ],
+    "metrics": {
+      "quota": "1,800万 tokens",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 1,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.cucloud.cn/product/tokenplan.html"
+      }
+    ]
+  },
+  {
+    "id": "cucloud-token-team-max",
+    "slug": "cucloud-token-team-max",
+    "name": "联通云 Token Plan-Max（团队版）",
+    "vendor": "联通云",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "1398元/月",
+    "priceValue": 1398.0,
+    "priceCurrency": "CNY",
+    "summary": "联通云 的 Token Plan-Max（团队版） 套餐，核心看点是月费、额度和适配模型。",
+    "description": "联通云 Token Plan-Max（团队版） 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "覆盖 3 个代表模型",
+    "officialUrl": "https://www.cucloud.cn/product/tokenplan.html",
+    "tags": [
+      "联通云",
+      "Token Plan",
+      "Token Plan-Max（团队版）"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://www.cucloud.cn/product/tokenplan.html"
+    ],
+    "metrics": {
+      "quota": "250,000 credits",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 1,398元/月 更新为 1398元/月，计费方式为 固定月费。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.cucloud.cn/product/tokenplan.html"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.cucloud.cn/product/tokenplan.html"
+      }
+    ]
+  },
+  {
+    "id": "cucloud-token-pro",
+    "slug": "cucloud-token-pro",
+    "name": "联通云 Token Plan-Pro（个人版）",
+    "vendor": "联通云",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "30元/月",
+    "priceValue": 30.0,
+    "priceCurrency": "CNY",
+    "summary": "联通云 的 Token Plan-Pro（个人版） 套餐，核心看点是月费、额度和适配模型。",
+    "description": "联通云 Token Plan-Pro（个人版） 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "覆盖 2 个代表模型",
+    "officialUrl": "https://www.cucloud.cn/product/tokenplan.html",
+    "tags": [
+      "联通云",
+      "Token Plan",
+      "Token Plan-Pro（个人版）"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://www.cucloud.cn/product/tokenplan.html"
+    ],
+    "metrics": {
+      "quota": "1,200万 tokens",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 1,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.cucloud.cn/product/tokenplan.html"
+      }
+    ]
+  },
+  {
+    "id": "cucloud-token-team-pro",
+    "slug": "cucloud-token-team-pro",
+    "name": "联通云 Token Plan-Pro（团队版）",
+    "vendor": "联通云",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "698元/月",
+    "priceValue": 698.0,
+    "priceCurrency": "CNY",
+    "summary": "联通云 的 Token Plan-Pro（团队版） 套餐，核心看点是月费、额度和适配模型。",
+    "description": "联通云 Token Plan-Pro（团队版） 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "覆盖 3 个代表模型",
+    "officialUrl": "https://www.cucloud.cn/product/tokenplan.html",
+    "tags": [
+      "联通云",
+      "Token Plan",
+      "Token Plan-Pro（团队版）"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://www.cucloud.cn/product/tokenplan.html"
+    ],
+    "metrics": {
+      "quota": "100,000 credits",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 1,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.cucloud.cn/product/tokenplan.html"
+      }
+    ]
+  },
+  {
+    "id": "tencent-token-lite",
+    "slug": "tencent-token-lite",
+    "name": "腾讯云 Lite",
+    "vendor": "腾讯云",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "39元/月",
+    "priceValue": 39.0,
+    "priceCurrency": "CNY",
+    "summary": "腾讯云 的 Lite 套餐，核心看点是月费、额度和适配模型。",
+    "description": "腾讯云 Lite 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "覆盖 3 个代表模型",
+    "officialUrl": "https://cloud.tencent.com/act/pro/tokenplan",
+    "tags": [
+      "腾讯云",
+      "Token Plan",
+      "Lite"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://cloud.tencent.com/act/pro/tokenplan"
+    ],
+    "metrics": {
+      "quota": "每订阅月 3500万 Tokens",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 1,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://cloud.tencent.com/act/pro/tokenplan"
+      }
+    ]
+  },
+  {
+    "id": "tencent-token-max",
+    "slug": "tencent-token-max",
+    "name": "腾讯云 Max",
+    "vendor": "腾讯云",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "599元/月",
+    "priceValue": 599.0,
+    "priceCurrency": "CNY",
+    "summary": "腾讯云 的 Max 套餐，核心看点是月费、额度和适配模型。",
+    "description": "腾讯云 Max 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "覆盖 3 个代表模型",
+    "officialUrl": "https://cloud.tencent.com/act/pro/tokenplan",
+    "tags": [
+      "腾讯云",
+      "Token Plan",
+      "Max"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://cloud.tencent.com/act/pro/tokenplan"
+    ],
+    "metrics": {
+      "quota": "每订阅月 6.5 亿 Tokens",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 1,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://cloud.tencent.com/act/pro/tokenplan"
+      }
+    ]
+  },
+  {
+    "id": "tencent-token-pro",
+    "slug": "tencent-token-pro",
+    "name": "腾讯云 Pro",
+    "vendor": "腾讯云",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "299元/月",
+    "priceValue": 299.0,
+    "priceCurrency": "CNY",
+    "summary": "腾讯云 的 Pro 套餐，核心看点是月费、额度和适配模型。",
+    "description": "腾讯云 Pro 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "覆盖 3 个代表模型",
+    "officialUrl": "https://cloud.tencent.com/act/pro/tokenplan",
+    "tags": [
+      "腾讯云",
+      "Token Plan",
+      "Pro"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://cloud.tencent.com/act/pro/tokenplan"
+    ],
+    "metrics": {
+      "quota": "每订阅月 3.2 亿 Tokens",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 1,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://cloud.tencent.com/act/pro/tokenplan"
+      }
+    ]
+  },
+  {
+    "id": "tencent-token-standard",
+    "slug": "tencent-token-standard",
+    "name": "腾讯云 Standard",
+    "vendor": "腾讯云",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "99元/月",
+    "priceValue": 99.0,
+    "priceCurrency": "CNY",
+    "summary": "腾讯云 的 Standard 套餐，核心看点是月费、额度和适配模型。",
+    "description": "腾讯云 Standard 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "覆盖 3 个代表模型",
+    "officialUrl": "https://cloud.tencent.com/act/pro/tokenplan",
+    "tags": [
+      "腾讯云",
+      "Token Plan",
+      "Standard"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://cloud.tencent.com/act/pro/tokenplan"
+    ],
+    "metrics": {
+      "quota": "每订阅月 1 亿 Tokens",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 1,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://cloud.tencent.com/act/pro/tokenplan"
+      }
+    ]
+  },
+  {
+    "id": "aliyun-token-shared-package",
+    "slug": "aliyun-token-shared-package",
+    "name": "阿里云百炼 团队版 共享包",
+    "vendor": "阿里云百炼",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "¥5000/个",
+    "priceValue": 5000.0,
+    "priceCurrency": "CNY",
+    "summary": "阿里云百炼 的 团队版 共享包 套餐，核心看点是月费、额度和适配模型。",
+    "description": "阿里云百炼 团队版 共享包 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "官方文档积分消耗具体规则不明确",
+    "officialUrl": "https://common-buy.aliyun.com/token-plan",
+    "tags": [
+      "阿里云百炼",
+      "Token Plan",
+      "团队版 共享包"
+    ],
+    "coverageNotes": [
+      "官方站点直抓",
+      "价格与额度以官网口径为准",
+      "官方来源：https://help.aliyun.com/zh/model-studio/token-plan-overview"
+    ],
+    "metrics": {
+      "quota": "625000 Credits/个",
+      "billing": "一次性共享包",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-06",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 待接入官网直抓 更新为 ¥5000/个，计费方式为 一次性共享包。",
+        "impact": "value-down",
+        "sourceUrl": "https://help.aliyun.com/zh/model-studio/token-plan-overview"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://common-buy.aliyun.com/token-plan"
+      }
+    ]
+  },
+  {
+    "id": "aliyun-token-premium",
+    "slug": "aliyun-token-premium",
+    "name": "阿里云百炼 团队版 尊享坐席",
+    "vendor": "阿里云百炼",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "¥1398/坐席/月",
+    "priceValue": 1398.0,
+    "priceCurrency": "CNY",
+    "summary": "阿里云百炼 的 团队版 尊享坐席 套餐，核心看点是月费、额度和适配模型。",
+    "description": "阿里云百炼 团队版 尊享坐席 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "官方文档积分消耗具体规则不明确",
+    "officialUrl": "https://common-buy.aliyun.com/token-plan",
+    "tags": [
+      "阿里云百炼",
+      "Token Plan",
+      "团队版 尊享坐席"
+    ],
+    "coverageNotes": [
+      "官方站点直抓",
+      "价格与额度以官网口径为准",
+      "官方来源：https://help.aliyun.com/zh/model-studio/token-plan-overview"
+    ],
+    "metrics": {
+      "quota": "250000 Credits/坐席/月",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": [
+        {
+          "label": "每月",
+          "value": "250000",
+          "unit": ""
+        }
+      ]
+    },
+    "history": [
+      {
+        "date": "2026-05-06",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 待接入官网直抓 更新为 ¥1398/坐席/月，计费方式为 固定月费。",
+        "impact": "value-down",
+        "sourceUrl": "https://help.aliyun.com/zh/model-studio/token-plan-overview"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://common-buy.aliyun.com/token-plan"
+      }
+    ]
+  },
+  {
+    "id": "aliyun-token-standard",
+    "slug": "aliyun-token-standard",
+    "name": "阿里云百炼 团队版 标准坐席",
+    "vendor": "阿里云百炼",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "¥198/坐席/月",
+    "priceValue": 198.0,
+    "priceCurrency": "CNY",
+    "summary": "阿里云百炼 的 团队版 标准坐席 套餐，核心看点是月费、额度和适配模型。",
+    "description": "阿里云百炼 团队版 标准坐席 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "官方文档积分消耗具体规则不明确",
+    "officialUrl": "https://common-buy.aliyun.com/token-plan",
+    "tags": [
+      "阿里云百炼",
+      "Token Plan",
+      "团队版 标准坐席"
+    ],
+    "coverageNotes": [
+      "官方站点直抓",
+      "价格与额度以官网口径为准",
+      "官方来源：https://help.aliyun.com/zh/model-studio/token-plan-overview"
+    ],
+    "metrics": {
+      "quota": "25000 Credits/坐席/月",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": [
+        {
+          "label": "每月",
+          "value": "25000",
+          "unit": ""
+        }
+      ]
+    },
+    "history": [
+      {
+        "date": "2026-05-06",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 待接入官网直抓 更新为 ¥198/坐席/月，计费方式为 固定月费。",
+        "impact": "value-down",
+        "sourceUrl": "https://help.aliyun.com/zh/model-studio/token-plan-overview"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://common-buy.aliyun.com/token-plan"
+      }
+    ]
+  },
+  {
+    "id": "aliyun-token-advanced",
+    "slug": "aliyun-token-advanced",
+    "name": "阿里云百炼 团队版 高级坐席",
+    "vendor": "阿里云百炼",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "¥698/坐席/月",
+    "priceValue": 698.0,
+    "priceCurrency": "CNY",
+    "summary": "阿里云百炼 的 团队版 高级坐席 套餐，核心看点是月费、额度和适配模型。",
+    "description": "阿里云百炼 团队版 高级坐席 更接近按月购买的额度包。PlanTrack 会记录价格、额度口径、支持模型和限时说明，避免只看月费做误判。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "官方文档积分消耗具体规则不明确",
+    "officialUrl": "https://common-buy.aliyun.com/token-plan",
+    "tags": [
+      "阿里云百炼",
+      "Token Plan",
+      "团队版 高级坐席"
+    ],
+    "coverageNotes": [
+      "官方站点直抓",
+      "价格与额度以官网口径为准",
+      "官方来源：https://help.aliyun.com/zh/model-studio/token-plan-overview"
+    ],
+    "metrics": {
+      "quota": "100000 Credits/坐席/月",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": [
+        {
+          "label": "每月",
+          "value": "100000",
+          "unit": ""
+        }
+      ]
+    },
+    "history": [
+      {
+        "date": "2026-05-06",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 待接入官网直抓 更新为 ¥698/坐席/月，计费方式为 固定月费。",
+        "impact": "value-down",
+        "sourceUrl": "https://help.aliyun.com/zh/model-studio/token-plan-overview"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://common-buy.aliyun.com/token-plan"
+      }
+    ]
+  },
+  {
+    "id": "cursor-pro",
+    "slug": "cursor-pro",
+    "name": "Cursor Pro",
+    "vendor": "Cursor",
+    "category": "ide-subscription",
+    "subcategory": "IDE / Agent",
+    "priceDisplay": "$20/月",
+    "priceValue": 20.0,
+    "priceCurrency": "USD",
+    "summary": "usage-based IDE 订阅，不能与固定额度包直接混比。",
+    "description": "Cursor Pro 更接近 IDE 订阅而不是纯模型包月。PlanTrack 在详情页里会明确区分 usage-based 与 fixed plan，避免用户误把它当作固定额度产品理解。",
+    "status": "tracked",
+    "valueLane": "Usage-based IDE",
+    "highlight": "计费说明比标价本身更值得被放大。",
+    "officialUrl": "https://cursor.com/pricing",
+    "tags": [
+      "Cursor",
+      "IDE",
+      "Agent"
+    ],
+    "coverageNotes": [
+      "官方 pricing",
+      "usage-based 说明",
+      "产品分类边界",
+      "官方来源：https://cursor.com/pricing"
+    ],
+    "metrics": {
+      "quota": "extended limits on Agent",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": [
+        {
+          "label": "月度",
+          "value": "$20",
+          "unit": "included usage"
+        }
+      ]
+    },
+    "history": [
+      {
+        "date": "2026-05-03",
+        "type": "billing",
+        "title": "计费说明口径更新",
+        "summary": "把 included usage 与自动消耗路径的说明写得更清楚。",
+        "impact": "neutral"
+      },
+      {
+        "date": "2026-04-10",
+        "type": "classification",
+        "title": "从固定套餐比较中独立出来",
+        "summary": "改为单独一条 usage lane，比直接放在月包表更准确。",
+        "impact": "neutral"
+      }
+    ]
+  },
+  {
+    "id": "opencode-go",
+    "slug": "opencode-go",
+    "name": "OpenCode Go",
+    "vendor": "OpenCode",
+    "category": "ide-subscription",
+    "subcategory": "IDE / Agent",
+    "priceDisplay": "$10/月（首月 $5）",
+    "priceValue": 10.0,
+    "priceCurrency": "USD",
+    "summary": "OpenCode 的 Go 套餐，更适合按使用入口与 IDE 集成能力来判断价值。",
+    "description": "OpenCode Go 需要结合 IDE / Agent 工作流一起理解，不能简单和固定请求数套餐放在同一维度。",
+    "status": "tracked",
+    "valueLane": "Usage lane",
+    "highlight": "覆盖 3 个代表模型",
+    "officialUrl": "https://opencode.ai/zh/go",
+    "tags": [
+      "OpenCode",
+      "IDE / Agent",
+      "Go"
+    ],
+    "coverageNotes": [
+      "官方购买页",
+      "价格与额度口径",
+      "模型支持范围",
+      "官方来源：https://opencode.ai/zh/go"
+    ],
+    "metrics": {
+      "quota": "按模型分档，每 5 小时约 1-31650 次请求",
+      "billing": "固定月费 / 首月优惠",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 $10/月，首月 $5 更新为 $10/月（首月 $5），计费方式为 固定月费 / 首月优惠。",
+        "impact": "value-down",
+        "sourceUrl": "https://opencode.ai/zh/go"
+      },
+      {
+        "date": "2026-05-05",
+        "type": "coverage",
+        "title": "新增目录收录",
+        "summary": "已纳入上游目录源追踪，后续继续补充官方价格抓取与变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://opencode.ai/zh/go"
+      }
+    ]
+  },
+  {
+    "id": "openrouter",
+    "slug": "openrouter",
+    "name": "OpenRouter",
+    "vendor": "OpenRouter",
+    "category": "aggregator",
+    "subcategory": "中转站",
+    "priceDisplay": "免费 / 按量",
+    "priceValue": 0.0,
+    "priceCurrency": "USD",
+    "summary": "聚合模型入口，价值更多体现在可选模型与入口便利性。",
+    "description": "OpenRouter 更像聚合入口而不是单一套餐。PlanTrack 会记录它的免费模型窗口、热门模型策略和产品形态，但不会强行把它压进固定月费的排序逻辑里。",
+    "status": "tracked",
+    "valueLane": "Aggregator",
+    "highlight": "价值来自入口密度和限免策略，而不是单一月费。",
+    "officialUrl": "https://openrouter.ai",
+    "tags": [
+      "OpenRouter",
+      "中转站",
+      "聚合平台"
+    ],
+    "coverageNotes": [
+      "官方站点",
+      "免费模型窗口",
+      "聚合入口说明",
+      "官方来源：https://openrouter.ai/pricing"
+    ],
+    "metrics": {
+      "quota": "25+ free models",
+      "billing": "按量计费",
+      "lastChecked": "2026-05-06",
+      "changeCount": 2,
+      "limits": [
+        {
+          "label": "限免",
+          "value": "部分模型",
+          "unit": "free window"
+        }
+      ]
+    },
+    "history": [
+      {
+        "date": "2026-05-05",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 部分模型限免 更新为 免费 / 按量，计费方式为 按量计费。",
+        "impact": "neutral",
+        "sourceUrl": "https://openrouter.ai/pricing"
+      },
+      {
+        "date": "2026-05-01",
+        "type": "coverage",
+        "title": "新增免费模型窗口记录",
+        "summary": "开始记录免费模型窗口和代表性模型说明。",
+        "impact": "neutral"
+      }
+    ]
+  }
+]

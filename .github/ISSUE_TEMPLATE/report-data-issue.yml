@@ -1,0 +1,58 @@
+name: Report data issue
+description: Report incorrect pricing, quota, limits, or outdated platform information.
+title: "[Data Issue] "
+labels:
+  - data-issue
+body:
+  - type: input
+    id: platform
+    attributes:
+      label: Platform / Plan
+      description: Which platform or plan is affected?
+      placeholder: e.g. ChatGPT Plus
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Issue type
+      options:
+        - Wrong price
+        - Wrong allowance / limits
+        - Outdated info
+        - Missing key info
+        - Service discontinued
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What is wrong?
+      description: Describe the issue clearly.
+      placeholder: Describe the incorrect data you found...
+    validations:
+      required: true
+
+  - type: textarea
+    id: correct_info
+    attributes:
+      label: Correct information
+      description: If you know the correct data, add it here.
+      placeholder: The correct price, limit, or updated information...
+
+  - type: input
+    id: source_url
+    attributes:
+      label: Source URL
+      description: Official pricing or docs page.
+      placeholder: https://...
+
+  - type: input
+    id: contact
+    attributes:
+      label: Contact (optional)
+      description: Email or handle if you want us to follow up.
+      placeholder: your@email.com
