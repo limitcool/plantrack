@@ -30,11 +30,11 @@ const chartConfig = {
   },
   "value-down": {
     label: "价值下降",
-    color: "hsl(0, 84%, 60%)",
+    color: "var(--color-destructive)",
   },
   neutral: {
     label: "中性变动",
-    color: "hsl(240, 5%, 64%)",
+    color: "var(--color-muted-foreground)",
   },
   price: {
     label: "价格变动",
@@ -42,15 +42,15 @@ const chartConfig = {
   },
   promo: {
     label: "促销活动",
-    color: "hsl(250, 76%, 60%)",
+    color: "var(--color-chart-2)",
   },
   quota: {
     label: "配额变更",
-    color: "hsl(40, 96%, 53%)",
+    color: "var(--color-chart-3)",
   },
   coverage: {
     label: "收录更新",
-    color: "hsl(200, 76%, 50%)",
+    color: "var(--color-chart-4)",
   },
 } satisfies ChartConfig;
 
@@ -174,8 +174,8 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
   // Chart data
   const impactChartData = [
     { name: t.up, value: stats.impactCounts["value-up"], fill: "var(--color-primary)" },
-    { name: t.down, value: stats.impactCounts["value-down"], fill: "hsl(0, 84%, 60%)" },
-    { name: t.neutral, value: stats.impactCounts.neutral, fill: "hsl(240, 5%, 64%)" },
+    { name: t.down, value: stats.impactCounts["value-down"], fill: "var(--color-destructive)" },
+    { name: t.neutral, value: stats.impactCounts.neutral, fill: "var(--color-muted-foreground)" },
   ];
 
   const typeChartData = Object.entries(stats.typeCounts).map(([type, count]) => ({
@@ -212,14 +212,14 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
 
   const displayedChanges = showAll ? filteredChanges : filteredChanges.slice(0, 10);
 
-  const getImpactColor = (impact: string) => {
+  const getImpactContainerClass = (impact: string) => {
     switch (impact) {
       case "value-up":
-        return "border-l-primary";
+        return "border-primary/25 bg-primary/5";
       case "value-down":
-        return "border-l-red-500";
+        return "border-destructive/25 bg-destructive/5";
       default:
-        return "border-l-muted-foreground";
+        return "border-border bg-card";
     }
   };
 
@@ -228,7 +228,7 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
       case "value-up":
         return <TrendingUp className="h-5 w-5 text-primary" />;
       case "value-down":
-        return <TrendingDown className="h-5 w-5 text-red-500" />;
+        return <TrendingDown className="h-5 w-5 text-destructive" />;
       default:
         return <Minus className="h-5 w-5 text-muted-foreground" />;
     }
@@ -257,6 +257,7 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
             <Button
               variant={viewMode === "timeline" ? "default" : "outline"}
               size="sm"
+              className="h-11 px-4 sm:h-8"
               onClick={() => setViewMode("timeline")}
             >
               <Calendar className="mr-1 h-4 w-4" />
@@ -265,6 +266,7 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
             <Button
               variant={viewMode === "stats" ? "default" : "outline"}
               size="sm"
+              className="h-11 px-4 sm:h-8"
               onClick={() => setViewMode("stats")}
             >
               <BarChart3 className="mr-1 h-4 w-4" />
@@ -298,11 +300,11 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
               </Card>
               <Card>
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-red-500">{t.down}</CardTitle>
+                  <CardTitle className="text-sm font-medium text-destructive">{t.down}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center gap-2">
-                    <TrendingDown className="h-6 w-6 text-red-500" />
+                    <TrendingDown className="h-6 w-6 text-destructive" />
                     <span className="text-3xl font-bold">{stats.impactCounts["value-down"]}</span>
                   </div>
                 </CardContent>
@@ -384,8 +386,13 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
                       <YAxis tick={{ fontSize: 12 }} />
                       <ChartTooltip content={<ChartTooltipContent />} />
                       <Bar dataKey={t.up} stackId="a" fill="var(--color-primary)" radius={[0, 0, 0, 0]} />
-                      <Bar dataKey={t.down} stackId="a" fill="hsl(0, 84%, 60%)" radius={[0, 0, 0, 0]} />
-                      <Bar dataKey={t.neutral} stackId="a" fill="hsl(240, 5%, 64%)" radius={[4, 4, 0, 0]} />
+                      <Bar dataKey={t.down} stackId="a" fill="var(--color-destructive)" radius={[0, 0, 0, 0]} />
+                      <Bar
+                        dataKey={t.neutral}
+                        stackId="a"
+                        fill="var(--color-muted-foreground)"
+                        radius={[4, 4, 0, 0]}
+                      />
                     </BarChart>
                   </ChartContainer>
                 </CardContent>
@@ -422,7 +429,7 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
             {/* Filters */}
             <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Select value={impactFilter} onValueChange={(v) => setImpactFilter(v as typeof impactFilter)}>
-                <SelectTrigger className="w-full sm:w-[150px]">
+                <SelectTrigger aria-label={t.filterImpact} className="h-11 w-full sm:h-8 sm:w-[150px]">
                   <Filter className="mr-2 h-4 w-4" />
                   <SelectValue placeholder={t.filterImpact} />
                 </SelectTrigger>
@@ -436,7 +443,7 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
                   </SelectItem>
                   <SelectItem value="value-down">
                     <span className="flex items-center gap-2">
-                      <TrendingDown className="h-3 w-3 text-red-500" />
+                      <TrendingDown className="h-3 w-3 text-destructive" />
                       {t.down}
                     </span>
                   </SelectItem>
@@ -450,7 +457,7 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
               </Select>
 
               <Select value={typeFilter} onValueChange={setTypeFilter}>
-                <SelectTrigger className="w-full sm:w-[150px]">
+                <SelectTrigger aria-label={t.filterType} className="h-11 w-full sm:h-8 sm:w-[150px]">
                   <SelectValue placeholder={t.filterType} />
                 </SelectTrigger>
                 <SelectContent>
@@ -472,11 +479,13 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
               {displayedChanges.map((change, i) => (
                 <div
                   key={`${change.platformSlug}-${change.date}-${i}`}
-                  className={`rounded-lg border border-border border-l-4 ${getImpactColor(change.impact)} bg-card p-4 transition-colors hover:bg-card/80`}
+                  className={`rounded-2xl border p-4 transition-colors hover:bg-card/80 ${getImpactContainerClass(change.impact)}`}
                 >
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                     <div className="flex items-start gap-3">
-                      <PlatformIcon vendor={change.vendor} className="h-10 w-10 shrink-0 text-sm" />
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-background/80">
+                        <PlatformIcon vendor={change.vendor} className="h-10 w-10 shrink-0 text-sm" />
+                      </div>
                       <div>
                         <div className="flex flex-wrap items-center gap-2">
                           <span className="font-semibold">{change.platformName}</span>
@@ -550,18 +559,18 @@ function getChangeTypes(lang: Lang) {
 function getTypeColor(type: string): string {
   switch (type) {
     case "price":
-      return "hsl(168, 76%, 42%)";
+      return "var(--color-primary)";
     case "promo":
-      return "hsl(250, 76%, 60%)";
+      return "var(--color-chart-2)";
     case "quota":
-      return "hsl(40, 96%, 53%)";
+      return "var(--color-chart-3)";
     case "coverage":
-      return "hsl(200, 76%, 50%)";
+      return "var(--color-chart-4)";
     case "classification":
-      return "hsl(280, 76%, 50%)";
+      return "var(--color-chart-5)";
     case "regional":
-      return "hsl(320, 76%, 50%)";
+      return "var(--color-chart-2)";
     default:
-      return "hsl(240, 5%, 64%)";
+      return "var(--color-muted-foreground)";
   }
 }

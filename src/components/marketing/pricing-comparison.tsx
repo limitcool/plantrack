@@ -111,6 +111,11 @@ const dictionary = {
     rawUnit: "原始单位",
     compactUnit: "M / B",
     sort: "排序方式",
+    searchLabel: "搜索平台、厂商、标签或模型",
+    currencyLabel: "筛选币种",
+    allowanceLabel: "筛选配额类型",
+    unitLabel: "切换单位显示",
+    sortLabel: "切换排序方式",
     results: "共 {count} 个方案",
     selected: "已选 {count} 个",
     clearSelection: "清除选择",
@@ -217,6 +222,11 @@ const dictionary = {
     viewPlanDetails: "查看 {name} 详情",
     supportedModelsLabel: "支持模型",
     noModelHints: "待补充",
+    workspaceTitle: "筛选与排序",
+    workspaceDesc: "先缩小分类范围，再按价格、配额、模型和排序规则收敛结果。",
+    activeCategory: "当前分类",
+    filterSummary: "已启用 {count} 个筛选",
+    filterSummaryEmpty: "未启用额外筛选",
   },
   en: {
     title: "Pricing comparison",
@@ -235,6 +245,11 @@ const dictionary = {
     rawUnit: "Raw",
     compactUnit: "M / B",
     sort: "Sort by",
+    searchLabel: "Search plans, vendors, tags, or models",
+    currencyLabel: "Filter by currency",
+    allowanceLabel: "Filter by allowance type",
+    unitLabel: "Change unit display",
+    sortLabel: "Change sort order",
     results: "{count} plans",
     selected: "{count} selected",
     clearSelection: "Clear selection",
@@ -344,6 +359,11 @@ const dictionary = {
     viewPlanDetails: "View details for {name}",
     supportedModelsLabel: "Models",
     noModelHints: "Coming soon",
+    workspaceTitle: "Filters and ranking",
+    workspaceDesc: "Narrow the category first, then refine by price, allowance, models, and sorting logic.",
+    activeCategory: "Current category",
+    filterSummary: "{count} active filters",
+    filterSummaryEmpty: "No extra filters",
   },
 } as const;
 
@@ -873,6 +893,14 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
       }
     });
   }, [filteredAndSortedPlatforms, sortBy]);
+  const activeCategoryMeta =
+    categoriesWithCounts.find((item) => item.value === category) ?? categoriesWithCounts[0];
+  const activeFilterCount =
+    (search.trim() ? 1 : 0) +
+    (currencyFilter !== "all" ? 1 : 0) +
+    (allowanceFilter !== "all" ? 1 : 0) +
+    (selectedModels.size > 0 ? 1 : 0);
+  const hasFilterState = activeFilterCount > 0 || unitMode !== "compact";
 
   const getStatusBadge = (status: string) => {
     switch (status) {
@@ -884,7 +912,7 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
         );
       case "limited":
         return (
-          <Badge variant="secondary" className="bg-yellow-500/10 text-yellow-500 hover:bg-yellow-500/20">
+          <Badge variant="secondary" className="bg-secondary text-secondary-foreground hover:bg-secondary/80">
             {t.statusLimited}
           </Badge>
         );
@@ -896,9 +924,24 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
   return (
     <section id="pricing" className="py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-8 max-w-3xl">
-          <h2 className="font-bold text-3xl tracking-tight">{t.title}</h2>
-          <p className="mt-2 text-muted-foreground">{t.subtitle}</p>
+        <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-3xl">
+            <h2 className="font-bold text-3xl tracking-tight">{t.title}</h2>
+            <p className="mt-2 text-muted-foreground">{t.subtitle}</p>
+          </div>
+          <div className="flex flex-wrap gap-2 text-sm">
+            <Badge variant="secondary" className="rounded-full px-3 py-1">
+              {t.results.replace("{count}", String(filteredAndSortedPlatforms.length))}
+            </Badge>
+            <Badge variant="secondary" className="rounded-full px-3 py-1">
+              {filteredVendorGroups.length} {t.vendors}
+            </Badge>
+            {selectedIds.size > 0 && (
+              <Badge className="rounded-full bg-primary/10 px-3 py-1 text-primary hover:bg-primary/15">
+                {t.selected.replace("{count}", String(selectedIds.size))}
+              </Badge>
+            )}
+          </div>
         </div>
 
         <div className="space-y-5">
@@ -932,10 +975,31 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
           </div>
 
           <div className="rounded-[28px] border border-border/70 bg-card/55 p-4 sm:p-5">
+            <div className="mb-4 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+              <div className="min-w-0">
+                <div className="font-medium text-sm">{t.workspaceTitle}</div>
+                <p className="mt-1 text-muted-foreground text-sm">{t.workspaceDesc}</p>
+              </div>
+              <div className="flex flex-wrap gap-2 text-xs">
+                <Badge variant="secondary" className="rounded-full px-3 py-1">
+                  {t.activeCategory}: {activeCategoryMeta.label}
+                </Badge>
+                <Badge variant="secondary" className="rounded-full px-3 py-1">
+                  {activeFilterCount > 0
+                    ? t.filterSummary.replace("{count}", String(activeFilterCount))
+                    : t.filterSummaryEmpty}
+                </Badge>
+                <Badge variant="secondary" className="rounded-full px-3 py-1">
+                  {unitMode === "compact" ? t.compactUnit : t.rawUnit}
+                </Badge>
+              </div>
+            </div>
+
             <div className="grid gap-3 xl:grid-cols-[minmax(0,1.45fr)_repeat(4,minmax(0,0.82fr))]">
               <div className="relative min-w-0 xl:col-span-2">
                 <Search className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                 <Input
+                  aria-label={t.searchLabel}
                   placeholder={t.search}
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
@@ -943,7 +1007,10 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
                 />
               </div>
               <Select value={currencyFilter} onValueChange={(v) => setCurrencyFilter(v as "all" | "CNY" | "USD")}>
-                <SelectTrigger className="h-11 w-full rounded-2xl border-border/70 bg-background/95 shadow-none">
+                <SelectTrigger
+                  aria-label={t.currencyLabel}
+                  className="h-11 w-full rounded-2xl border-border/70 bg-background/95 shadow-none"
+                >
                   <SelectValue placeholder={t.currency} />
                 </SelectTrigger>
                 <SelectContent>
@@ -953,7 +1020,10 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
                 </SelectContent>
               </Select>
               <Select value={allowanceFilter} onValueChange={(v) => setAllowanceFilter(v as AllowanceFilter)}>
-                <SelectTrigger className="h-11 w-full rounded-2xl border-border/70 bg-background/95 shadow-none">
+                <SelectTrigger
+                  aria-label={t.allowanceLabel}
+                  className="h-11 w-full rounded-2xl border-border/70 bg-background/95 shadow-none"
+                >
                   <SelectValue placeholder={t.allowance} />
                 </SelectTrigger>
                 <SelectContent>
@@ -964,7 +1034,10 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
                 </SelectContent>
               </Select>
               <Select value={unitMode} onValueChange={(v) => setUnitMode(v as MetricUnitMode)}>
-                <SelectTrigger className="h-11 w-full rounded-2xl border-border/70 bg-background/95 shadow-none">
+                <SelectTrigger
+                  aria-label={t.unitLabel}
+                  className="h-11 w-full rounded-2xl border-border/70 bg-background/95 shadow-none"
+                >
                   <SelectValue placeholder={t.unit} />
                 </SelectTrigger>
                 <SelectContent>
@@ -973,7 +1046,10 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
                 </SelectContent>
               </Select>
               <Select value={sortBy} onValueChange={(v) => setSortBy(v as SortOption)}>
-                <SelectTrigger className="h-11 w-full rounded-2xl border-border/70 bg-background/95 shadow-none">
+                <SelectTrigger
+                  aria-label={t.sortLabel}
+                  className="h-11 w-full rounded-2xl border-border/70 bg-background/95 shadow-none"
+                >
                   <ArrowUpDown className="mr-2 h-4 w-4" />
                   <SelectValue placeholder={t.sort} />
                 </SelectTrigger>
@@ -1005,7 +1081,7 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
                         variant="ghost"
                         size="sm"
                         onClick={() => setSelectedModels(new Set())}
-                        className="h-8 px-2 text-muted-foreground hover:text-foreground"
+                        className="h-11 px-3 text-muted-foreground hover:text-foreground sm:h-8"
                       >
                         <X className="mr-1 h-3 w-3" />
                         {t.clearModels}
@@ -1026,7 +1102,7 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
                           key={group.key}
                           type="button"
                           onClick={() => setActiveModelFamily(group.key)}
-                          className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-colors ${
+                          className={`inline-flex min-h-11 items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-colors sm:min-h-0 ${
                             isActiveFamily
                               ? "border-primary bg-primary/10 text-foreground shadow-sm"
                               : "border-border bg-background text-muted-foreground hover:border-primary/40 hover:text-foreground"
@@ -1088,7 +1164,7 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
                               return next;
                             })
                           }
-                          className="h-8 rounded-full px-3 text-xs"
+                          className="h-11 rounded-full px-3 text-xs sm:h-8"
                         >
                           {activeModelGroup.items.every((item) => selectedModels.has(item.key))
                             ? t.unselectGroup
@@ -1105,7 +1181,7 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
                                 key={item.key}
                                 type="button"
                                 onClick={() => toggleModelKey(item.key)}
-                                className={`inline-flex max-w-full items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-colors ${
+                                className={`inline-flex min-h-11 max-w-full items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-colors sm:min-h-0 ${
                                   active
                                     ? "border-primary bg-primary text-primary-foreground"
                                     : "border-border bg-background text-muted-foreground hover:border-primary/40 hover:text-foreground"
@@ -1140,20 +1216,11 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
 
             <div className="mt-4 flex flex-col gap-3 border-border/70 border-t pt-4 lg:flex-row lg:items-center lg:justify-between">
               <div className="space-y-1">
-                <span className="text-muted-foreground text-sm" aria-live="polite">
-                  {t.results.replace("{count}", String(filteredAndSortedPlatforms.length))}
-                  <span className="ml-2">
-                    · {filteredVendorGroups.length} {t.vendors}
-                  </span>
-                  {selectedIds.size > 0 && (
-                    <span className="ml-2 text-primary">
-                      · {t.selected.replace("{count}", String(selectedIds.size))}
-                    </span>
-                  )}
-                </span>
+                <div className="font-medium text-sm">
+                  {t.activeCategory}: {activeCategoryMeta.label}
+                </div>
+                <div className="text-muted-foreground text-sm">{activeCategoryMeta.description}</div>
                 <div className="text-muted-foreground text-xs">{t.compareScopeNote}</div>
-                <div className="text-muted-foreground text-xs">{t.valueScoreFormula}</div>
-                <div className="text-muted-foreground/85 text-xs">{t.dataFreshnessNote}</div>
               </div>
               <div className="flex flex-wrap items-center gap-2">
                 {selectedIds.size > 0 && (
@@ -1162,14 +1229,14 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
                       variant="ghost"
                       size="sm"
                       onClick={clearSelection}
-                      className="text-muted-foreground hover:text-foreground"
+                      className="h-11 px-3 text-muted-foreground hover:text-foreground sm:h-8"
                     >
                       <X className="mr-1 h-3 w-3" />
                       {t.clearSelection}
                     </Button>
                     <Sheet open={compareOpen} onOpenChange={setCompareOpen}>
                       <SheetTrigger asChild>
-                        <Button size="sm" className="gap-2">
+                        <Button size="sm" className="h-11 gap-2 px-3 sm:h-8">
                           <Scale className="h-4 w-4" />
                           {t.compareSelected} ({selectedIds.size})
                         </Button>
@@ -1197,11 +1264,7 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
                     </span>
                   </>
                 )}
-                {(search ||
-                  currencyFilter !== "all" ||
-                  allowanceFilter !== "all" ||
-                  unitMode !== "compact" ||
-                  selectedModels.size > 0) && (
+                {hasFilterState && (
                   <Button
                     variant="ghost"
                     size="sm"
@@ -1212,7 +1275,7 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
                       setSelectedModels(new Set());
                       setUnitMode("compact");
                     }}
-                    className="text-muted-foreground hover:text-foreground"
+                    className="h-11 px-3 text-muted-foreground hover:text-foreground sm:h-8"
                   >
                     <RotateCcw className="mr-1 h-3 w-3" />
                     {t.clearFilters}
@@ -1371,7 +1434,7 @@ function PriceRangeDisplay({
   return (
     <div className={wrapperClass}>
       <span className={`whitespace-nowrap font-bold text-primary tabular-nums ${className}`}>{minPrice}</span>
-      <span className="text-primary/55 text-sm">-</span>
+      <span className="text-muted-foreground text-sm">-</span>
       <span className={`whitespace-nowrap font-bold text-primary tabular-nums ${className}`}>{maxPrice}</span>
     </div>
   );
@@ -1428,7 +1491,7 @@ function ActiveVendorPlanPanel({
   return (
     <div
       className={`rounded-2xl border p-4 transition-colors ${
-        isSelected ? "border-primary/30 bg-primary/6 shadow-sm" : "border-border/70 bg-background"
+        isSelected ? "border-primary/30 bg-primary/5 shadow-sm" : "border-border/70 bg-background"
       }`}
     >
       <div className="flex items-start gap-3">
@@ -1558,7 +1621,7 @@ function VendorPlanDirectoryItem({
   return (
     <div
       className={`border-border/70 border-b px-4 py-4 transition-colors last:border-b-0 ${
-        isSelected ? "bg-primary/6" : "bg-background hover:bg-secondary/20"
+        isSelected ? "bg-primary/5" : "bg-background hover:bg-secondary/20"
       }`}
     >
       <div className="flex items-start gap-3">
@@ -1703,9 +1766,9 @@ function VendorGroupCard({
   const showSummaryAside = selectedPlanCount > 0 || miniChartData.length > 1;
 
   const getRankBadge = (rank: number) => {
-    if (rank === 1) return <Badge className="bg-yellow-500 text-yellow-950">TOP 1</Badge>;
-    if (rank === 2) return <Badge className="bg-zinc-400 text-zinc-950">TOP 2</Badge>;
-    if (rank === 3) return <Badge className="bg-amber-700 text-amber-100">TOP 3</Badge>;
+    if (rank === 1) return <Badge className="bg-primary text-primary-foreground">TOP 1</Badge>;
+    if (rank === 2) return <Badge variant="secondary">TOP 2</Badge>;
+    if (rank === 3) return <Badge variant="outline">TOP 3</Badge>;
     return null;
   };
 
@@ -2036,7 +2099,7 @@ function PlatformDetailsDialog({
     switch (category) {
       case "model-subscription":
         return (
-          <Badge variant="outline" className="border-blue-500/30 bg-blue-500/10 text-blue-400">
+          <Badge variant="outline" className="border-border bg-secondary/50 text-secondary-foreground">
             {t.categoryBadgeModel}
           </Badge>
         );
@@ -2048,13 +2111,13 @@ function PlatformDetailsDialog({
         );
       case "token-plan":
         return (
-          <Badge variant="outline" className="border-yellow-500/30 bg-yellow-500/10 text-yellow-400">
+          <Badge variant="outline" className="border-border bg-secondary/50 text-secondary-foreground">
             {t.categoryBadgeToken}
           </Badge>
         );
       case "image-generation":
         return (
-          <Badge variant="outline" className="border-purple-500/30 bg-purple-500/10 text-purple-400">
+          <Badge variant="outline" className="border-border bg-secondary/50 text-secondary-foreground">
             {t.categoryBadgeImage}
           </Badge>
         );
@@ -2279,7 +2342,7 @@ function PlatformDetailsDialog({
                     >
                       <div className="absolute top-5 left-5 flex h-6 w-6 items-center justify-center rounded-full bg-secondary">
                         {event.impact === "value-up" && <TrendingUp className="h-3.5 w-3.5 text-primary" />}
-                        {event.impact === "value-down" && <TrendingDown className="h-3.5 w-3.5 text-red-500" />}
+                        {event.impact === "value-down" && <TrendingDown className="h-3.5 w-3.5 text-destructive" />}
                         {event.impact === "neutral" && <Minus className="h-3.5 w-3.5 text-muted-foreground" />}
                       </div>
                       <div className="flex flex-wrap items-center gap-2">
@@ -2404,7 +2467,7 @@ function ComparePanel({ platforms, bestValueId, unitMode, lang }: ComparePanelPr
                     <div
                       key={p.id}
                       className={`flex items-center justify-between rounded-lg border p-3 ${
-                        isBest ? "border-primary/40 bg-primary/8" : "border-border bg-card"
+                        isBest ? "border-primary/40 bg-primary/5" : "border-border bg-card"
                       }`}
                     >
                       <div className="flex items-center gap-2">
@@ -2460,7 +2523,7 @@ function ComparePanel({ platforms, bestValueId, unitMode, lang }: ComparePanelPr
               <div
                 key={p.id}
                 className={`flex items-center justify-between rounded-lg border p-3 ${
-                  p.id === getBestPriceId() ? "border-primary/40 bg-primary/8" : "border-border bg-card"
+                  p.id === getBestPriceId() ? "border-primary/40 bg-primary/5" : "border-border bg-card"
                 }`}
               >
                 <div className="flex items-center gap-2">
@@ -2500,7 +2563,7 @@ function ComparePanel({ platforms, bestValueId, unitMode, lang }: ComparePanelPr
                     <PlatformIcon vendor={p.vendor} className="h-6 w-6 text-xs" />
                     <span className="text-xs">{p.name}</span>
                     {p.id === bestValueId && (
-                      <Badge className="bg-yellow-500 text-xs text-yellow-950">{t.recommended}</Badge>
+                      <Badge className="bg-primary text-xs text-primary-foreground">{t.recommended}</Badge>
                     )}
                   </div>
                 </th>
