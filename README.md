@@ -1,5 +1,6 @@
 # PlanTrack
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/limitcool/plantrack)
 [![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=nextdotjs&logoColor=white)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
