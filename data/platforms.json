@@ -144,6 +144,279 @@
     ]
   },
   {
+    "id": "crof",
+    "slug": "crof",
+    "name": "CROF",
+    "vendor": "CROF",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "$5/月起",
+    "priceValue": 5.0,
+    "priceCurrency": "USD",
+    "summary": "CROF 已从 TokenPlan 表格导入，适合继续补充编程套餐的官网抓取。",
+    "description": "该条目当前来自 TokenPlan 表格导入，已保留套餐价格、调用配额和支持模型线索，后续需要补充官网直抓。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "支持 4 个代表模型",
+    "officialUrl": "https://crof.ai/pricing",
+    "tags": [
+      "CROF",
+      "TokenPlan 导入",
+      "Coding Plan"
+    ],
+    "coverageNotes": [
+      "TokenPlan 表格导入",
+      "官方来源：https://crof.ai/pricing"
+    ],
+    "supportedModels": [
+      "DeepSeek-V4",
+      "DeepSeek-V3.2",
+      "Kimi-K2.6",
+      "Kimi-K2.5",
+      "MiniMax-M2.5",
+      "GLM-5.1",
+      "GLM-5",
+      "GLM-4.7",
+      "GLM-4.7-Flash",
+      "qwen3.6-27b",
+      "qwen3.5-397b-a17b",
+      "qwen3.5-9b"
+    ],
+    "metrics": {
+      "quota": "Hobby 500/day；Pro 1,000/day；Intermediate 2,500/day；Scale 7,500/day；Max 15,000/day",
+      "billing": "固定月费 / 支持 PAYG",
+      "lastChecked": "2026-05-08",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-08",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 $5/月 / $10/月 / $20/月 更新为 $5/月起，计费方式为 固定月费 / 支持 PAYG。",
+        "impact": "neutral",
+        "sourceUrl": "https://crof.ai/pricing"
+      },
+      {
+        "date": "2026-05-08",
+        "type": "coverage",
+        "title": "新增 TokenPlan 表格导入",
+        "summary": "从 TokenPlan 表格导入，后续需要补官网直抓与价格变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://crof.ai/pricing"
+      }
+    ]
+  },
+  {
+    "id": "canopy-coding-plan",
+    "slug": "canopy-coding-plan",
+    "name": "Canopy Coding Plan",
+    "vendor": "Canopy",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "$15/月 / $30/月",
+    "priceValue": 15.0,
+    "priceCurrency": "USD",
+    "summary": "Canopy Coding Plan 已从 TokenPlan 表格导入，适合继续补充编程套餐的官网抓取。",
+    "description": "该条目当前来自 TokenPlan 表格导入，已保留套餐价格、调用配额和支持模型线索，后续需要补充官网直抓。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "首周免费 · 500 req / day",
+    "officialUrl": "",
+    "tags": [
+      "Canopy",
+      "TokenPlan 导入",
+      "Coding Plan"
+    ],
+    "coverageNotes": [
+      "TokenPlan 表格导入",
+      "待接入官网直抓"
+    ],
+    "supportedModels": [
+      "Mimo-V2-Flash",
+      "MiniMax M2.5"
+    ],
+    "metrics": {
+      "quota": "10000 req / mo",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-08",
+      "changeCount": 1,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-08",
+        "type": "coverage",
+        "title": "新增 TokenPlan 表格导入",
+        "summary": "从 TokenPlan 表格导入，后续需要补官网直抓与价格变动记录。",
+        "impact": "neutral",
+        "sourceUrl": ""
+      }
+    ]
+  },
+  {
+    "id": "chutes",
+    "slug": "chutes",
+    "name": "Chutes",
+    "vendor": "Chutes",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "$3/月起",
+    "priceValue": 3.0,
+    "priceCurrency": "USD",
+    "summary": "Chutes 已从 TokenPlan 表格导入，适合继续补充编程套餐的官网抓取。",
+    "description": "该条目当前来自 TokenPlan 表格导入，已保留套餐价格、调用配额和支持模型线索，后续需要补充官网直抓。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "支持 4 个代表模型",
+    "officialUrl": "https://chutes.ai/pricing",
+    "tags": [
+      "Chutes",
+      "TokenPlan 导入",
+      "Coding Plan"
+    ],
+    "coverageNotes": [
+      "TokenPlan 表格导入",
+      "官方来源：https://chutes.ai/pricing"
+    ],
+    "supportedModels": [
+      "Kimi-K2.5",
+      "Kimi-K2.6",
+      "MiniMax-M2.5",
+      "GLM-5",
+      "GLM-5.1",
+      "Qwen-3.5"
+    ],
+    "metrics": {
+      "quota": "Base / Plus / Pro 套餐，超额请求按 PAYG 结算",
+      "billing": "固定月费 / 超额 PAYG",
+      "lastChecked": "2026-05-08",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-08",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 $10/月 / $20/月 更新为 $3/月起，计费方式为 固定月费 / 超额 PAYG。",
+        "impact": "value-up",
+        "sourceUrl": "https://chutes.ai/pricing"
+      },
+      {
+        "date": "2026-05-08",
+        "type": "coverage",
+        "title": "新增 TokenPlan 表格导入",
+        "summary": "从 TokenPlan 表格导入，后续需要补官网直抓与价格变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://chutes.ai/pricing"
+      }
+    ]
+  },
+  {
+    "id": "command-code",
+    "slug": "command-code",
+    "name": "Command Code",
+    "vendor": "Command Code",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "$1/月起",
+    "priceValue": 1.0,
+    "priceCurrency": "USD",
+    "summary": "Command Code 已从 TokenPlan 表格导入，适合继续补充编程套餐的官网抓取。",
+    "description": "该条目当前来自 TokenPlan 表格导入，已保留套餐价格、调用配额和支持模型线索，后续需要补充官网直抓。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "支持 4 个代表模型",
+    "officialUrl": "https://commandcode.ai/pricing",
+    "tags": [
+      "Command Code",
+      "TokenPlan 导入",
+      "Coding Plan"
+    ],
+    "coverageNotes": [
+      "TokenPlan 表格导入",
+      "官方来源：https://commandcode.ai/pricing"
+    ],
+    "supportedModels": [
+      "GPT-5",
+      "Claude Opus 4.7",
+      "DeepSeek-V4"
+    ],
+    "metrics": {
+      "quota": "Go ~15K requests / 月；Pro ~25K requests / 月；Max ~110K requests / 月；Ultra ~200K requests / 月",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-08",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-08",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 $1/月 / $15/月 / $200/月 更新为 $1/月起，计费方式为 固定月费。",
+        "impact": "neutral",
+        "sourceUrl": "https://commandcode.ai/pricing"
+      },
+      {
+        "date": "2026-05-08",
+        "type": "coverage",
+        "title": "新增 TokenPlan 表格导入",
+        "summary": "从 TokenPlan 表格导入，后续需要补官网直抓与价格变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://commandcode.ai/pricing"
+      }
+    ]
+  },
+  {
+    "id": "fire-pass",
+    "slug": "fire-pass",
+    "name": "Fire-Pass",
+    "vendor": "Fire-Pass",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "$7/周",
+    "priceValue": 7.0,
+    "priceCurrency": "USD",
+    "summary": "Fire-Pass 已从 TokenPlan 表格导入，适合继续补充编程套餐的官网抓取。",
+    "description": "该条目当前来自 TokenPlan 表格导入，已保留套餐价格、调用配额和支持模型线索，后续需要补充官网直抓。",
+    "status": "deprecated",
+    "valueLane": "Coding plan",
+    "highlight": "首周免费 · 无限",
+    "officialUrl": "https://fireworks.ai/",
+    "tags": [
+      "Fire-Pass",
+      "TokenPlan 导入",
+      "Coding Plan"
+    ],
+    "coverageNotes": [
+      "TokenPlan 表格导入",
+      "待接入官网直抓"
+    ],
+    "supportedModels": [
+      "K2.5 Turbo"
+    ],
+    "metrics": {
+      "quota": "无限 / Unlimit",
+      "billing": "固定周费",
+      "lastChecked": "2026-05-08",
+      "changeCount": 1,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-08",
+        "type": "coverage",
+        "title": "新增 TokenPlan 表格导入",
+        "summary": "从 TokenPlan 表格导入，后续需要补官网直抓与价格变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://fireworks.ai/"
+      }
+    ]
+  },
+  {
     "id": "kimi-allegro",
     "slug": "kimi-allegro",
     "name": "Kimi Allegro",
@@ -481,6 +754,620 @@
     ],
     "supportedModels": [
       "MiniMax-M2.7"
+    ]
+  },
+  {
+    "id": "nanogpt",
+    "slug": "nanogpt",
+    "name": "NanoGPT",
+    "vendor": "NanoGPT",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "$8/月",
+    "priceValue": 8.0,
+    "priceCurrency": "USD",
+    "summary": "NanoGPT 已从 TokenPlan 表格导入，适合继续补充编程套餐的官网抓取。",
+    "description": "该条目当前来自 TokenPlan 表格导入，已保留套餐价格、调用配额和支持模型线索，后续需要补充官网直抓。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "支持 4 个代表模型",
+    "officialUrl": "https://nano-gpt.com/subscription",
+    "tags": [
+      "NanoGPT",
+      "TokenPlan 导入",
+      "Coding Plan"
+    ],
+    "coverageNotes": [
+      "TokenPlan 表格导入",
+      "待接入官网直抓"
+    ],
+    "supportedModels": [
+      "K2.6",
+      "GLM 5",
+      "MiniMax M2.5",
+      "K2.5",
+      "GLM 5.1",
+      "Qwen3.5 397B"
+    ],
+    "metrics": {
+      "quota": "6000w token / wk",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-08",
+      "changeCount": 1,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-08",
+        "type": "coverage",
+        "title": "新增 TokenPlan 表格导入",
+        "summary": "从 TokenPlan 表格导入，后续需要补官网直抓与价格变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://nano-gpt.com/subscription"
+      }
+    ]
+  },
+  {
+    "id": "neuralwatt",
+    "slug": "neuralwatt",
+    "name": "NeuralWatt",
+    "vendor": "NeuralWatt",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "$20/月起",
+    "priceValue": 20.0,
+    "priceCurrency": "USD",
+    "summary": "NeuralWatt 已从 TokenPlan 表格导入，适合继续补充编程套餐的官网抓取。",
+    "description": "该条目当前来自 TokenPlan 表格导入，已保留套餐价格、调用配额和支持模型线索，后续需要补充官网直抓。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "$5 额度",
+    "officialUrl": "https://portal.neuralwatt.com/pricing",
+    "tags": [
+      "NeuralWatt",
+      "TokenPlan 导入",
+      "Coding Plan"
+    ],
+    "coverageNotes": [
+      "TokenPlan 表格导入",
+      "官方来源：https://portal.neuralwatt.com/pricing"
+    ],
+    "supportedModels": [
+      "Kimi-K2.5",
+      "Kimi-K2.6",
+      "MiniMax-M2.5",
+      "GLM-5",
+      "GLM-5.1",
+      "Qwen3.5 397B",
+      "Qwen3.6 35B"
+    ],
+    "metrics": {
+      "quota": "Basic 6 kWh / 月；Standard 16 kWh / 月；Pro 33 kWh / 月",
+      "billing": "固定月费 / 超额 $5/kWh",
+      "lastChecked": "2026-05-08",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-08",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 $ 20/月 / $ 50/月 / $ 100/月 更新为 $20/月起，计费方式为 固定月费 / 超额 $5/kWh。",
+        "impact": "neutral",
+        "sourceUrl": "https://portal.neuralwatt.com/pricing"
+      },
+      {
+        "date": "2026-05-08",
+        "type": "coverage",
+        "title": "新增 TokenPlan 表格导入",
+        "summary": "从 TokenPlan 表格导入，后续需要补官网直抓与价格变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://portal.neuralwatt.com/pricing"
+      }
+    ]
+  },
+  {
+    "id": "ollama-cloud",
+    "slug": "ollama-cloud",
+    "name": "Ollama Cloud",
+    "vendor": "Ollama",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "$20/月起",
+    "priceValue": 20.0,
+    "priceCurrency": "USD",
+    "summary": "Ollama Cloud 已从 TokenPlan 表格导入，适合继续补充编程套餐的官网抓取。",
+    "description": "该条目当前来自 TokenPlan 表格导入，已保留套餐价格、调用配额和支持模型线索，后续需要补充官网直抓。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "支持 4 个代表模型",
+    "officialUrl": "https://ollama.com/pricing",
+    "tags": [
+      "Ollama",
+      "TokenPlan 导入",
+      "Coding Plan"
+    ],
+    "coverageNotes": [
+      "TokenPlan 表格导入",
+      "官方来源：https://ollama.com/pricing"
+    ],
+    "supportedModels": [
+      "MiniMax M2.7",
+      "K2.6",
+      "MiniMax M2.5",
+      "K2.5",
+      "Gemma 4 31B",
+      "GLM 5.1"
+    ],
+    "metrics": {
+      "quota": "Pro 50x Free 云端用量；Max 5x Pro 云端用量",
+      "billing": "固定月费 / 支持年付",
+      "lastChecked": "2026-05-08",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-08",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 $20/月 / $100/月 更新为 $20/月起，计费方式为 固定月费 / 支持年付。",
+        "impact": "neutral",
+        "sourceUrl": "https://ollama.com/pricing"
+      },
+      {
+        "date": "2026-05-08",
+        "type": "coverage",
+        "title": "新增 TokenPlan 表格导入",
+        "summary": "从 TokenPlan 表格导入，后续需要补官网直抓与价格变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://ollama.com/pricing"
+      }
+    ]
+  },
+  {
+    "id": "synthetic",
+    "slug": "synthetic",
+    "name": "Synthetic",
+    "vendor": "Synthetic",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "$30/月",
+    "priceValue": 30.0,
+    "priceCurrency": "USD",
+    "summary": "Synthetic 已从 TokenPlan 表格导入，适合继续补充编程套餐的官网抓取。",
+    "description": "该条目当前来自 TokenPlan 表格导入，已保留套餐价格、调用配额和支持模型线索，后续需要补充官网直抓。",
+    "status": "deprecated",
+    "valueLane": "Coding plan",
+    "highlight": "支持 4 个代表模型",
+    "officialUrl": "https://synthetic.new/pricing",
+    "tags": [
+      "Synthetic",
+      "TokenPlan 导入",
+      "Coding Plan"
+    ],
+    "coverageNotes": [
+      "TokenPlan 表格导入",
+      "官方来源：https://synthetic.new/pricing"
+    ],
+    "supportedModels": [
+      "DeepSeek-R1",
+      "DeepSeek-V3",
+      "DeepSeek-V3.2",
+      "Kimi-K2.5",
+      "Kimi-K2.6",
+      "MiniMax-M2.5",
+      "GLM-4.7",
+      "GLM-4.7-Flash",
+      "GLM-5",
+      "GLM-5.1",
+      "Qwen3-235B-A22B",
+      "Qwen3-Coder",
+      "Qwen3.5-397B-A17B",
+      "Llama-3.3",
+      "Llama-3.2",
+      "Llama-3.1"
+    ],
+    "metrics": {
+      "quota": "1 pack: 500 requests / 5hr",
+      "billing": "固定月费 / 支持日付",
+      "lastChecked": "2026-05-08",
+      "changeCount": 1,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-08",
+        "type": "coverage",
+        "title": "新增 TokenPlan 表格导入",
+        "summary": "从 TokenPlan 表格导入，后续需要补官网直抓与价格变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://synthetic.new/pricing"
+      }
+    ]
+  },
+  {
+    "id": "zenmux-builder",
+    "slug": "zenmux-builder",
+    "name": "ZenMux Builder",
+    "vendor": "ZenMux Builder",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "$20/月起",
+    "priceValue": 20.0,
+    "priceCurrency": "USD",
+    "summary": "ZenMux Builder 已从 TokenPlan 表格导入，适合继续补充编程套餐的官网抓取。",
+    "description": "该条目当前来自 TokenPlan 表格导入，已保留套餐价格、调用配额和支持模型线索，后续需要补充官网直抓。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "50 Flow / 5hr",
+    "officialUrl": "https://zenmux.ai/pricing/subscription",
+    "tags": [
+      "ZenMux Builder",
+      "TokenPlan 导入",
+      "Coding Plan"
+    ],
+    "coverageNotes": [
+      "TokenPlan 表格导入",
+      "官方来源：https://zenmux.ai/pricing/subscription"
+    ],
+    "supportedModels": [
+      "GPT-5",
+      "GPT-5.2",
+      "Claude Sonnet 4",
+      "Claude Sonnet 4.6",
+      "Claude Opus 4",
+      "Claude Opus 4.7",
+      "Gemini 3 Pro",
+      "Grok-4",
+      "Grok-4.1"
+    ],
+    "metrics": {
+      "quota": "Pro 50 Flows / 5hr；Max 300 Flows / 5hr；Ultra 800 Flows / 5hr",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-08",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-08",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 $20/月 / $100/月 / $200/月 更新为 $20/月起，计费方式为 固定月费。",
+        "impact": "neutral",
+        "sourceUrl": "https://zenmux.ai/pricing/subscription"
+      },
+      {
+        "date": "2026-05-08",
+        "type": "coverage",
+        "title": "新增 TokenPlan 表格导入",
+        "summary": "从 TokenPlan 表格导入，后续需要补官网直抓与价格变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://zenmux.ai/pricing/subscription"
+      }
+    ]
+  },
+  {
+    "id": "apertis-a",
+    "slug": "apertis-a",
+    "name": "apertis.a",
+    "vendor": "apertis.a",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "$11/月起",
+    "priceValue": 11.0,
+    "priceCurrency": "USD",
+    "summary": "apertis.a 已从 TokenPlan 表格导入，适合继续补充编程套餐的官网抓取。",
+    "description": "该条目当前来自 TokenPlan 表格导入，已保留套餐价格、调用配额和支持模型线索，后续需要补充官网直抓。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "支持 4 个代表模型",
+    "officialUrl": "https://apertis.ai/subscribe",
+    "tags": [
+      "apertis.a",
+      "TokenPlan 导入",
+      "Coding Plan"
+    ],
+    "coverageNotes": [
+      "TokenPlan 表格导入",
+      "官方来源：https://apertis.ai/subscribe"
+    ],
+    "supportedModels": [
+      "GPT-5.4",
+      "GPT-5.1",
+      "GPT-5.3",
+      "GPT-5.5",
+      "GPT-5.2",
+      "GPT-5",
+      "Claude Opus 4.6",
+      "Claude Haiku 4.5",
+      "Claude Sonnet 4.5",
+      "Claude Sonnet 4.6",
+      "Claude Opus 4.5",
+      "Claude Opus 4.7",
+      "Claude Opus 4.1",
+      "Gemini 3.1 Pro",
+      "Gemini 3",
+      "Gemini 2.5 Flash",
+      "Gemini 3.1 Flash",
+      "Gemini 3 Flash",
+      "DeepSeek-V3.2",
+      "DeepSeek-V3.1",
+      "DeepSeek-V4",
+      "Kimi-K2-Thinking",
+      "Kimi-K2.5",
+      "Kimi-K2.6",
+      "MiniMax-M2.1",
+      "MiniMax-M2",
+      "MiniMax-M2.7",
+      "MiniMax-M2.5",
+      "GLM-5",
+      "GLM-4.6",
+      "GLM-5.1",
+      "GLM-4.7",
+      "Qwen3.5-Flash",
+      "Qwen3.5-35B-A3B",
+      "Qwen3.5-27B",
+      "Qwen3.5-122B-A10B",
+      "Qwen3.5 Plus",
+      "Qwen3.5 397B A17B",
+      "Qwen3.6 Plus"
+    ],
+    "metrics": {
+      "quota": "Lite 600 quotas / 月；Pro 900 quotas / 月；Plus 1,500 quotas / 月；Max 3,000 quotas / 月",
+      "billing": "固定月费 / 支持季付年付",
+      "lastChecked": "2026-05-08",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-08",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 $11/月 / $22.75/月 / $54/月 更新为 $11/月起，计费方式为 固定月费 / 支持季付年付。",
+        "impact": "neutral",
+        "sourceUrl": "https://apertis.ai/subscribe"
+      },
+      {
+        "date": "2026-05-08",
+        "type": "coverage",
+        "title": "新增 TokenPlan 表格导入",
+        "summary": "从 TokenPlan 表格导入，后续需要补官网直抓与价格变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://apertis.ai/subscribe"
+      }
+    ]
+  },
+  {
+    "id": "arliai",
+    "slug": "arliai",
+    "name": "arliai",
+    "vendor": "arliai",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "$10/月起",
+    "priceValue": 10.0,
+    "priceCurrency": "USD",
+    "summary": "arliai 已从 TokenPlan 表格导入，适合继续补充编程套餐的官网抓取。",
+    "description": "该条目当前来自 TokenPlan 表格导入，已保留套餐价格、调用配额和支持模型线索，后续需要补充官网直抓。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "支持 1 个代表模型",
+    "officialUrl": "https://www.arliai.com/pricing",
+    "tags": [
+      "arliai",
+      "TokenPlan 导入",
+      "Coding Plan"
+    ],
+    "coverageNotes": [
+      "TokenPlan 表格导入",
+      "官方来源：https://www.arliai.com/pricing"
+    ],
+    "supportedModels": [
+      "Qwen-3.5-27B"
+    ],
+    "metrics": {
+      "quota": "Starter/Core/Advanced/Professional/Ultimate 均为无限 Tokens + 无限 Requests",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-08",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-08",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 $10/月 / $15/月 / $25/月 更新为 $10/月起，计费方式为 固定月费。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.arliai.com/pricing"
+      },
+      {
+        "date": "2026-05-08",
+        "type": "coverage",
+        "title": "新增 TokenPlan 表格导入",
+        "summary": "从 TokenPlan 表格导入，后续需要补官网直抓与价格变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.arliai.com/pricing"
+      }
+    ]
+  },
+  {
+    "id": "io-net",
+    "slug": "io-net",
+    "name": "io.net",
+    "vendor": "io.net",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "$13.99/月起",
+    "priceValue": 13.99,
+    "priceCurrency": "USD",
+    "summary": "io.net 已从 TokenPlan 表格导入，适合继续补充编程套餐的官网抓取。",
+    "description": "该条目当前来自 TokenPlan 表格导入，已保留套餐价格、调用配额和支持模型线索，后续需要补充官网直抓。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "支持 4 个代表模型",
+    "officialUrl": "https://ai.io.net/ai/models",
+    "tags": [
+      "io.net",
+      "TokenPlan 导入",
+      "Coding Plan"
+    ],
+    "coverageNotes": [
+      "TokenPlan 表格导入",
+      "官方来源：https://ai.io.net/ai/models"
+    ],
+    "supportedModels": [
+      "K2.6",
+      "GLM 5",
+      "MiniMax M2.5",
+      "K2.5",
+      "Ds v3.2",
+      "GLM 5.1"
+    ],
+    "metrics": {
+      "quota": "Professional 含 $15/月 credits；Developer 含 $150/月 credits",
+      "billing": "固定月费 / 超额 PAYG",
+      "lastChecked": "2026-05-08",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-08",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 $13.99/月 / $135/月 更新为 $13.99/月起，计费方式为 固定月费 / 超额 PAYG。",
+        "impact": "neutral",
+        "sourceUrl": "https://ai.io.net/ai/models"
+      },
+      {
+        "date": "2026-05-08",
+        "type": "coverage",
+        "title": "新增 TokenPlan 表格导入",
+        "summary": "从 TokenPlan 表格导入，后续需要补官网直抓与价格变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://ai.io.net/ai/models"
+      }
+    ]
+  },
+  {
+    "id": "wafer-pass",
+    "slug": "wafer-pass",
+    "name": "wafer-pass",
+    "vendor": "wafer-pass",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "$3/周起",
+    "priceValue": 3.0,
+    "priceCurrency": "USD",
+    "summary": "wafer-pass 已从 TokenPlan 表格导入，适合继续补充编程套餐的官网抓取。",
+    "description": "该条目当前来自 TokenPlan 表格导入，已保留套餐价格、调用配额和支持模型线索，后续需要补充官网直抓。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "支持 2 个代表模型",
+    "officialUrl": "https://www.wafer.ai/",
+    "tags": [
+      "wafer-pass",
+      "TokenPlan 导入",
+      "Coding Plan"
+    ],
+    "coverageNotes": [
+      "TokenPlan 表格导入",
+      "官方来源：https://www.wafer.ai/"
+    ],
+    "supportedModels": [
+      "DeepSeekV4",
+      "DeepSeek-V4",
+      "MiniMax-M2.7",
+      "GLM5.1",
+      "GLM-5.1",
+      "Qwen3.5-397B",
+      "Qwen3.5-397B-A17B"
+    ],
+    "metrics": {
+      "quota": "Lite 100 req / 5hr；Starter 1,000 req / 5hr；Privacy 2,000 req / 5hr",
+      "billing": "固定周费",
+      "lastChecked": "2026-05-08",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-08",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 $10/周 更新为 $3/周起，计费方式为 固定周费。",
+        "impact": "value-up",
+        "sourceUrl": "https://www.wafer.ai/"
+      },
+      {
+        "date": "2026-05-08",
+        "type": "coverage",
+        "title": "新增 TokenPlan 表格导入",
+        "summary": "从 TokenPlan 表格导入，后续需要补官网直抓与价格变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://www.wafer.ai/"
+      }
+    ]
+  },
+  {
+    "id": "alaya-code",
+    "slug": "alaya-code",
+    "name": "九章云极 Alaya Code",
+    "vendor": "九章云极",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥39/月起",
+    "priceValue": 39.0,
+    "priceCurrency": "CNY",
+    "summary": "九章云极 Alaya Code 已从 TokenPlan 表格导入，适合继续补充编程套餐的官网抓取。",
+    "description": "该条目当前来自 TokenPlan 表格导入，已保留套餐价格、调用配额和支持模型线索，后续需要补充官网直抓。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "支持 3 个代表模型",
+    "officialUrl": "https://codingplan.alayanew.com/",
+    "tags": [
+      "九章云极",
+      "TokenPlan 导入",
+      "Coding Plan"
+    ],
+    "coverageNotes": [
+      "TokenPlan 表格导入",
+      "官方来源：https://codingplan.alayanew.com/"
+    ],
+    "supportedModels": [
+      "DeepSeek-V4",
+      "GLM-5",
+      "GLM-5.1"
+    ],
+    "metrics": {
+      "quota": "Lite 3x Claude Code 标准用量；Plus 5x Lite；Max 20x Lite",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-08",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-08",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 ￥39/月 / ￥199/月 / ￥699/月 更新为 ¥39/月起，计费方式为 固定月费。",
+        "impact": "neutral",
+        "sourceUrl": "https://codingplan.alayanew.com/"
+      },
+      {
+        "date": "2026-05-08",
+        "type": "coverage",
+        "title": "新增 TokenPlan 表格导入",
+        "summary": "从 TokenPlan 表格导入，后续需要补官网直抓与价格变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://codingplan.alayanew.com/"
+      }
     ]
   },
   {
@@ -1832,6 +2719,61 @@
     ]
   },
   {
+    "id": "step-plan",
+    "slug": "step-plan",
+    "name": "阶跃星辰 Step Plan",
+    "vendor": "阶跃星辰",
+    "category": "coding-plan",
+    "subcategory": "编程订阅",
+    "priceDisplay": "¥38/月起",
+    "priceValue": 38.0,
+    "priceCurrency": "CNY",
+    "summary": "阶跃星辰 Step Plan 已从 TokenPlan 表格导入，适合继续补充编程套餐的官网抓取。",
+    "description": "该条目当前来自 TokenPlan 表格导入，已保留套餐价格、调用配额和支持模型线索，后续需要补充官网直抓。",
+    "status": "tracked",
+    "valueLane": "Coding plan",
+    "highlight": "支持 2 个代表模型",
+    "officialUrl": "https://platform.stepfun.com/step-plan",
+    "tags": [
+      "阶跃星辰",
+      "TokenPlan 导入",
+      "Coding Plan"
+    ],
+    "coverageNotes": [
+      "TokenPlan 表格导入",
+      "官方来源：https://platform.stepfun.com/step-plan"
+    ],
+    "supportedModels": [
+      "step-3.5-flash-2603",
+      "step-3.5-flash"
+    ],
+    "metrics": {
+      "quota": "Flash Mini 100 Prompt / 5hr（~1,500 次调用）；Flash Plus 400 Prompt / 5hr（~6,000 次调用）；Flash Pro 1,500 Prompt / 5hr（~22,500 次调用）；Flash Max 5,000 Prompt / 5hr（~75,000 次调用）",
+      "billing": "固定月费 / 支持月付季付年付",
+      "lastChecked": "2026-05-08",
+      "changeCount": 2,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-08",
+        "type": "price",
+        "title": "官方价格更新",
+        "summary": "官方来源价格从 ￥49/月 / ￥99/月 / ￥199/月 更新为 ¥38/月起，计费方式为 固定月费 / 支持月付季付年付。",
+        "impact": "value-up",
+        "sourceUrl": "https://platform.stepfun.com/step-plan"
+      },
+      {
+        "date": "2026-05-08",
+        "type": "coverage",
+        "title": "新增 TokenPlan 表格导入",
+        "summary": "从 TokenPlan 表格导入，后续需要补官网直抓与价格变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://platform.stepfun.com/step-plan"
+      }
+    ]
+  },
+  {
     "id": "aliyun-coding-lite-stopped",
     "slug": "aliyun-coding-lite-stopped",
     "name": "阿里云百炼 Lite",
@@ -1955,6 +2897,53 @@
       "Qwen3-coder-next",
       "Qwen3-coder-plus",
       "GLM-4.7"
+    ]
+  },
+  {
+    "id": "canopy-token-plan",
+    "slug": "canopy-token-plan",
+    "name": "Canopy Token Plan",
+    "vendor": "Canopy",
+    "category": "token-plan",
+    "subcategory": "Token / Credits",
+    "priceDisplay": "$15.99/月 / $59.99/月 / $129.99/月",
+    "priceValue": 15.99,
+    "priceCurrency": "USD",
+    "summary": "Canopy Token Plan 已从 TokenPlan 表格导入，待补官网直抓与正式额度口径。",
+    "description": "该条目当前来自 TokenPlan 表格导入，已保留价格、额度和支持模型线索，后续需要补充官网直抓。",
+    "status": "tracked",
+    "valueLane": "Token plan",
+    "highlight": "首周免费 · 50M高速Token + 无限",
+    "officialUrl": "https://cloud.canopywave.io/models",
+    "tags": [
+      "Canopy",
+      "TokenPlan 导入",
+      "Token Plan"
+    ],
+    "coverageNotes": [
+      "TokenPlan 表格导入",
+      "待接入官网直抓"
+    ],
+    "supportedModels": [
+      "K2.6",
+      "MiniMax M2.5"
+    ],
+    "metrics": {
+      "quota": "50M高速Token + 无限；200M高速Token + 无限；500M高速Token + 无限",
+      "billing": "固定月费",
+      "lastChecked": "2026-05-08",
+      "changeCount": 1,
+      "limits": []
+    },
+    "history": [
+      {
+        "date": "2026-05-08",
+        "type": "coverage",
+        "title": "新增 TokenPlan 表格导入",
+        "summary": "从 TokenPlan 表格导入，后续需要补官网直抓与价格变动记录。",
+        "impact": "neutral",
+        "sourceUrl": "https://cloud.canopywave.io/models"
+      }
     ]
   },
   {
