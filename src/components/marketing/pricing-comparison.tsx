@@ -51,7 +51,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Input } from "@/components/ui/input";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -563,6 +563,14 @@ function detectModelFamily(label: string): { key: string; label: string } {
   return { key: "other", label: "Other" };
 }
 
+function slugify(value: string): string {
+  return value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "") || "section";
+}
+
 function groupModelFilters(items: ModelFilterItem[]): ModelFilterGroup[] {
   const groups = new Map<string, ModelFilterGroup>();
 
@@ -952,6 +960,7 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
                   type="button"
                   key={cat.value}
                   onClick={() => setCategory(cat.value)}
+                  aria-pressed={category === cat.value}
                   className={`flex items-center gap-2 rounded-2xl border px-4 py-2 font-medium text-sm transition-all ${
                     category === cat.value
                       ? "border-primary bg-primary text-primary-foreground shadow-sm"
@@ -1102,6 +1111,7 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
                           key={group.key}
                           type="button"
                           onClick={() => setActiveModelFamily(group.key)}
+                          aria-pressed={isActiveFamily}
                           className={`inline-flex min-h-11 items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-colors sm:min-h-0 ${
                             isActiveFamily
                               ? "border-primary bg-primary/10 text-foreground shadow-sm"
@@ -1181,6 +1191,7 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
                                 key={item.key}
                                 type="button"
                                 onClick={() => toggleModelKey(item.key)}
+                                aria-pressed={active}
                                 className={`inline-flex min-h-11 max-w-full items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-colors sm:min-h-0 ${
                                   active
                                     ? "border-primary bg-primary text-primary-foreground"
@@ -1454,9 +1465,7 @@ function SummaryMetricCard({
   return (
     <div
       className={`flex min-h-[104px] flex-col justify-between rounded-2xl border p-3 ${
-        emphasized
-          ? "border-primary/15 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent"
-          : "border-border/70 bg-secondary/30"
+        emphasized ? "border-primary/15 bg-primary/5" : "border-border/70 bg-secondary/30"
       }`}
     >
       <div className="space-y-2">
@@ -1842,7 +1851,7 @@ function VendorGroupCard({
       </CardHeader>
       <CardContent className="space-y-5 pt-1">
         <div className={`grid gap-3 ${showSummaryAside ? "lg:grid-cols-[minmax(0,1.25fr)_minmax(164px,0.82fr)]" : ""}`}>
-          <div className="rounded-2xl border border-primary/15 bg-gradient-to-r from-primary/10 via-primary/5 to-transparent p-4">
+          <div className="rounded-2xl border border-primary/15 bg-primary/5 p-4">
             <div className={microLabelClass}>{t.unifiedRmb}</div>
             <PriceRangeDisplay
               minPrice={group.minPriceDisplay}
@@ -2021,7 +2030,7 @@ function VendorGroupCard({
 
           <div className="space-y-3">
             <ScrollArea className="w-full whitespace-nowrap">
-              <div className="flex gap-2 pb-1">
+              <div className="inline-flex min-w-max gap-2 pb-2 pr-2">
                 {group.plans.map((plan) => {
                   const isActive = plan.id === activePlan.id;
                   const isSelected = selectedIds.has(plan.id);
@@ -2030,6 +2039,7 @@ function VendorGroupCard({
                       key={plan.id}
                       type="button"
                       onClick={() => setActivePlanId(plan.id)}
+                      aria-pressed={isActive}
                       className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-colors ${
                         isActive
                           ? "border-primary bg-primary text-primary-foreground"
@@ -2050,6 +2060,7 @@ function VendorGroupCard({
                   );
                 })}
               </div>
+              <ScrollBar orientation="horizontal" />
             </ScrollArea>
 
             <ActiveVendorPlanPanel
@@ -2391,6 +2402,7 @@ interface ComparePanelProps {
 function ComparePanel({ platforms, bestValueId, unitMode, lang }: ComparePanelProps) {
   const t = dictionary[lang];
   const [expandedMetric, setExpandedMetric] = useState<string | null>(null);
+  const comparePanelId = useId();
 
   const toggleMetric = (metric: string) => {
     setExpandedMetric((prev) => (prev === metric ? null : metric));
@@ -2453,13 +2465,15 @@ function ComparePanel({ platforms, bestValueId, unitMode, lang }: ComparePanelPr
             <button
               type="button"
               onClick={() => toggleMetric(label)}
+              aria-expanded={expandedMetric === label}
+              aria-controls={`${comparePanelId}-${slugify(label)}`}
               className="flex w-full items-center justify-between rounded-lg border border-border bg-card p-4 hover:bg-secondary/50"
             >
               <span className="font-medium">{label}</span>
               {expandedMetric === label ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
             </button>
             {expandedMetric === label && (
-              <div className="mt-2 grid gap-2">
+              <div id={`${comparePanelId}-${slugify(label)}`} className="mt-2 grid gap-2">
                 {platforms.map((p) => {
                   const value = getCompareValue(p, label);
                   const isBest = p.id === getBestLimitId(label) && value !== "-";
@@ -2512,13 +2526,15 @@ function ComparePanel({ platforms, bestValueId, unitMode, lang }: ComparePanelPr
         <button
           type="button"
           onClick={() => toggleMetric("price")}
+          aria-expanded={expandedMetric === "price"}
+          aria-controls={`${comparePanelId}-price`}
           className="flex w-full items-center justify-between rounded-lg border border-border bg-card p-4 hover:bg-secondary/50"
         >
           <span className="font-medium">{t.comparePrice}</span>
           {expandedMetric === "price" ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
         </button>
         {expandedMetric === "price" && (
-          <div className="mt-2 grid gap-2">
+          <div id={`${comparePanelId}-price`} className="mt-2 grid gap-2">
             {platforms.map((p) => (
               <div
                 key={p.id}
