@@ -7,10 +7,19 @@ interface PlatformIconProps {
   vendor: string;
   name?: string;
   className?: string;
+  compact?: boolean;
 }
 
-export function PlatformIcon({ vendor, name, className }: PlatformIconProps) {
-  return <ProviderIcon vendor={vendor} name={name} className={cn("size-10 rounded-lg", className)} iconClassName="size-5" />;
+export function PlatformIcon({ vendor, name, className, compact = false }: PlatformIconProps) {
+  return (
+    <ProviderIcon
+      vendor={vendor}
+      name={name}
+      compact={compact}
+      className={cn("size-10 rounded-lg", className)}
+      iconClassName={compact ? "size-4" : "size-5"}
+    />
+  );
 }
 
 export function getVendorColor(vendor: string) {

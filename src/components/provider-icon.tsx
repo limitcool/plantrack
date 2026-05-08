@@ -23,7 +23,11 @@ type ProviderIconProps = {
   name?: string;
   className?: string;
   iconClassName?: string;
+  decorative?: boolean;
+  compact?: boolean;
 };
+
+type LabelTone = "neutral" | "signal" | "supporting" | "contrast";
 
 type ProviderVisual =
   | {
@@ -33,9 +37,14 @@ type ProviderVisual =
       containerClassName: string;
     }
   | {
+      kind: "label";
+      label: string;
+      labelClassName: string;
+      containerClassName: string;
+    }
+  | {
       kind: "image";
       src: string;
-      alt: string;
       imageClassName: string;
       containerClassName: string;
     }
@@ -85,17 +94,60 @@ function PlantrackGlyph({ className }: { className?: string }) {
   );
 }
 
-function BrandImage({ src, alt, className }: { src: string; alt: string; className?: string }) {
+const LABEL_TONE_STYLES: Record<LabelTone, { containerClassName: string; labelClassName: string }> = {
+  neutral: {
+    containerClassName: "bg-secondary text-secondary-foreground",
+    labelClassName: "text-secondary-foreground",
+  },
+  supporting: {
+    containerClassName: "bg-muted text-muted-foreground",
+    labelClassName: "text-foreground",
+  },
+  signal: {
+    containerClassName: "bg-accent text-accent-foreground",
+    labelClassName: "text-accent-foreground",
+  },
+  contrast: {
+    containerClassName: "bg-foreground text-background",
+    labelClassName: "text-background",
+  },
+};
+
+function buildLabelVisual(label: string, tone: LabelTone): ProviderVisual {
+  const styles = LABEL_TONE_STYLES[tone];
+  return {
+    kind: "label",
+    label,
+    labelClassName: styles.labelClassName,
+    containerClassName: styles.containerClassName,
+  };
+}
+
+function BrandImage({ src, className }: { src: string; className?: string }) {
   return (
     <Image
       src={src}
-      alt={alt}
+      alt=""
       className={cn("size-5 object-contain", className)}
       width={20}
       height={20}
       loading="lazy"
       unoptimized
     />
+  );
+}
+
+function BrandLabel({ label, className }: { label: string; className?: string }) {
+  return (
+    <span
+      aria-hidden="true"
+      className={cn(
+        "inline-flex items-center justify-center font-bold text-[11px] leading-none uppercase tracking-[0.02em]",
+        className,
+      )}
+    >
+      {label}
+    </span>
   );
 }
 
@@ -204,7 +256,6 @@ function resolveProvider(vendor: string, name?: string): ProviderVisual {
     return {
       kind: "image",
       src: "/brand-icons/jdcloud.ico",
-      alt: "京东云",
       imageClassName: "size-5",
       containerClassName: "bg-white dark:bg-[#18181b]",
     };
@@ -214,7 +265,6 @@ function resolveProvider(vendor: string, name?: string): ProviderVisual {
     return {
       kind: "image",
       src: "/brand-icons/tencent.ico",
-      alt: "腾讯云",
       imageClassName: "size-5",
       containerClassName: "bg-white dark:bg-[#0f172a]",
     };
@@ -224,7 +274,6 @@ function resolveProvider(vendor: string, name?: string): ProviderVisual {
     return {
       kind: "image",
       src: "/brand-icons/cucloud.ico",
-      alt: "联通云",
       imageClassName: "size-5",
       containerClassName: "bg-white dark:bg-[#111827]",
     };
@@ -234,7 +283,6 @@ function resolveProvider(vendor: string, name?: string): ProviderVisual {
     return {
       kind: "image",
       src: "/brand-icons/ctyun.ico",
-      alt: "天翼云",
       imageClassName: "size-5",
       containerClassName: "bg-white dark:bg-[#111827]",
     };
@@ -244,7 +292,6 @@ function resolveProvider(vendor: string, name?: string): ProviderVisual {
     return {
       kind: "image",
       src: "/brand-icons/mobile-cloud.ico",
-      alt: "移动云",
       imageClassName: "size-5",
       containerClassName: "bg-white dark:bg-[#111827]",
     };
@@ -254,17 +301,63 @@ function resolveProvider(vendor: string, name?: string): ProviderVisual {
     return {
       kind: "image",
       src: "/brand-icons/xfyun.ico",
-      alt: "讯飞星火",
       imageClassName: "size-5",
       containerClassName: "bg-white dark:bg-[#111827]",
     };
+  }
+
+  if (haystack.includes("ollama")) {
+    return buildLabelVisual("OL", "neutral");
+  }
+
+  if (haystack.includes("io.net") || haystack.includes(" io ") || haystack.includes("ionet")) {
+    return buildLabelVisual("IO", "signal");
+  }
+
+  if (haystack.includes("neuralwatt")) {
+    return buildLabelVisual("NW", "signal");
+  }
+
+  if (haystack.includes("wafer")) {
+    return buildLabelVisual("WF", "supporting");
+  }
+
+  if (haystack.includes("chutes")) {
+    return buildLabelVisual("CH", "contrast");
+  }
+
+  if (haystack.includes("synthetic")) {
+    return buildLabelVisual("SY", "supporting");
+  }
+
+  if (haystack.includes("zenmux")) {
+    return buildLabelVisual("ZM", "signal");
+  }
+
+  if (haystack.includes("九章云极") || haystack.includes("alaya")) {
+    return buildLabelVisual("AL", "contrast");
+  }
+
+  if (haystack.includes("arliai")) {
+    return buildLabelVisual("AR", "supporting");
+  }
+
+  if (haystack.includes("apertis")) {
+    return buildLabelVisual("AP", "signal");
+  }
+
+  if (haystack.includes("crof")) {
+    return buildLabelVisual("CF", "contrast");
+  }
+
+  if (haystack.includes("command code")) {
+    return buildLabelVisual("CC", "neutral");
   }
 
   if (haystack.includes("商汤") || haystack.includes("sensenova") || haystack.includes("sensetime")) {
     return {
       kind: "image",
       src: "/brand-icons/sensenova.png",
-      alt: "SenseNova",
       imageClassName: "size-5 rounded-sm",
       containerClassName: "bg-white dark:bg-[#111827]",
     };
@@ -274,7 +367,6 @@ function resolveProvider(vendor: string, name?: string): ProviderVisual {
     return {
       kind: "image",
       src: "/brand-icons/bigmodel.png",
-      alt: "智谱 GLM",
       imageClassName: "size-5",
       containerClassName: "bg-white dark:bg-[#111827]",
     };
@@ -284,7 +376,6 @@ function resolveProvider(vendor: string, name?: string): ProviderVisual {
     return {
       kind: "image",
       src: "/brand-icons/infini-ai.png",
-      alt: "无问芯穹",
       imageClassName: "size-5 rounded-sm",
       containerClassName: "bg-white dark:bg-[#111827]",
     };
@@ -294,7 +385,6 @@ function resolveProvider(vendor: string, name?: string): ProviderVisual {
     return {
       kind: "image",
       src: "/brand-icons/scnet.png",
-      alt: "国家超算中心",
       imageClassName: "size-5 rounded-sm",
       containerClassName: "bg-white dark:bg-[#111827]",
     };
@@ -304,7 +394,6 @@ function resolveProvider(vendor: string, name?: string): ProviderVisual {
     return {
       kind: "image",
       src: "/brand-icons/opencode.ico",
-      alt: "OpenCode",
       imageClassName: "size-5",
       containerClassName: "bg-white dark:bg-[#111827]",
     };
@@ -317,11 +406,22 @@ function resolveProvider(vendor: string, name?: string): ProviderVisual {
   };
 }
 
-export function ProviderIcon({ vendor, name, className, iconClassName }: ProviderIconProps) {
+export function ProviderIcon({
+  vendor,
+  name,
+  className,
+  iconClassName,
+  decorative = true,
+  compact = false,
+}: ProviderIconProps) {
   const resolved = resolveProvider(vendor, name);
+  const accessibleLabel = (name ?? vendor).trim();
 
   return (
     <div
+      aria-hidden={decorative || undefined}
+      aria-label={!decorative ? accessibleLabel : undefined}
+      role={!decorative ? "img" : undefined}
       className={cn(
         "flex shrink-0 items-center justify-center rounded-[14px] border border-black/5 shadow-[inset_0_1px_0_rgba(255,255,255,0.65)] dark:border-white/10 dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]",
         resolved.containerClassName,
@@ -330,8 +430,13 @@ export function ProviderIcon({ vendor, name, className, iconClassName }: Provide
     >
       {resolved.kind === "simple" ? (
         <SimpleIcon icon={resolved.icon} className={cn(resolved.iconClassName, iconClassName)} />
+      ) : resolved.kind === "label" ? (
+        <BrandLabel
+          label={resolved.label}
+          className={cn(compact ? "text-[9px] tracking-[-0.01em]" : null, resolved.labelClassName, iconClassName)}
+        />
       ) : resolved.kind === "image" ? (
-        <BrandImage src={resolved.src} alt={resolved.alt} className={cn(resolved.imageClassName, iconClassName)} />
+        <BrandImage src={resolved.src} className={cn(resolved.imageClassName, iconClassName)} />
       ) : resolved.kind === "openai" ? (
         <OpenAiGlyph className={cn(resolved.iconClassName, iconClassName)} />
       ) : (

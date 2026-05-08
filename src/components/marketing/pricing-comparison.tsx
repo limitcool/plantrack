@@ -35,13 +35,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import {
   Drawer,
   DrawerContent,
@@ -564,11 +558,13 @@ function detectModelFamily(label: string): { key: string; label: string } {
 }
 
 function slugify(value: string): string {
-  return value
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "") || "section";
+  return (
+    value
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "") || "section"
+  );
 }
 
 function groupModelFilters(items: ModelFilterItem[]): ModelFilterGroup[] {
@@ -737,7 +733,7 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
     }
 
     const selectedGroup = groupedModelFilters.find((group) => group.items.some((item) => selectedModels.has(item.key)));
-    return selectedGroup ?? groupedModelFilters[0];
+    return selectedGroup ?? null;
   }, [activeModelFamily, groupedModelFilters, selectedModels]);
 
   // Find best value platform
@@ -901,8 +897,7 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
       }
     });
   }, [filteredAndSortedPlatforms, sortBy]);
-  const activeCategoryMeta =
-    categoriesWithCounts.find((item) => item.value === category) ?? categoriesWithCounts[0];
+  const activeCategoryMeta = categoriesWithCounts.find((item) => item.value === category) ?? categoriesWithCounts[0];
   const activeFilterCount =
     (search.trim() ? 1 : 0) +
     (currencyFilter !== "all" ? 1 : 0) +
@@ -1090,7 +1085,7 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
                         variant="ghost"
                         size="sm"
                         onClick={() => setSelectedModels(new Set())}
-                        className="h-11 px-3 text-muted-foreground hover:text-foreground sm:h-8"
+                        className="h-11 px-3 text-muted-foreground hover:text-foreground sm:h-10"
                       >
                         <X className="mr-1 h-3 w-3" />
                         {t.clearModels}
@@ -1110,9 +1105,9 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
                         <button
                           key={group.key}
                           type="button"
-                          onClick={() => setActiveModelFamily(group.key)}
+                          onClick={() => setActiveModelFamily((current) => (current === group.key ? null : group.key))}
                           aria-pressed={isActiveFamily}
-                          className={`inline-flex min-h-11 items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-colors sm:min-h-0 ${
+                          className={`inline-flex min-h-11 items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-colors sm:min-h-10 ${
                             isActiveFamily
                               ? "border-primary bg-primary/10 text-foreground shadow-sm"
                               : "border-border bg-background text-muted-foreground hover:border-primary/40 hover:text-foreground"
@@ -1174,7 +1169,7 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
                               return next;
                             })
                           }
-                          className="h-11 rounded-full px-3 text-xs sm:h-8"
+                          className="h-11 rounded-full px-3 text-xs sm:h-10"
                         >
                           {activeModelGroup.items.every((item) => selectedModels.has(item.key))
                             ? t.unselectGroup
@@ -1192,7 +1187,7 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
                                 type="button"
                                 onClick={() => toggleModelKey(item.key)}
                                 aria-pressed={active}
-                                className={`inline-flex min-h-11 max-w-full items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-colors sm:min-h-0 ${
+                                className={`inline-flex min-h-11 max-w-full items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-colors sm:min-h-10 ${
                                   active
                                     ? "border-primary bg-primary text-primary-foreground"
                                     : "border-border bg-background text-muted-foreground hover:border-primary/40 hover:text-foreground"
@@ -1214,6 +1209,14 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
                         </div>
                       </ScrollArea>
                     </div>
+                  ) : null}
+                  {!activeModelGroup && selectedModels.size === 0 ? (
+                    <p className="px-1 text-muted-foreground text-xs leading-5">
+                      {t.allModels}
+                      {lang === "zh"
+                        ? "：当前未选择任何模型家族或具体型号，列表显示全部结果。"
+                        : ": no model family or exact model is selected, so all results are shown."}
+                    </p>
                   ) : null}
                 </div>
               </div>
@@ -1240,14 +1243,14 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
                       variant="ghost"
                       size="sm"
                       onClick={clearSelection}
-                      className="h-11 px-3 text-muted-foreground hover:text-foreground sm:h-8"
+                      className="h-11 px-3 text-muted-foreground hover:text-foreground sm:h-10"
                     >
                       <X className="mr-1 h-3 w-3" />
                       {t.clearSelection}
                     </Button>
                     <Sheet open={compareOpen} onOpenChange={setCompareOpen}>
                       <SheetTrigger asChild>
-                        <Button size="sm" className="h-11 gap-2 px-3 sm:h-8">
+                        <Button size="sm" className="h-11 gap-2 px-3 sm:h-10">
                           <Scale className="h-4 w-4" />
                           {t.compareSelected} ({selectedIds.size})
                         </Button>
@@ -1286,7 +1289,7 @@ export function PricingComparison({ platforms, lang }: PricingComparisonProps) {
                       setSelectedModels(new Set());
                       setUnitMode("compact");
                     }}
-                    className="h-11 px-3 text-muted-foreground hover:text-foreground sm:h-8"
+                    className="h-11 px-3 text-muted-foreground hover:text-foreground sm:h-10"
                   >
                     <RotateCcw className="mr-1 h-3 w-3" />
                     {t.clearFilters}
@@ -2052,43 +2055,45 @@ function VendorGroupCard({
                 className="overflow-x-auto pb-3 pr-1 md:overflow-visible [-webkit-overflow-scrolling:touch]"
               >
                 <div className="inline-flex min-w-max snap-x snap-mandatory gap-2 pr-3 md:min-w-0 md:flex md:flex-wrap md:pr-0">
-                {group.plans.map((plan) => {
-                  const isActive = plan.id === activePlan.id;
-                  const isSelected = selectedIds.has(plan.id);
-                  return (
-                    <button
-                      key={plan.id}
-                      ref={(node) => {
-                        planButtonRefs.current[plan.id] = node;
-                      }}
-                      type="button"
-                      onClick={() => setActivePlanId(plan.id)}
-                      aria-pressed={isActive}
-                      className={`inline-flex shrink-0 snap-start items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-colors md:max-w-full ${
-                        isActive
-                          ? "border-primary bg-primary text-primary-foreground"
-                          : "border-border bg-background text-muted-foreground hover:border-primary/40 hover:text-foreground"
-                      }`}
-                    >
-                      <span>{getPlanSeriesName(plan)}</span>
-                      {isSelected && (
-                        <span
-                          className={`rounded-full px-1.5 py-0.5 text-[11px] ${
-                            isActive ? "bg-primary-foreground/20 text-primary-foreground" : "bg-primary/10 text-primary"
-                          }`}
-                        >
-                          {t.selectedShort}
-                        </span>
-                      )}
-                    </button>
-                  );
-                })}
+                  {group.plans.map((plan) => {
+                    const isActive = plan.id === activePlan.id;
+                    const isSelected = selectedIds.has(plan.id);
+                    return (
+                      <button
+                        key={plan.id}
+                        ref={(node) => {
+                          planButtonRefs.current[plan.id] = node;
+                        }}
+                        type="button"
+                        onClick={() => setActivePlanId(plan.id)}
+                        aria-pressed={isActive}
+                        className={`inline-flex shrink-0 snap-start items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-colors md:max-w-full ${
+                          isActive
+                            ? "border-primary bg-primary text-primary-foreground"
+                            : "border-border bg-background text-muted-foreground hover:border-primary/40 hover:text-foreground"
+                        }`}
+                      >
+                        <span>{getPlanSeriesName(plan)}</span>
+                        {isSelected && (
+                          <span
+                            className={`rounded-full px-1.5 py-0.5 text-[11px] ${
+                              isActive
+                                ? "bg-primary-foreground/20 text-primary-foreground"
+                                : "bg-primary/10 text-primary"
+                            }`}
+                          >
+                            {t.selectedShort}
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
               {group.plans.length > 4 && (
                 <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-secondary/12 to-transparent md:hidden" />
               )}
-              </div>
+            </div>
 
             <ActiveVendorPlanPanel
               plan={activePlan}
@@ -2512,7 +2517,7 @@ function ComparePanel({ platforms, bestValueId, unitMode, lang }: ComparePanelPr
                       }`}
                     >
                       <div className="flex items-center gap-2">
-                        <PlatformIcon vendor={p.vendor} className="h-8 w-8 text-xs" />
+                        <PlatformIcon vendor={p.vendor} compact className="h-8 w-8 text-xs" />
                         <span className="font-medium">{p.name}</span>
                       </div>
                       <div className="flex items-center gap-2">
@@ -2570,7 +2575,7 @@ function ComparePanel({ platforms, bestValueId, unitMode, lang }: ComparePanelPr
                 }`}
               >
                 <div className="flex items-center gap-2">
-                  <PlatformIcon vendor={p.vendor} className="h-8 w-8 text-xs" />
+                  <PlatformIcon vendor={p.vendor} compact className="h-8 w-8 text-xs" />
                   <span className="font-medium">{p.name}</span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -2603,7 +2608,7 @@ function ComparePanel({ platforms, bestValueId, unitMode, lang }: ComparePanelPr
               {platforms.map((p) => (
                 <th key={p.id} className="p-3 text-center font-medium">
                   <div className="flex flex-col items-center gap-1">
-                    <PlatformIcon vendor={p.vendor} className="h-6 w-6 text-xs" />
+                    <PlatformIcon vendor={p.vendor} compact className="h-6 w-6 text-xs" />
                     <span className="text-xs">{p.name}</span>
                     {p.id === bestValueId && (
                       <Badge className="bg-primary text-xs text-primary-foreground">{t.recommended}</Badge>

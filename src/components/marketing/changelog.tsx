@@ -387,12 +387,7 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
                       <ChartTooltip content={<ChartTooltipContent />} />
                       <Bar dataKey={t.up} stackId="a" fill="var(--color-primary)" radius={[0, 0, 0, 0]} />
                       <Bar dataKey={t.down} stackId="a" fill="var(--color-destructive)" radius={[0, 0, 0, 0]} />
-                      <Bar
-                        dataKey={t.neutral}
-                        stackId="a"
-                        fill="var(--color-muted-foreground)"
-                        radius={[4, 4, 0, 0]}
-                      />
+                      <Bar dataKey={t.neutral} stackId="a" fill="var(--color-muted-foreground)" radius={[4, 4, 0, 0]} />
                     </BarChart>
                   </ChartContainer>
                 </CardContent>
@@ -411,7 +406,7 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
                       key={vendor}
                       className="flex items-center gap-2 rounded-lg border border-border bg-secondary/30 px-3 py-2"
                     >
-                      <PlatformIcon vendor={vendor} className="h-8 w-8 text-xs" />
+                      <PlatformIcon vendor={vendor} compact className="h-8 w-8 text-xs" />
                       <div>
                         <div className="font-medium">{vendor}</div>
                         <div className="text-xs text-muted-foreground">
@@ -429,7 +424,7 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
             {/* Filters */}
             <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Select value={impactFilter} onValueChange={(v) => setImpactFilter(v as typeof impactFilter)}>
-                <SelectTrigger aria-label={t.filterImpact} className="h-11 w-full sm:h-8 sm:w-[150px]">
+                <SelectTrigger aria-label={t.filterImpact} className="h-11 w-full sm:h-10 sm:w-[150px]">
                   <Filter className="mr-2 h-4 w-4" />
                   <SelectValue placeholder={t.filterImpact} />
                 </SelectTrigger>
@@ -457,7 +452,7 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
               </Select>
 
               <Select value={typeFilter} onValueChange={setTypeFilter}>
-                <SelectTrigger aria-label={t.filterType} className="h-11 w-full sm:h-8 sm:w-[150px]">
+                <SelectTrigger aria-label={t.filterType} className="h-11 w-full sm:h-10 sm:w-[150px]">
                   <SelectValue placeholder={t.filterType} />
                 </SelectTrigger>
                 <SelectContent>
