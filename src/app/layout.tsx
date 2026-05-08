@@ -13,6 +13,22 @@ const siteTitle = "PlanTrack - AI 订阅比价追踪平台";
 const siteDescription =
   "一站式比较 OpenAI、Claude、Kimi、MiniMax 等 AI 服务的 Token Plan、Coding Plan 方案，定期追踪价格与配额变动。";
 const ogImageUrl = `${siteUrl}/plantrack-mark.svg`;
+const publishedAt = "2026-05-09T01:20:41+08:00";
+const organizationName = "PlanTrack";
+
+async function resolveModifiedAt() {
+  try {
+    const { execSync } = await import("node:child_process");
+    return execSync("git log -1 --format=%cI", {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).trim();
+  } catch {
+    return publishedAt;
+  }
+}
+
+const modifiedAt = await resolveModifiedAt();
 
 const structuredData = [
   {
@@ -53,10 +69,45 @@ const structuredData = [
     about: {
       "@id": `${siteUrl}/#organization`,
     },
+    author: {
+      "@id": `${siteUrl}/#organization`,
+    },
+    publisher: {
+      "@id": `${siteUrl}/#organization`,
+    },
     breadcrumb: {
       "@id": `${siteUrl}/#breadcrumb`,
     },
     inLanguage: "zh-CN",
+    datePublished: publishedAt,
+    dateModified: modifiedAt,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": `${siteUrl}/#application`,
+    name: siteName,
+    url: siteUrl,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    description: siteDescription,
+    image: ogImageUrl,
+    creator: {
+      "@id": `${siteUrl}/#organization`,
+    },
+    author: {
+      "@id": `${siteUrl}/#organization`,
+    },
+    publisher: {
+      "@id": `${siteUrl}/#organization`,
+    },
+    datePublished: publishedAt,
+    dateModified: modifiedAt,
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
   },
   {
     "@context": "https://schema.org",
@@ -77,6 +128,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: siteTitle,
   description: siteDescription,
+  authors: [{ name: organizationName, url: siteUrl }],
+  creator: organizationName,
+  publisher: organizationName,
   alternates: {
     canonical: siteUrl,
   },
