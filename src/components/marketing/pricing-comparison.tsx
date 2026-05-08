@@ -1,6 +1,6 @@
 "use client";
 
-import { startTransition, useId, useMemo, useState } from "react";
+import { startTransition, useEffect, useId, useMemo, useRef, useState } from "react";
 
 import {
   ArrowDown,
@@ -51,7 +51,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Input } from "@/components/ui/input";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -1737,6 +1737,8 @@ function VendorGroupCard({
   const [vendorPlansOpen, setVendorPlansOpen] = useState(false);
   const [vendorPlansMounted, setVendorPlansMounted] = useState(false);
   const [activePlanId, setActivePlanId] = useState(group.plans[0]?.id ?? platform.id);
+  const planRailRef = useRef<HTMLDivElement | null>(null);
+  const planButtonRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const priceText =
     group.minPriceValueRmb === group.maxPriceValueRmb
       ? t.vendorRange.replace("{min}", group.minPriceDisplay)
@@ -1789,6 +1791,21 @@ function VendorGroupCard({
       });
     }
   };
+
+  useEffect(() => {
+    const rail = planRailRef.current;
+    const activeButton = planButtonRefs.current[activePlanId];
+    if (!rail || !activeButton || rail.scrollWidth <= rail.clientWidth) {
+      return;
+    }
+
+    const targetLeft = activeButton.offsetLeft - rail.clientWidth / 2 + activeButton.clientWidth / 2;
+    const maxLeft = rail.scrollWidth - rail.clientWidth;
+    rail.scrollTo({
+      left: Math.max(0, Math.min(targetLeft, maxLeft)),
+      behavior: "smooth",
+    });
+  }, [activePlanId]);
 
   return (
     <Card
@@ -2029,18 +2046,25 @@ function VendorGroupCard({
           </div>
 
           <div className="space-y-3">
-            <ScrollArea className="w-full whitespace-nowrap">
-              <div className="inline-flex min-w-max gap-2 pb-2 pr-2">
+            <div className="relative">
+              <div
+                ref={planRailRef}
+                className="overflow-x-auto pb-3 pr-1 md:overflow-visible [-webkit-overflow-scrolling:touch]"
+              >
+                <div className="inline-flex min-w-max snap-x snap-mandatory gap-2 pr-3 md:min-w-0 md:flex md:flex-wrap md:pr-0">
                 {group.plans.map((plan) => {
                   const isActive = plan.id === activePlan.id;
                   const isSelected = selectedIds.has(plan.id);
                   return (
                     <button
                       key={plan.id}
+                      ref={(node) => {
+                        planButtonRefs.current[plan.id] = node;
+                      }}
                       type="button"
                       onClick={() => setActivePlanId(plan.id)}
                       aria-pressed={isActive}
-                      className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-colors ${
+                      className={`inline-flex shrink-0 snap-start items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-colors md:max-w-full ${
                         isActive
                           ? "border-primary bg-primary text-primary-foreground"
                           : "border-border bg-background text-muted-foreground hover:border-primary/40 hover:text-foreground"
@@ -2059,9 +2083,12 @@ function VendorGroupCard({
                     </button>
                   );
                 })}
+                </div>
               </div>
-              <ScrollBar orientation="horizontal" />
-            </ScrollArea>
+              {group.plans.length > 4 && (
+                <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-secondary/12 to-transparent md:hidden" />
+              )}
+              </div>
 
             <ActiveVendorPlanPanel
               plan={activePlan}
