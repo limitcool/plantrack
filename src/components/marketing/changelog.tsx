@@ -1,15 +1,17 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { TrendingUp, TrendingDown, Minus, ExternalLink, Filter, BarChart3, Calendar } from "lucide-react";
+
+import { BarChart3, Calendar, ExternalLink, Filter, Minus, TrendingDown, TrendingUp } from "lucide-react";
+import { Bar, BarChart, Cell, Legend, Pie, PieChart, XAxis, YAxis } from "recharts";
+
+import { PlatformIcon } from "@/components/marketing/platform-icons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
-import { PlatformIcon } from "@/components/marketing/platform-icons";
 import type { Lang } from "@/lib/lang";
-import { Bar, BarChart, XAxis, YAxis, Cell, PieChart, Pie, Legend } from "recharts";
 import type { Platform, PlatformHistory } from "@/lib/types";
 
 interface ChangelogProps {
@@ -246,11 +248,11 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
   };
 
   return (
-    <section id="changelog" className="border-t border-border py-16">
+    <section id="changelog" className="border-border border-t py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight">{t.title}</h2>
+            <h2 className="font-bold text-3xl tracking-tight">{t.title}</h2>
             <p className="mt-2 text-muted-foreground">{t.subtitle}</p>
           </div>
           <div className="flex gap-2">
@@ -281,42 +283,42 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               <Card>
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-muted-foreground">{t.total}</CardTitle>
+                  <CardTitle className="font-medium text-muted-foreground text-sm">{t.total}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-3xl font-bold">{stats.total}</div>
+                  <div className="font-bold text-3xl">{stats.total}</div>
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-primary">{t.up}</CardTitle>
+                  <CardTitle className="font-medium text-primary text-sm">{t.up}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center gap-2">
                     <TrendingUp className="h-6 w-6 text-primary" />
-                    <span className="text-3xl font-bold">{stats.impactCounts["value-up"]}</span>
+                    <span className="font-bold text-3xl">{stats.impactCounts["value-up"]}</span>
                   </div>
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-destructive">{t.down}</CardTitle>
+                  <CardTitle className="font-medium text-destructive text-sm">{t.down}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center gap-2">
                     <TrendingDown className="h-6 w-6 text-destructive" />
-                    <span className="text-3xl font-bold">{stats.impactCounts["value-down"]}</span>
+                    <span className="font-bold text-3xl">{stats.impactCounts["value-down"]}</span>
                   </div>
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-muted-foreground">{t.neutral}</CardTitle>
+                  <CardTitle className="font-medium text-muted-foreground text-sm">{t.neutral}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center gap-2">
                     <Minus className="h-6 w-6 text-muted-foreground" />
-                    <span className="text-3xl font-bold">{stats.impactCounts.neutral}</span>
+                    <span className="font-bold text-3xl">{stats.impactCounts.neutral}</span>
                   </div>
                 </CardContent>
               </Card>
@@ -342,8 +344,8 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
                         dataKey="value"
                         nameKey="name"
                       >
-                        {impactChartData.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={entry.fill} />
+                        {impactChartData.map((entry) => (
+                          <Cell key={entry.name} fill={entry.fill} />
                         ))}
                       </Pie>
                       <Legend />
@@ -365,8 +367,8 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
                       <YAxis type="category" dataKey="name" width={80} tick={{ fontSize: 12 }} />
                       <ChartTooltip content={<ChartTooltipContent />} />
                       <Bar dataKey="value" radius={4}>
-                        {typeChartData.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={entry.fill} />
+                        {typeChartData.map((entry) => (
+                          <Cell key={entry.name} fill={entry.fill} />
                         ))}
                       </Bar>
                     </BarChart>
@@ -409,7 +411,7 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
                       <PlatformIcon vendor={vendor} compact className="h-8 w-8 text-xs" />
                       <div>
                         <div className="font-medium">{vendor}</div>
-                        <div className="text-xs text-muted-foreground">
+                        <div className="text-muted-foreground text-xs">
                           {t.changesCount.replace("{count}", String(count))}
                         </div>
                       </div>
@@ -464,16 +466,16 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
                 </SelectContent>
               </Select>
 
-              <div className="text-sm text-muted-foreground">
+              <div className="text-muted-foreground text-sm">
                 {t.records.replace("{count}", String(filteredChanges.length))}
               </div>
             </div>
 
             {/* Timeline */}
             <div className="space-y-4">
-              {displayedChanges.map((change, i) => (
+              {displayedChanges.map((change) => (
                 <div
-                  key={`${change.platformSlug}-${change.date}-${i}`}
+                  key={`${change.platformSlug}-${change.date}-${change.title}`}
                   className={`rounded-2xl border p-4 transition-colors hover:bg-card/80 ${getImpactContainerClass(change.impact)}`}
                 >
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
@@ -484,24 +486,24 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
                       <div>
                         <div className="flex flex-wrap items-center gap-2">
                           <span className="font-semibold">{change.platformName}</span>
-                          <span className="text-sm text-muted-foreground">{change.vendor}</span>
+                          <span className="text-muted-foreground text-sm">{change.vendor}</span>
                           <Badge variant={getTypeBadgeVariant(change.type)}>
                             {changeTypes.find((t) => t.value === change.type)?.label || change.type}
                           </Badge>
                           <div className="flex items-center">{getImpactIcon(change.impact)}</div>
                         </div>
                         <h4 className="mt-1 font-medium">{change.title}</h4>
-                        <p className="mt-1 text-sm text-muted-foreground">{change.summary}</p>
+                        <p className="mt-1 text-muted-foreground text-sm">{change.summary}</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3 pl-13 sm:pl-0">
-                      <span className="whitespace-nowrap text-sm text-muted-foreground">{change.date}</span>
+                      <span className="whitespace-nowrap text-muted-foreground text-sm">{change.date}</span>
                       {change.sourceUrl && (
                         <a
                           href={change.sourceUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-1 text-sm text-primary hover:underline"
+                          className="flex items-center gap-1 text-primary text-sm hover:underline"
                         >
                           {t.source}
                           <ExternalLink className="h-3 w-3" />
@@ -526,8 +528,8 @@ export function Changelog({ platforms, lang }: ChangelogProps) {
                 <div className="mb-4 rounded-full bg-secondary p-4">
                   <Filter className="h-8 w-8 text-muted-foreground" />
                 </div>
-                <h3 className="text-lg font-semibold">{t.emptyTitle}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{t.emptyDesc}</p>
+                <h3 className="font-semibold text-lg">{t.emptyTitle}</h3>
+                <p className="mt-1 text-muted-foreground text-sm">{t.emptyDesc}</p>
               </div>
             )}
           </>

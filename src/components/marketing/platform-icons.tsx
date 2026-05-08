@@ -21,11 +21,3 @@ export function PlatformIcon({ vendor, name, className, compact = false }: Platf
     />
   );
 }
-
-export function getVendorColor(vendor: string) {
-  return {
-    bg: "bg-secondary",
-    text: "text-foreground",
-    vendor,
-  };
-}

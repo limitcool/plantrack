@@ -142,7 +142,7 @@ function BrandLabel({ label, className }: { label: string; className?: string })
     <span
       aria-hidden="true"
       className={cn(
-        "inline-flex items-center justify-center font-bold text-[11px] leading-none uppercase tracking-[0.02em]",
+        "inline-flex items-center justify-center font-bold text-[11px] uppercase leading-none tracking-[0.02em]",
         className,
       )}
     >
@@ -416,32 +416,39 @@ export function ProviderIcon({
 }: ProviderIconProps) {
   const resolved = resolveProvider(vendor, name);
   const accessibleLabel = (name ?? vendor).trim();
+  const content =
+    resolved.kind === "simple" ? (
+      <SimpleIcon icon={resolved.icon} className={cn(resolved.iconClassName, iconClassName)} />
+    ) : resolved.kind === "label" ? (
+      <BrandLabel
+        label={resolved.label}
+        className={cn(compact ? "text-[9px] tracking-[-0.01em]" : null, resolved.labelClassName, iconClassName)}
+      />
+    ) : resolved.kind === "image" ? (
+      <BrandImage src={resolved.src} className={cn(resolved.imageClassName, iconClassName)} />
+    ) : resolved.kind === "openai" ? (
+      <OpenAiGlyph className={cn(resolved.iconClassName, iconClassName)} />
+    ) : (
+      <UvlioGlyph className={cn(resolved.iconClassName, iconClassName)} />
+    );
+
+  const containerClassName = cn(
+    "flex shrink-0 items-center justify-center rounded-[14px] border border-black/5 shadow-[inset_0_1px_0_rgba(255,255,255,0.65)] dark:border-white/10 dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]",
+    resolved.containerClassName,
+    className,
+  );
+
+  if (decorative) {
+    return (
+      <div aria-hidden="true" className={containerClassName}>
+        {content}
+      </div>
+    );
+  }
 
   return (
-    <div
-      aria-hidden={decorative || undefined}
-      aria-label={!decorative ? accessibleLabel : undefined}
-      role={!decorative ? "img" : undefined}
-      className={cn(
-        "flex shrink-0 items-center justify-center rounded-[14px] border border-black/5 shadow-[inset_0_1px_0_rgba(255,255,255,0.65)] dark:border-white/10 dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]",
-        resolved.containerClassName,
-        className,
-      )}
-    >
-      {resolved.kind === "simple" ? (
-        <SimpleIcon icon={resolved.icon} className={cn(resolved.iconClassName, iconClassName)} />
-      ) : resolved.kind === "label" ? (
-        <BrandLabel
-          label={resolved.label}
-          className={cn(compact ? "text-[9px] tracking-[-0.01em]" : null, resolved.labelClassName, iconClassName)}
-        />
-      ) : resolved.kind === "image" ? (
-        <BrandImage src={resolved.src} className={cn(resolved.imageClassName, iconClassName)} />
-      ) : resolved.kind === "openai" ? (
-        <OpenAiGlyph className={cn(resolved.iconClassName, iconClassName)} />
-      ) : (
-        <UvlioGlyph className={cn(resolved.iconClassName, iconClassName)} />
-      )}
+    <div aria-label={accessibleLabel} className={containerClassName} role="img">
+      {content}
     </div>
   );
 }

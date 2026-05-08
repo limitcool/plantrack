@@ -2052,9 +2052,9 @@ function VendorGroupCard({
             <div className="relative">
               <div
                 ref={planRailRef}
-                className="overflow-x-auto pb-3 pr-1 md:overflow-visible [-webkit-overflow-scrolling:touch]"
+                className="overflow-x-auto pr-1 pb-3 [-webkit-overflow-scrolling:touch] md:overflow-visible"
               >
-                <div className="inline-flex min-w-max snap-x snap-mandatory gap-2 pr-3 md:min-w-0 md:flex md:flex-wrap md:pr-0">
+                <div className="inline-flex min-w-max snap-x snap-mandatory gap-2 pr-3 md:flex md:min-w-0 md:flex-wrap md:pr-0">
                   {group.plans.map((plan) => {
                     const isActive = plan.id === activePlan.id;
                     const isSelected = selectedIds.has(plan.id);
@@ -2611,7 +2611,7 @@ function ComparePanel({ platforms, bestValueId, unitMode, lang }: ComparePanelPr
                     <PlatformIcon vendor={p.vendor} compact className="h-6 w-6 text-xs" />
                     <span className="text-xs">{p.name}</span>
                     {p.id === bestValueId && (
-                      <Badge className="bg-primary text-xs text-primary-foreground">{t.recommended}</Badge>
+                      <Badge className="bg-primary text-primary-foreground text-xs">{t.recommended}</Badge>
                     )}
                   </div>
                 </th>
